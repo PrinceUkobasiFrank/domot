@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Domot! — List Property</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet"/>
+
+<link href="property_listing.css" rel="stylesheet"/></head>
+<body>
+<div class="ambient">
+<div class="ambient-orb ambient-orb-1"></div>
+<div class="ambient-orb ambient-orb-2"></div>
+</div>
+<div class="page-container" id="pageContainer">
+<div class="page-header">
+<div class="header-back">
+<button class="back-btn" onclick="goBack()">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+</button>
+</div>
+<div class="header-title">List Property</div>
+<div class="header-sub">Create a trusted property listing for renters and buyers.</div>
+</div>
+<div class="section-spacer animate-in" style="margin-top:16px;">
+<div class="progress-track" id="progressTrack">
+<div class="progress-step active" data-step="1">
+<div class="progress-dot active">1</div>
+<div class="progress-label">Type</div>
+</div>
+<div class="progress-connector"><div class="progress-connector-fill" id="conn1"></div></div>
+<div class="progress-step" data-step="2">
+<div class="progress-dot pending">2</div>
+<div class="progress-label">Details</div>
+</div>
+<div class="progress-connector"><div class="progress-connector-fill" id="conn2"></div></div>
+<div class="progress-step" data-step="3">
+<div class="progress-dot pending">3</div>
+<div class="progress-label">Photos</div>
+</div>
+<div class="progress-connector"><div class="progress-connector-fill" id="conn3"></div></div>
+<div class="progress-step" data-step="4">
+<div class="progress-dot pending">4</div>
+<div class="progress-label">Verify</div>
+</div>
+<div class="progress-connector"><div class="progress-connector-fill" id="conn4"></div></div>
+<div class="progress-step" data-step="5">
+<div class="progress-dot pending">5</div>
+<div class="progress-label">Publish</div>
+</div>
+</div>
+</div>
+<div class="step-content active" id="step1">
+<div class="section-spacer animate-in delay-1">
+<div class="section-label">Property Type</div>
+<div class="select-grid">
+<button class="select-card" data-type="house" onclick="selectType(this)">
+<div class="select-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div>
+<div class="select-label">House</div>
+</button>
+<button class="select-card" data-type="apartment" onclick="selectType(this)">
+<div class="select-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="20" rx="2" ry="2" width="16" x="4" y="2"></rect><line x1="12" x2="12.01" y1="18" y2="18"></line></svg></div>
+<div class="select-label">Apartment</div>
+</button>
+<button class="select-card" data-type="lodge" onclick="selectType(this)">
+<div class="select-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M2 22h20"></path><path d="M4 22V10l8-6 8 6v12"></path><path d="M9 22v-6h6v6"></path></svg></div>
+<div class="select-label">Student Lodge</div>
+</button>
+<button class="select-card" data-type="duplex" onclick="selectType(this)">
+<div class="select-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline><line x1="12" x2="12" y1="2" y2="9"></line></svg></div>
+<div class="select-label">Duplex</div>
+</button>
+<button class="select-card" data-type="commercial" onclick="selectType(this)">
+<div class="select-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="14" rx="2" ry="2" width="20" x="2" y="7"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></div>
+<div class="select-label">Commercial</div>
+</button>
+<button class="select-card" data-type="land" onclick="selectType(this)">
+<div class="select-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+<div class="select-label">Land</div>
+</button>
+</div>
+</div>
+<div class="section-spacer animate-in delay-2">
+<div class="section-label">Listing Purpose</div>
+<div class="purpose-row">
+<button class="purpose-card" data-purpose="rent" onclick="selectPurpose(this)">
+<div class="purpose-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div>
+<div class="purpose-label">Rent Out</div>
+<div class="purpose-desc">For tenants</div>
+</button>
+<button class="purpose-card" data-purpose="sell" onclick="selectPurpose(this)">
+<div class="purpose-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><line x1="12" x2="12" y1="3" y2="21"></line><line x1="7" x2="17" y1="8" y2="8"></line><line x1="7" x2="17" y1="16" y2="16"></line><line stroke-width="1.5" x1="7" x2="17" y1="8" y2="16"></line></svg></div>
+<div class="purpose-label">Sell</div>
+<div class="purpose-desc">For buyers</div>
+</button>
+<button class="purpose-card" data-purpose="both" onclick="selectPurpose(this)">
+<div class="purpose-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="8" y2="16"></line><line x1="8" x2="16" y1="12" y2="12"></line></svg></div>
+<div class="purpose-label">Both</div>
+<div class="purpose-desc">Rent and Sell</div>
+</button>
+</div>
+</div>
+<div class="info-badge animate-in delay-3">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="16" y2="12"></line><line x1="12" x2="12.01" y1="8" y2="8"></line></svg>
+Your choice determines where your property appears
+</div>
+<div class="step-nav animate-in delay-4">
+<div></div>
+<button class="step-nav-btn next" onclick="nextStep()">Continue</button>
+</div>
+</div>
+<div class="step-content" id="step2">
+<div class="section-spacer animate-in">
+<div class="section-label">Property Details</div>
+<div class="form-card">
+<div class="form-group">
+<label class="form-label">Property Name</label>
+<input class="form-input" id="propName" placeholder="e.g. Sunrise Apartments" type="text"/>
+</div>
+<div class="form-group">
+<label class="form-label">Address</label>
+<input class="form-input" id="propAddress" placeholder="Street address" type="text"/>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label class="form-label">City</label>
+<input class="form-input" id="propCity" placeholder="e.g. Uyo" type="text"/>
+</div>
+<div class="form-group">
+<label class="form-label">State</label>
+<select class="form-select" id="propState">
+<option value="">Select state</option>
+<option value="akwa-ibom">Akwa Ibom</option>
+<option value="lagos">Lagos</option>
+<option value="abuja">Abuja</option>
+<option value="rivers">Rivers</option>
+<option value="cross-river">Cross River</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+<div class="section-spacer animate-in delay-1">
+<div class="section-label">Specifications</div>
+<div class="form-card">
+<div class="form-row">
+<div class="form-group">
+<label class="form-label">Bedrooms</label>
+<select class="form-select" id="propBedrooms">
+<option value="">Select</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5+</option>
+</select>
+</div>
+<div class="form-group">
+<label class="form-label">Bathrooms</label>
+<select class="form-select" id="propBathrooms">
+<option value="">Select</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4+</option>
+</select>
+</div>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label class="form-label">Parking Spaces</label>
+<select class="form-select" id="propParking">
+<option value="">Select</option>
+<option value="0">None</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3+</option>
+</select>
+</div>
+<div class="form-group">
+<label class="form-label">Property Size (sqm)</label>
+<input class="form-input" id="propSize" placeholder="e.g. 450" type="number"/>
+</div>
+</div>
+</div>
+</div>
+<div class="section-spacer animate-in delay-2">
+<div class="section-label">Pricing</div>
+<div class="form-card" id="rentPriceGroup">
+<div class="form-group">
+<label class="form-label">Annual Rent (N)</label>
+<input class="form-input" id="propRent" placeholder="e.g. 650000" type="number"/>
+</div>
+</div>
+<div class="form-card" id="salePriceGroup" style="display:none;">
+<div class="form-group">
+<label class="form-label">Sale Price (N)</label>
+<input class="form-input" id="propSale" placeholder="e.g. 45000000" type="number"/>
+</div>
+</div>
+</div>
+<div class="section-spacer animate-in delay-3">
+<div class="section-label">Amenities</div>
+<div class="amenities-grid">
+<button class="amenity-chip" onclick="toggleAmenity(this)"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>24/7 Power</button>
+<button class="amenity-chip" onclick="toggleAmenity(this)"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Security</button>
+<button class="amenity-chip" onclick="toggleAmenity(this)"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>Water</button>
+<button class="amenity-chip" onclick="toggleAmenity(this)"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><rect height="13" width="15" x="1" y="3"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>Parking</button>
+<button class="amenity-chip" onclick="toggleAmenity(this)"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" x2="12.01" y1="20" y2="20"></line></svg>Wi-Fi</button>
+<button class="amenity-chip" onclick="toggleAmenity(this)"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M20 9v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9"></path><path d="M9 22V12h6v10"></path><path d="M2 10.6L12 2l10 8.6"></path></svg>Furnished</button>
+<button class="amenity-chip" onclick="toggleAmenity(this)"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M2 12h20"></path><path d="M20 12v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"></path><path d="M12 2v10"></path><path d="M12 2a5 5 0 0 1 5 5v5H7V7a5 5 0 0 1 5-5z"></path></svg>Swimming Pool</button>
+<button class="amenity-chip" onclick="toggleAmenity(this)"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M6.5 6.5h11"></path><path d="M6.5 17.5h11"></path><path d="M6 20v-2a6 6 0 0 1 12 0v2"></path><path d="M18 4v2a6 6 0 0 1-12 0V4"></path></svg>Gym</button>
+<button class="amenity-chip" onclick="toggleAmenity(this)"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><rect height="18" rx="2" ry="2" width="18" x="3" y="3"></rect><line x1="3" x2="21" y1="9" y2="9"></line><line x1="9" x2="9" y1="21" y2="9"></line></svg>Balcony</button>
+<button class="amenity-chip" onclick="toggleAmenity(this)"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"></path></svg>Air Conditioning</button>
+</div>
+</div>
+<div class="step-nav animate-in delay-4">
+<button class="step-nav-btn back" onclick="prevStep()">Back</button>
+<button class="step-nav-btn next" onclick="nextStep()">Continue</button>
+</div>
+</div>
+<div class="step-content" id="step3">
+<div class="section-spacer animate-in">
+<div class="section-label">Property Photos</div>
+<div class="upload-zone" id="uploadZone" onclick="document.getElementById('photoInput').click()">
+<div class="upload-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" x2="12" y1="3" y2="15"></line></svg>
+</div>
+<div class="upload-title">Upload Property Photos</div>
+<div class="upload-desc">Drag and drop or tap to browse</div>
+<div class="upload-hint">Exterior, Living Room, Kitchen, Bedrooms, Bathrooms</div>
+</div>
+<input accept="image/*" class="upload-input" id="photoInput" multiple="" onchange="handlePhotos(event)" type="file"/>
+</div>
+<div class="section-spacer animate-in delay-1" id="photoPreviewSection" style="display:none;">
+<div class="section-label">Uploaded Photos</div>
+<div class="photo-grid" id="photoGrid"></div>
+</div>
+<div class="info-badge animate-in delay-2" id="coverHint" style="display:none;">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="16" y2="12"></line><line x1="12" x2="12.01" y1="8" y2="8"></line></svg>
+Tap the star icon to set a cover image
+</div>
+<div class="step-nav animate-in delay-3">
+<button class="step-nav-btn back" onclick="prevStep()">Back</button>
+<button class="step-nav-btn next" onclick="nextStep()">Continue</button>
+</div>
+</div>
+<div class="step-content" id="step4">
+<div class="section-spacer animate-in">
+<div class="section-label">Verification Center</div>
+<div class="verification-hero">
+<div class="verification-label">Projected Trust Score</div>
+<div class="verification-score" id="trustScore">42<span style="font-size:20px;color:var(--text-muted);">/100</span></div>
+<div class="verification-sub">Upload documents to increase visibility</div>
+</div>
+</div>
+<div class="section-spacer animate-in delay-1">
+<div class="section-label">Required Documents</div>
+<div class="doc-card" onclick="uploadDoc(this,'ownership')">
+<div class="doc-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></div>
+<div class="doc-info">
+<div class="doc-name">Proof of Ownership</div>
+<div class="doc-status pending" id="status-ownership">Pending upload</div>
+</div>
+<button class="doc-action" id="btn-ownership">Upload</button>
+</div>
+<div class="doc-card" onclick="uploadDoc(this,'survey')">
+<div class="doc-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" ry="2" width="18" x="3" y="3"></rect><line x1="3" x2="21" y1="9" y2="9"></line><line x1="9" x2="9" y1="21" y2="9"></line></svg></div>
+<div class="doc-info">
+<div class="doc-name">Survey Plan</div>
+<div class="doc-status pending" id="status-survey">Pending upload</div>
+</div>
+<button class="doc-action" id="btn-survey">Upload</button>
+</div>
+<div class="doc-card" onclick="uploadDoc(this,'coo')">
+<div class="doc-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="M9 15l2 2 4-4"></path></svg></div>
+<div class="doc-info">
+<div class="doc-name">Certificate of Occupancy</div>
+<div class="doc-status pending" id="status-coo">Pending upload</div>
+</div>
+<button class="doc-action" id="btn-coo">Upload</button>
+</div>
+<div class="doc-card" onclick="uploadDoc(this,'approval')">
+<div class="doc-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg></div>
+<div class="doc-info">
+<div class="doc-name">Building Approval</div>
+<div class="doc-status pending" id="status-approval">Pending upload</div>
+</div>
+<button class="doc-action" id="btn-approval">Upload</button>
+</div>
+<div class="doc-card" onclick="uploadDoc(this,'tax')">
+<div class="doc-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><line x1="12" x2="12" y1="3" y2="21"></line><line x1="7" x2="17" y1="8" y2="8"></line><line x1="7" x2="17" y1="16" y2="16"></line><line stroke-width="1.5" x1="7" x2="17" y1="8" y2="16"></line></svg></div>
+<div class="doc-info">
+<div class="doc-name">Property Tax Documents</div>
+<div class="doc-status pending" id="status-tax">Pending upload</div>
+</div>
+<button class="doc-action" id="btn-tax">Upload</button>
+</div>
+</div>
+<div class="step-nav animate-in delay-2">
+<button class="step-nav-btn back" onclick="prevStep()">Back</button>
+<button class="step-nav-btn next" onclick="nextStep()">Continue</button>
+</div>
+</div>
+<div class="step-content" id="step5">
+<div class="section-spacer animate-in">
+<div class="section-label">Preview</div>
+<div class="preview-card">
+<div class="preview-image">
+<img alt="Property" id="previewImg" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#161624,#2a2044)'" src=""/>
+<div class="preview-badge" id="previewBadge">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+Verified
+</div>
+</div>
+<div class="preview-body">
+<div class="preview-name" id="previewName">Sunrise Apartments</div>
+<div class="preview-location" id="previewLocation">Shelter Afrique, Uyo, Akwa Ibom</div>
+<div class="preview-price" id="previewPrice">N650,000/year</div>
+<div class="preview-meta">
+<div class="preview-meta-item"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg><span id="previewBedrooms">2</span> Beds</div>
+<div class="preview-meta-item"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" x2="4" y1="22" y2="15"></line></svg><span id="previewBathrooms">2</span> Baths</div>
+<div class="preview-meta-item"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><rect height="13" width="15" x="1" y="3"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg><span id="previewParking">1</span> Parking</div>
+</div>
+<div class="preview-amenities" id="previewAmenities">
+<div class="preview-amenity">24/7 Power</div>
+<div class="preview-amenity">Security</div>
+<div class="preview-amenity">Water</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section-spacer animate-in delay-1">
+<div class="section-label">Visible To</div>
+<div class="audience-card">
+<div class="audience-item" id="audienceRent">
+<div class="audience-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div>
+<div class="audience-text">Renters</div>
+<div class="audience-check"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+</div>
+<div class="audience-item" id="audienceBuy">
+<div class="audience-icon buyers"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><line x1="12" x2="12" y1="3" y2="21"></line><line x1="7" x2="17" y1="8" y2="8"></line><line x1="7" x2="17" y1="16" y2="16"></line><line stroke-width="1.5" x1="7" x2="17" y1="8" y2="16"></line></svg></div>
+<div class="audience-text">Buyers</div>
+<div class="audience-check" id="buyerCheck" style="display:none;"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+</div>
+</div>
+</div>
+<div class="section-spacer animate-in delay-2">
+<div class="section-label">Domot! Recommendations</div>
+<div class="rec-card">
+<div class="rec-item">
+<div class="rec-dot"></div>
+<div class="rec-text">Add 3 more photos to improve visibility by 15%</div>
+</div>
+<div class="rec-item">
+<div class="rec-dot"></div>
+<div class="rec-text">Upload ownership documents to increase trust score</div>
+</div>
+<div class="rec-item">
+<div class="rec-dot"></div>
+<div class="rec-text">Add detailed amenities for better matching</div>
+</div>
+</div>
+</div>
+<div class="section-spacer animate-in delay-3">
+<div class="section-label">Publish Settings</div>
+<div class="form-card">
+<div class="toggle-row">
+<div>
+<div class="toggle-label">Enable Applications</div>
+<div class="toggle-desc">Allow tenants to apply directly</div>
+</div>
+<div class="toggle-switch active" onclick="toggleSwitch(this)">
+<div class="toggle-knob"></div>
+</div>
+</div>
+<div class="toggle-row">
+<div>
+<div class="toggle-label">Enable Inspection Booking</div>
+<div class="toggle-desc">Let prospects schedule viewings</div>
+</div>
+<div class="toggle-switch active" onclick="toggleSwitch(this)">
+<div class="toggle-knob"></div>
+</div>
+</div>
+</div>
+</div>
+<div style="height:8px;"></div>
+</div>
+<div style="height:8px;"></div>
+</div>
+<div class="sticky-bar" id="stickyBar">
+<button class="btn-secondary" onclick="saveDraft()">Save Draft</button>
+<button class="btn-primary" disabled="" id="publishBtn" onclick="publishListing()">Publish Listing</button>
+</div>
+<div class="success-screen" id="successScreen">
+<div class="success-orb">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+</div>
+<div class="success-title">Property Published</div>
+<div class="success-sub">Your property is now visible on Domot!</div>
+<div class="success-stats">
+<div class="success-stat">
+<div class="success-stat-value" id="successTrust">92</div>
+<div class="success-stat-label">Trust Score</div>
+</div>
+<div class="success-stat">
+<div class="success-stat-value" id="successId">DOM-LST-2026-001</div>
+<div class="success-stat-label">Listing ID</div>
+</div>
+</div>
+<div class="success-actions">
+<button class="success-btn primary" onclick="viewListing()">View Listing</button>
+<button class="success-btn secondary" onclick="manageProperty()">Manage Property</button>
+</div>
+</div>
+
+<script src="property_listing.js"></script></body>
+</html>

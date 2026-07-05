@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Domot! — Where would you like to live?</title>
+
+<link href="waylf.css" rel="stylesheet"/></head>
+<body>
+<div class="app" id="app">
+<!-- Progress bar -->
+<div class="progress-bar">
+<div class="progress-fill" id="progressFill"></div>
+</div>
+<!-- Background with PARALLAX -->
+<div class="bg-layer" id="bgLayer">
+<img alt="Hero Illustration" src="bg3.png"/>
+</div>
+<!-- Luxury floating glow -->
+<div class="luxury-glow" style="top: 20%; left: 10%;"></div>
+<div class="luxury-glow" style="top: 60%; right: 5%; animation-delay: -4s;"></div>
+<div class="ambient" id="ambient"></div>
+<!-- Bottom frost panel -->
+<div class="frost-panel">
+<div class="content">
+<div class="header">
+<h1 id="typeTitle"></h1>
+<p id="typeSubtitle"></p>
+</div>
+<!-- Search Bar -->
+<div class="search-wrapper" id="searchWrapper">
+<svg class="search-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="8"></circle>
+<line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+</svg>
+<input autocomplete="off" class="search-input" id="searchInput" placeholder="Search city, area or estate" type="text"/>
+<button class="search-clear" id="searchClear">
+<svg fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="12">
+<line x1="18" x2="6" y1="6" y2="18"></line>
+<line x1="6" x2="18" y1="6" y2="18"></line>
+</svg>
+</button>
+</div>
+<!-- Search Results -->
+<div class="search-results" id="searchResults">
+<div class="results-label">Search Results</div>
+<div class="locations-container" id="searchResultsContainer"></div>
+<div class="no-results" id="noResults">No locations found</div>
+</div>
+<!-- Section Label -->
+<div class="section-label" id="sectionLabel">Popular Locations</div>
+<!-- Popular Locations -->
+<div class="locations-container" id="locationsContainer">
+<button class="location-chip" data-value="shelter-afrique" id="chipShelterAfrique">
+<svg class="location-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+<span class="chip-check">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</span>
+                       Shelter Afrique
+                   </button>
+<button class="location-chip" data-value="ewet-housing" id="chipEwetHousing">
+<svg class="location-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+<span class="chip-check">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</span>
+                       Ewet Housing
+                   </button>
+<button class="location-chip" data-value="osongama" id="chipOsongama">
+<svg class="location-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+<span class="chip-check">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</span>
+                       Osongama
+                   </button>
+<button class="location-chip" data-value="lagos-island" id="chipLagosIsland">
+<svg class="location-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+<span class="chip-check">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</span>
+                       Lagos Island
+                   </button>
+<button class="location-chip" data-value="lekki" id="chipLekki">
+<svg class="location-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+<span class="chip-check">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</span>
+                       Lekki
+                   </button>
+<button class="location-chip" data-value="yaba" id="chipYaba">
+<svg class="location-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+<span class="chip-check">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</span>
+                       Yaba
+                   </button>
+</div>
+<div class="cta-wrapper" id="ctaWrapper">
+<button class="cta-btn" disabled="" id="ctaBtn">
+<span>Continue</span>
+<svg class="cta-arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<line x1="5" x2="19" y1="12" y2="12"></line>
+<polyline points="12 5 19 12 12 19"></polyline>
+</svg>
+</button>
+</div>
+<div class="footer-note" id="footerNote">
+                   You can update these preferences anytime.
+               </div>
+</div>
+</div>
+</div>
+
+<script src="waylf.js"></script></body>
+</html>

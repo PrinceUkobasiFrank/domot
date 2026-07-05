@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Domot! — Dashboard</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet"/>
+
+<link href="thf.css" rel="stylesheet"/></head>
+<body>
+<!-- Ambient orbs -->
+<div class="ambient" id="ambient">
+<div class="ambient-orb ambient-orb-1"></div>
+<div class="ambient-orb ambient-orb-2"></div>
+</div>
+<!-- ==================== DISCOVER TAB ==================== -->
+<div class="tab-view active" id="tab-discover">
+<div class="ptr-indicator" id="ptrIndicator">
+<div class="ptr-spinner"></div>
+</div>
+<div class="feed-container" id="feedContainer">
+<!-- Header -->
+<div class="header">
+<div class="header-top">
+<div class="greeting animate-in">
+<div class="greeting-eyebrow">Good Evening</div>
+<h1><span class="name-accent">Frank</span></h1>
+</div>
+<div class="profile-btn animate-in delay-1" id="profileBtn">
+<img alt="Profile" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="profile.jpg"/>
+<span class="profile-initial" style="display:none;">F</span>
+<div class="verification-badge basic">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</div>
+</div>
+</div>
+<div class="search-bar animate-in delay-2">
+<div class="search-input-wrapper">
+<svg class="search-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="8"></circle>
+<line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+</svg>
+<input class="search-input" id="searchInput" placeholder="Search locations, estates, properties…" type="text"/>
+<button class="search-mic" id="searchMic">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+<path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+<line x1="12" x2="12" y1="19" y2="23"></line>
+<line x1="8" x2="16" y1="23" y2="23"></line>
+</svg>
+</button>
+</div>
+</div>
+<div class="trust-meter animate-in delay-3" id="trustMeter">
+<div class="trust-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+</svg>
+</div>
+<div class="trust-info">
+<div class="label">Trust Meter</div>
+<div class="status">🟡 Basic Verified · Tap to complete</div>
+</div>
+<svg class="trust-arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+</div>
+<!-- Filter Pills -->
+<div class="filters-scroll animate-in delay-4" id="filtersScroll">
+<button class="filter-pill active" data-filter="self-contain">Self Contain</button>
+<button class="filter-pill" data-filter="1-bedroom">1 Bedroom</button>
+<button class="filter-pill" data-filter="student-lodge">Student Lodge</button>
+<button class="filter-pill" data-filter="verified-only">Verified Only</button>
+<button class="filter-pill" data-filter="new-listings">New Listings</button>
+<button class="filter-pill" data-filter="best-rated">Best Rated</button>
+<button class="filter-pill" data-filter="2-bedroom">2 Bedroom</button>
+<button class="filter-pill" data-filter="duplex">Duplex</button>
+</div>
+<!-- Hero Card: Neighborhood Intelligence -->
+<div class="hero-card scale-in delay-2" id="heroCard" onclick="AudioEngine.init(); AudioEngine.playTap(); haptic('light'); setTimeout(() =&gt; { window.location.href = 'property_detail.html'; }, 180);">
+<div class="hero-top-badge">
+<svg fill="currentColor" viewbox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+<span>Top Area For You</span>
+</div>
+<img alt="Shelter Afrique" class="hero-image" onerror="this.style.background='linear-gradient(135deg,#161624,#2a2044)'; this.style.display='block';" src="h1.jpg"/>
+<div class="hero-content">
+<div class="hero-area">Shelter Afrique</div>
+<div class="hero-trust-badge score-animate">
+<div class="shield-num">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+</svg>
+<span class="score-number">92</span>
+</div>
+<div class="trust-label-group">
+<span class="trust-label">Trust Score</span>
+<span class="trust-sublabel">Highest in Uyo</span>
+</div>
+</div>
+<div class="hero-metrics">
+<div class="hero-metric">
+<div class="hero-metric-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+</svg>
+</div>
+<div class="hero-metric-text">Electricity — <strong>Reliable</strong></div>
+</div>
+<div class="hero-metric">
+<div class="hero-metric-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+</svg>
+</div>
+<div class="hero-metric-text">Safety — <strong>High</strong></div>
+</div>
+<div class="hero-metric">
+<div class="hero-metric-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M19 16.9A5 5 0 0 0 18 7h-1.26a8 8 0 1 0-11.62 9"></path>
+<polyline points="13 11 9 17 15 17 11 23"></polyline>
+</svg>
+</div>
+<div class="hero-metric-text">Flood Risk — <strong>Low</strong></div>
+</div>
+</div>
+<div class="hero-cta">
+<span>View Full Neighbourhood Report</span>
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+</div>
+</div>
+<!-- Best Matches Section -->
+<div class="properties-section">
+<div class="section-header">
+<h2 class="section-title">Best Matches</h2>
+<span class="section-action">See All</span>
+</div>
+<div class="properties-scroll" id="bestMatchesScroll">
+<div class="skeleton-card" id="skeleton1">
+<div class="skeleton skeleton-image"></div>
+<div class="skeleton-body">
+<div class="skeleton skeleton-line"></div>
+<div class="skeleton skeleton-line short"></div>
+<div class="skeleton skeleton-line price"></div>
+</div>
+</div>
+<div class="skeleton-card" id="skeleton2">
+<div class="skeleton skeleton-image"></div>
+<div class="skeleton-body">
+<div class="skeleton skeleton-line"></div>
+<div class="skeleton skeleton-line short"></div>
+<div class="skeleton skeleton-line price"></div>
+</div>
+</div>
+<div class="skeleton-card" id="skeleton3">
+<div class="skeleton skeleton-image"></div>
+<div class="skeleton-body">
+<div class="skeleton skeleton-line"></div>
+<div class="skeleton skeleton-line short"></div>
+<div class="skeleton skeleton-line price"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Newly Verified Section -->
+<div class="newly-verified-section">
+<div class="section-header">
+<h2 class="section-title">Newly Verified</h2>
+<span class="section-action">See All</span>
+</div>
+<div class="verified-list" id="verifiedList"></div>
+</div>
+<div style="height: 24px;"></div>
+</div>
+</div>
+<!-- ==================== TRUST TAB ==================== -->
+<div class="tab-view" id="tab-trust">
+<div class="header">
+<div class="header-top">
+<div class="greeting animate-in">
+<div class="greeting-eyebrow">Your Reputation</div>
+<h1>Trust Center</h1>
+</div>
+<div class="profile-btn animate-in delay-1">
+<span class="profile-initial">F</span>
+<div class="verification-badge basic">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</div>
+</div>
+</div>
+</div>
+<!-- Trust Score Hero -->
+<div class="trust-hero scale-in delay-1">
+<div class="trust-score-display">
+<div class="trust-score-ring">
+<span class="trust-score-number" id="trustScoreNum">92</span>
+</div>
+<div class="trust-score-info">
+<div class="ts-title">Trust Score</div>
+<div class="ts-subtitle">Top 12% of renters in Uyo</div>
+<div class="trust-score-badge">
+<svg fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24" width="12">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+                        High Trust
+                    </div>
+</div>
+</div>
+</div>
+<!-- Verification Status -->
+<div class="glass-card animate-in delay-2">
+<div class="glass-card-title">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+<polyline points="22 4 12 14.01 9 11.01"></polyline>
+</svg>
+                Verification Status
+            </div>
+<div class="verification-item">
+<div class="verification-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+<circle cx="12" cy="7" r="4"></circle>
+</svg>
+</div>
+<div class="verification-details">
+<div class="v-label">Identity Verified</div>
+<div class="v-status">Government ID confirmed</div>
+</div>
+<div class="verification-check">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+</div>
+</div>
+<div class="verification-item">
+<div class="verification-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+</svg>
+</div>
+<div class="verification-details">
+<div class="v-label">Phone Verified</div>
+<div class="v-status">+234 80X XXX XXXX</div>
+</div>
+<div class="verification-check">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+</div>
+</div>
+<div class="verification-item">
+<div class="verification-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<rect height="16" rx="2" ry="2" width="22" x="1" y="4"></rect>
+<line x1="1" x2="23" y1="10" y2="10"></line>
+</svg>
+</div>
+<div class="verification-details">
+<div class="v-label">Payment Verified</div>
+<div class="v-status">OPay &amp; Bank linked</div>
+</div>
+<div class="verification-check">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+</div>
+</div>
+<div class="verification-item">
+<div class="verification-icon pending">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+</div>
+<div class="verification-details">
+<div class="v-label">Address Verified</div>
+<div class="v-status">Pending utility bill upload</div>
+</div>
+<div class="verification-check pending">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+</div>
+</div>
+</div>
+<!-- Trust Breakdown -->
+<div class="glass-card animate-in delay-3">
+<div class="glass-card-title">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<line x1="18" x2="18" y1="20" y2="10"></line>
+<line x1="12" x2="12" y1="20" y2="4"></line>
+<line x1="6" x2="6" y1="20" y2="14"></line>
+</svg>
+                Trust Breakdown
+            </div>
+<div class="trust-breakdown-item">
+<span class="breakdown-label">Identity</span>
+<div class="breakdown-bar">
+<div class="breakdown-fill" style="width: 100%"></div>
+</div>
+<span class="breakdown-value">+25</span>
+</div>
+<div class="trust-breakdown-item">
+<span class="breakdown-label">Payment History</span>
+<div class="breakdown-bar">
+<div class="breakdown-fill" style="width: 80%"></div>
+</div>
+<span class="breakdown-value">+20</span>
+</div>
+<div class="trust-breakdown-item">
+<span class="breakdown-label">Transactions</span>
+<div class="breakdown-bar">
+<div class="breakdown-fill" style="width: 72%"></div>
+</div>
+<span class="breakdown-value">+18</span>
+</div>
+<div class="trust-breakdown-item">
+<span class="breakdown-label">Interactions</span>
+<div class="breakdown-bar">
+<div class="breakdown-fill" style="width: 60%"></div>
+</div>
+<span class="breakdown-value">+15</span>
+</div>
+<div class="trust-breakdown-item">
+<span class="breakdown-label">Reviews</span>
+<div class="breakdown-bar">
+<div class="breakdown-fill" style="width: 56%"></div>
+</div>
+<span class="breakdown-value">+14</span>
+</div>
+</div>
+<!-- Reputation Metrics -->
+<div class="glass-card animate-in delay-4">
+<div class="glass-card-title">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+</svg>
+                Reputation
+            </div>
+<div class="reputation-grid">
+<div class="reputation-cell">
+<div class="rep-number">4.8</div>
+<div class="rep-label">Landlord Rating</div>
+</div>
+<div class="reputation-cell">
+<div class="rep-number">4.9</div>
+<div class="rep-label">Tenant Rating</div>
+</div>
+<div class="reputation-cell">
+<div class="rep-number">12</div>
+<div class="rep-label">Applications</div>
+</div>
+<div class="reputation-cell">
+<div class="rep-number">8</div>
+<div class="rep-label">Agreements</div>
+</div>
+</div>
+</div>
+<!-- Trust Timeline -->
+<div class="glass-card animate-in delay-5">
+<div class="glass-card-title">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+                Trust Timeline
+            </div>
+<div class="timeline">
+<div class="timeline-line"></div>
+<div class="timeline-item">
+<div class="timeline-dot">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+</div>
+<div class="timeline-content">
+<div class="t-title">Identity Verified</div>
+<div class="t-date">Jan 15, 2026</div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+</div>
+<div class="timeline-content">
+<div class="t-title">First Agreement Signed</div>
+<div class="t-date">Feb 3, 2026</div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+</div>
+<div class="timeline-content">
+<div class="t-title">Property Rented</div>
+<div class="t-date">Feb 10, 2026</div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot pending">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+</div>
+<div class="timeline-content">
+<div class="t-title">Move-In Completed</div>
+<div class="t-date">Pending</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Benefits -->
+<div class="glass-card animate-in delay-5">
+<div class="glass-card-title">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+</svg>
+                Benefits of High Trust
+            </div>
+<div class="benefits-list">
+<div class="benefit-item">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+</svg>
+<span>Priority Applications</span>
+</div>
+<div class="benefit-item">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+<span>Faster Approvals</span>
+</div>
+<div class="benefit-item">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+</svg>
+<span>Better Match Quality</span>
+</div>
+</div>
+</div>
+<div style="height: 24px;"></div>
+</div>
+<!-- ==================== WALLET TAB ==================== -->
+<div class="tab-view" id="tab-wallet">
+<div class="header">
+<div class="header-top">
+<div class="greeting animate-in">
+<div class="greeting-eyebrow">Housing Finance</div>
+<h1>Wallet</h1>
+</div>
+<div class="profile-btn animate-in delay-1">
+<span class="profile-initial">F</span>
+<div class="verification-badge basic">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</div>
+</div>
+</div>
+</div>
+<!-- Wallet Hero -->
+<div class="wallet-hero scale-in delay-1">
+<div class="wallet-balances">
+<div class="wallet-balance-card" onclick="showAmountPopup('Available Balance', '₦245,000', false)">
+<div class="wb-label">Available</div>
+<div class="wb-amount">₦245,000</div>
+</div>
+<div class="wallet-balance-card escrow" onclick="showAmountPopup('In Escrow', '₦180,000', true)">
+<div class="wb-label">In Escrow</div>
+<div class="wb-amount">₦180,000</div>
+</div>
+</div>
+</div>
+<!-- Linked Accounts -->
+<div class="section-header animate-in delay-2">
+<h2 class="section-title">Linked Accounts</h2>
+<span class="section-action">Add New</span>
+</div>
+<div class="glass-card animate-in delay-2">
+<div class="linked-accounts">
+<div class="account-item">
+<div class="account-icon" style="padding: 0; overflow: hidden;">
+<img alt="OPay" onerror="this.style.display='none'; this.parentElement.innerHTML='&lt;svg viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'&gt;&lt;rect x=\'2\' y=\'3\' width=\'20\' height=\'14\' rx=\'2\' ry=\'2\'&gt;&lt;/rect&gt;&lt;line x1=\'8\' y1=\'21\' x2=\'16\' y2=\'21\'&gt;&lt;/line&gt;&lt;line x1=\'12\' y1=\'17\' x2=\'12\' y2=\'21\'&gt;&lt;/line&gt;&lt;/svg&gt;';" src="opay.jpg" style="width: 100%; height: 100%; object-fit: cover; border-radius: 11px;"/>
+</div>
+<div class="account-info">
+<div class="acc-name">OPay</div>
+<div class="acc-status">Connected · Primary</div>
+</div>
+<svg class="account-arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+<div class="account-item">
+<div class="account-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<line x1="1" x2="23" y1="12" y2="12"></line>
+<path d="M5 12v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"></path>
+<path d="M12 2L2 12h20L12 2z"></path>
+</svg>
+</div>
+<div class="account-info">
+<div class="acc-name">First Bank</div>
+<div class="acc-status">Connected · ****4521</div>
+</div>
+<svg class="account-arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+<div class="account-item">
+<div class="account-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<rect height="16" rx="2" ry="2" width="22" x="1" y="4"></rect>
+<line x1="1" x2="23" y1="10" y2="10"></line>
+</svg>
+</div>
+<div class="account-info">
+<div class="acc-name">Mastercard ··· 8842</div>
+<div class="acc-status">Expires 09/28</div>
+</div>
+<svg class="account-arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+</div>
+</div>
+<!-- Transactions -->
+<div class="section-header animate-in delay-3">
+<h2 class="section-title">Transactions</h2>
+<span class="section-action">View All</span>
+</div>
+<div class="glass-card animate-in delay-3">
+<div class="transaction-list">
+<div class="transaction-item">
+<div class="transaction-icon rent">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+</div>
+<div class="transaction-details">
+<div class="tx-title">Rent Payment</div>
+<div class="tx-date">May 1, 2026</div>
+</div>
+<div class="transaction-amount negative">-₦450,000</div>
+</div>
+<div class="transaction-item">
+<div class="transaction-icon legal">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+<polyline points="14 2 14 8 20 8"></polyline>
+<line x1="16" x2="8" y1="13" y2="13"></line>
+<line x1="16" x2="8" y1="17" y2="17"></line>
+<polyline points="10 9 9 9 8 9"></polyline>
+</svg>
+</div>
+<div class="transaction-details">
+<div class="tx-title">Legal Fees</div>
+<div class="tx-date">Apr 28, 2026</div>
+</div>
+<div class="transaction-amount negative">-₦25,000</div>
+</div>
+<div class="transaction-item">
+<div class="transaction-icon agency">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+<circle cx="9" cy="7" r="4"></circle>
+<path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+<path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+</svg>
+</div>
+<div class="transaction-details">
+<div class="tx-title">Agency Fee</div>
+<div class="tx-date">Apr 28, 2026</div>
+</div>
+<div class="transaction-amount negative">-₦45,000</div>
+</div>
+<div class="transaction-item">
+<div class="transaction-icon refund">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<polyline points="1 4 1 10 7 10"></polyline>
+<path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+</svg>
+</div>
+<div class="transaction-details">
+<div class="tx-title">Deposit Refund</div>
+<div class="tx-date">Apr 15, 2026</div>
+</div>
+<div class="transaction-amount positive">+₦50,000</div>
+</div>
+</div>
+</div>
+<!-- Escrow Center -->
+<div class="section-header animate-in delay-4">
+<h2 class="section-title">Escrow Center</h2>
+<span class="section-action">Details</span>
+</div>
+<div class="glass-card animate-in delay-4">
+<div class="escrow-status">
+<div class="escrow-pill">
+<div class="es-number">₦180K</div>
+<div class="es-label">Held</div>
+</div>
+<div class="escrow-pill">
+<div class="es-number">₦320K</div>
+<div class="es-label">Released</div>
+</div>
+</div>
+<div style="margin-top: 16px; padding: 12px; border-radius: 10px; background: rgba(124, 92, 250, 0.06); border: 1px solid rgba(124, 92, 250, 0.15); text-align: center;">
+<span style="font-size: 12px; font-weight: 600; color: var(--accent-violet);">All payments are protected by Domot Escrow</span>
+</div>
+</div>
+<!-- Receipts -->
+<div class="section-header animate-in delay-5">
+<h2 class="section-title">Receipts</h2>
+<span class="section-action">Download All</span>
+</div>
+<div class="glass-card animate-in delay-5">
+<div class="transaction-list">
+<div class="transaction-item">
+<div class="transaction-icon rent">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+<polyline points="14 2 14 8 20 8"></polyline>
+</svg>
+</div>
+<div class="transaction-details">
+<div class="tx-title">Rent Receipt — May 2026</div>
+<div class="tx-date">May 1, 2026</div>
+</div>
+<svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="color: var(--accent-violet);" viewbox="0 0 24 24" width="16">
+<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+<polyline points="7 10 12 15 17 10"></polyline>
+<line x1="12" x2="12" y1="15" y2="3"></line>
+</svg>
+</div>
+<div class="transaction-item">
+<div class="transaction-icon legal">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+<polyline points="14 2 14 8 20 8"></polyline>
+</svg>
+</div>
+<div class="transaction-details">
+<div class="tx-title">Legal Fee Receipt</div>
+<div class="tx-date">Apr 28, 2026</div>
+</div>
+<svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="color: var(--accent-violet);" viewbox="0 0 24 24" width="16">
+<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+<polyline points="7 10 12 15 17 10"></polyline>
+<line x1="12" x2="12" y1="15" y2="3"></line>
+</svg>
+</div>
+</div>
+</div>
+<!-- Payment Insights -->
+<div class="section-header animate-in delay-5">
+<h2 class="section-title">Payment Insights</h2>
+</div>
+<div class="glass-card animate-in delay-5">
+<div class="payment-insights">
+<div class="insight-cell">
+<div class="in-number">₦1.2M</div>
+<div class="in-label">Total Spend</div>
+</div>
+<div class="insight-cell">
+<div class="in-number">₦450K</div>
+<div class="in-label">Avg. Rent</div>
+</div>
+<div class="insight-cell">
+<div class="in-number">₦5.4M</div>
+<div class="in-label">Annual Cost</div>
+</div>
+</div>
+</div>
+<div style="height: 24px;"></div>
+</div>
+<!-- ==================== HUB TAB ==================== -->
+<div class="tab-view" id="tab-hub">
+<div class="header">
+<div class="header-top">
+<div class="greeting animate-in">
+<div class="greeting-eyebrow">Operating Center</div>
+<h1>Hub</h1>
+</div>
+<div class="profile-btn animate-in delay-1">
+<span class="profile-initial">F</span>
+<div class="verification-badge basic">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</div>
+</div>
+</div>
+</div>
+<!-- Hub Grid -->
+<div class="hub-grid animate-in delay-1">
+<div class="hub-tile" onclick="showSubPage('agreements')">
+<div class="hub-tile-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+<polyline points="14 2 14 8 20 8"></polyline>
+<line x1="16" x2="8" y1="13" y2="13"></line>
+<line x1="16" x2="8" y1="17" y2="17"></line>
+<polyline points="10 9 9 9 8 9"></polyline>
+</svg>
+</div>
+<div class="hub-tile-label">Agreements</div>
+<div class="hub-tile-count">2 active</div>
+</div>
+<div class="hub-tile" onclick="showSubPage('applications')">
+<div class="hub-tile-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+<polyline points="14 2 14 8 20 8"></polyline>
+</svg>
+</div>
+<div class="hub-tile-label">Applications</div>
+<div class="hub-tile-count">3 pending</div>
+<div class="hub-tile-badge">3</div>
+</div>
+<div class="hub-tile" onclick="showSubPage('saved')">
+<div class="hub-tile-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+</svg>
+</div>
+<div class="hub-tile-label">Saved</div>
+<div class="hub-tile-count">12 properties</div>
+</div>
+<div class="hub-tile" onclick="showSubPage('documents')">
+<div class="hub-tile-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+</svg>
+</div>
+<div class="hub-tile-label">Documents</div>
+<div class="hub-tile-count">8 files</div>
+</div>
+</div>
+<!-- Hub List -->
+<div class="hub-list animate-in delay-2">
+<div class="hub-list-item" onclick="showSubPage('notifications')">
+<div class="hub-list-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+<path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+</svg>
+</div>
+<div class="hub-list-info">
+<div class="hl-title">Notifications</div>
+<div class="hl-subtitle">3 unread messages</div>
+</div>
+<div class="hub-tile-badge" style="position: static;">3</div>
+<svg class="hub-list-arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+<div class="hub-list-item" onclick="showSubPage('support')">
+<div class="hub-list-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+<line x1="12" x2="12.01" y1="17" y2="17"></line>
+</svg>
+</div>
+<div class="hub-list-info">
+<div class="hl-title">Support Center</div>
+<div class="hl-subtitle">Help, FAQ, Contact</div>
+</div>
+<svg class="hub-list-arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+<div class="hub-list-item" onclick="showSubPage('settings')">
+<div class="hub-list-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="3"></circle>
+<path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+</svg>
+</div>
+<div class="hub-list-info">
+<div class="hl-title">Settings</div>
+<div class="hl-subtitle">Theme, security, privacy</div>
+</div>
+<svg class="hub-list-arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+</div>
+<div style="height: 24px;"></div>
+</div>
+<!-- ==================== SUB-PAGES (Hub Detail Views) ==================== -->
+<div class="tab-view" id="subpage-agreements">
+<div class="header">
+<div class="header-top">
+<div class="greeting animate-in">
+<div class="greeting-eyebrow" onclick="hideSubPage()" style="cursor: pointer;">
+<svg fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 4px;" viewbox="0 0 24 24" width="12">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+                        Back to Hub
+                    </div>
+<h1>Agreements</h1>
+</div>
+</div>
+</div>
+<div class="glass-card animate-in delay-1">
+<div class="agreement-card">
+<div class="ag-title">Self Contain — Shelter Afrique</div>
+<div class="ag-meta">Frank O. · Mr. Akpan · May 2026 — Apr 2027</div>
+<div class="ag-status-bar">
+<div class="ag-status-dot"></div>
+<div class="ag-status-text">Active</div>
+</div>
+<div class="ag-action">View Agreement</div>
+</div>
+<div class="agreement-card">
+<div class="ag-title">1 Bedroom — Ewet Housing</div>
+<div class="ag-meta">Frank O. · Mrs. Etim · Jan 2025 — Dec 2025</div>
+<div class="ag-status-bar">
+<div class="ag-status-dot" style="background: var(--accent-warm);"></div>
+<div class="ag-status-text" style="color: var(--accent-warm);">Expiring Soon</div>
+</div>
+<div class="ag-action" style="border-color: rgba(240, 165, 0, 0.2); background: rgba(240, 165, 0, 0.06); color: var(--accent-warm);">Renew Agreement</div>
+</div>
+</div>
+<div style="height: 24px;"></div>
+</div>
+<div class="tab-view" id="subpage-applications">
+<div class="header">
+<div class="header-top">
+<div class="greeting animate-in">
+<div class="greeting-eyebrow" onclick="hideSubPage()" style="cursor: pointer;">
+<svg fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 4px;" viewbox="0 0 24 24" width="12">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+                        Back to Hub
+                    </div>
+<h1>Applications</h1>
+</div>
+</div>
+</div>
+<div class="glass-card animate-in delay-1">
+<div class="application-card">
+<img class="app-thumb" onerror="this.style.background='linear-gradient(135deg,#161624,#2a2044)'" src="h2.jpg"/>
+<div class="app-info">
+<div class="app-title">Self Contain — Osongama</div>
+<div class="app-location">Osongama Estate, Uyo</div>
+<div class="app-status pending">Pending Review</div>
+</div>
+</div>
+<div class="application-card">
+<img class="app-thumb" onerror="this.style.background='linear-gradient(135deg,#161624,#2a2044)'" src="h3.jpg"/>
+<div class="app-info">
+<div class="app-title">2 Bedroom — GRA</div>
+<div class="app-location">GRA Phase 2, Uyo</div>
+<div class="app-status approved">Approved</div>
+</div>
+</div>
+<div class="application-card">
+<img class="app-thumb" onerror="this.style.background='linear-gradient(135deg,#161624,#2a2044)'" src="h4.jpg"/>
+<div class="app-info">
+<div class="app-title">Student Lodge — UniUyo</div>
+<div class="app-location">UniUyo Area, Uyo</div>
+<div class="app-status rejected">Not Selected</div>
+</div>
+</div>
+</div>
+<div style="height: 24px;"></div>
+</div>
+<div class="tab-view" id="subpage-saved">
+<div class="header">
+<div class="header-top">
+<div class="greeting animate-in">
+<div class="greeting-eyebrow" onclick="hideSubPage()" style="cursor: pointer;">
+<svg fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 4px;" viewbox="0 0 24 24" width="12">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+                        Back to Hub
+                    </div>
+<h1>Saved Properties</h1>
+</div>
+</div>
+</div>
+<div class="verified-list animate-in delay-1" id="savedList"></div>
+<div style="height: 24px;"></div>
+</div>
+<div class="tab-view" id="subpage-documents">
+<div class="header">
+<div class="header-top">
+<div class="greeting animate-in">
+<div class="greeting-eyebrow" onclick="hideSubPage()" style="cursor: pointer;">
+<svg fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 4px;" viewbox="0 0 24 24" width="12">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+                        Back to Hub
+                    </div>
+<h1>Document Vault</h1>
+</div>
+</div>
+</div>
+<div class="glass-card animate-in delay-1">
+<div class="doc-grid">
+<div class="doc-item">
+<div class="doc-item-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+<polyline points="14 2 14 8 20 8"></polyline>
+</svg>
+</div>
+<div class="doc-item-name">Receipts</div>
+<div class="doc-item-count">6 files</div>
+</div>
+<div class="doc-item">
+<div class="doc-item-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+<polyline points="14 2 14 8 20 8"></polyline>
+</svg>
+</div>
+<div class="doc-item-name">Inspections</div>
+<div class="doc-item-count">3 files</div>
+</div>
+<div class="doc-item">
+<div class="doc-item-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+<polyline points="14 2 14 8 20 8"></polyline>
+</svg>
+</div>
+<div class="doc-item-name">Verifications</div>
+<div class="doc-item-count">2 files</div>
+</div>
+<div class="doc-item">
+<div class="doc-item-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+<polyline points="14 2 14 8 20 8"></polyline>
+</svg>
+</div>
+<div class="doc-item-name">Move-In</div>
+<div class="doc-item-count">1 file</div>
+</div>
+</div>
+</div>
+<div style="height: 24px;"></div>
+</div>
+<div class="tab-view" id="subpage-notifications">
+<div class="header">
+<div class="header-top">
+<div class="greeting animate-in">
+<div class="greeting-eyebrow" onclick="hideSubPage()" style="cursor: pointer;">
+<svg fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 4px;" viewbox="0 0 24 24" width="12">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+                        Back to Hub
+                    </div>
+<h1>Notifications</h1>
+</div>
+</div>
+</div>
+<div class="glass-card animate-in delay-1">
+<div class="notification-list">
+<div class="notification-item unread">
+<div class="notif-dot"></div>
+<div class="notif-content">
+<div class="nt-title">Application Approved</div>
+<div class="nt-body">Your application for 2 Bedroom at GRA has been approved by the landlord.</div>
+<div class="nt-time">2 hours ago</div>
+</div>
+</div>
+<div class="notification-item unread">
+<div class="notif-dot"></div>
+<div class="notif-content">
+<div class="nt-title">Rent Due Soon</div>
+<div class="nt-body">Your rent payment of ₦450,000 is due in 5 days.</div>
+<div class="nt-time">5 hours ago</div>
+</div>
+</div>
+<div class="notification-item unread">
+<div class="notif-dot"></div>
+<div class="notif-content">
+<div class="nt-title">New Property Match</div>
+<div class="nt-body">We found a new Self Contain in Shelter Afrique matching your preferences.</div>
+<div class="nt-time">1 day ago</div>
+</div>
+</div>
+<div class="notification-item">
+<div class="notif-dot"></div>
+<div class="notif-content">
+<div class="nt-title">Agreement Signed</div>
+<div class="nt-body">Your rental agreement has been countersigned by all parties.</div>
+<div class="nt-time">3 days ago</div>
+</div>
+</div>
+<div class="notification-item">
+<div class="notif-dot"></div>
+<div class="notif-content">
+<div class="nt-title">Trust Score Updated</div>
+<div class="nt-body">Your trust score increased to 92 after successful move-in.</div>
+<div class="nt-time">1 week ago</div>
+</div>
+</div>
+</div>
+</div>
+<div style="height: 24px;"></div>
+</div>
+<div class="tab-view" id="subpage-support">
+<div class="header">
+<div class="header-top">
+<div class="greeting animate-in">
+<div class="greeting-eyebrow" onclick="hideSubPage()" style="cursor: pointer;">
+<svg fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 4px;" viewbox="0 0 24 24" width="12">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+                        Back to Hub
+                    </div>
+<h1>Support Center</h1>
+</div>
+</div>
+</div>
+<div class="glass-card animate-in delay-1">
+<div class="hub-list" style="padding: 0;">
+<div class="hub-list-item" style="border-bottom: 1px solid var(--glass-border);">
+<div class="hub-list-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+<line x1="12" x2="12.01" y1="17" y2="17"></line>
+</svg>
+</div>
+<div class="hub-list-info">
+<div class="hl-title">Help Center</div>
+<div class="hl-subtitle">Browse FAQs and guides</div>
+</div>
+<svg class="hub-list-arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+<div class="hub-list-item" style="border-bottom: 1px solid var(--glass-border);">
+<div class="hub-list-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+</svg>
+</div>
+<div class="hub-list-info">
+<div class="hl-title">Chat with Support</div>
+<div class="hl-subtitle">Average response: 5 min</div>
+</div>
+<svg class="hub-list-arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+<div class="hub-list-item">
+<div class="hub-list-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+<polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+</div>
+<div class="hub-list-info">
+<div class="hl-title">Email Support</div>
+<div class="hl-subtitle">support@domot.ng</div>
+</div>
+<svg class="hub-list-arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+</div>
+</div>
+<div style="height: 24px;"></div>
+</div>
+<!-- ==================== SETTINGS PAGE ==================== -->
+<div class="tab-view" id="subpage-settings">
+<div class="header">
+<div class="header-top">
+<div class="greeting animate-in">
+<div class="greeting-eyebrow" onclick="hideSubPage()" style="cursor: pointer;">
+<svg fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 4px;" viewbox="0 0 24 24" width="12">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+                        Back to Hub
+                    </div>
+<h1>Settings</h1>
+</div>
+</div>
+</div>
+<!-- Appearance / Theme -->
+<div class="settings-group animate-in delay-1">
+<div class="settings-group-title">Appearance</div>
+<div class="settings-card">
+<div class="theme-options" id="themeOptions">
+<div class="theme-option" data-theme="system" onclick="selectTheme('system')">
+<div class="theme-radio" id="radio-system">
+<div class="theme-radio-dot"></div>
+</div>
+<span class="theme-option-label">System Default</span>
+</div>
+<div class="theme-option" data-theme="dark" onclick="selectTheme('dark')">
+<div class="theme-radio" id="radio-dark">
+<div class="theme-radio-dot"></div>
+</div>
+<span class="theme-option-label">Dark Mode</span>
+</div>
+<div class="theme-option" data-theme="light" onclick="selectTheme('light')">
+<div class="theme-radio" id="radio-light">
+<div class="theme-radio-dot"></div>
+</div>
+<span class="theme-option-label">Light Mode</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Profile -->
+<div class="settings-group animate-in delay-2">
+<div class="settings-group-title">Profile</div>
+<div class="settings-card">
+<div class="settings-item">
+<div class="settings-item-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+<circle cx="12" cy="7" r="4"></circle>
+</svg>
+</div>
+<div class="settings-item-info">
+<div class="si-title">Name</div>
+<div class="si-subtitle">Frank O.</div>
+</div>
+<svg class="settings-item-arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+<div class="settings-item">
+<div class="settings-item-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+</svg>
+</div>
+<div class="settings-item-info">
+<div class="si-title">Phone</div>
+<div class="si-subtitle">+234 80X XXX XXXX</div>
+</div>
+<svg class="settings-item-arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+<div class="settings-item">
+<div class="settings-item-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+<polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+</div>
+<div class="settings-item-info">
+<div class="si-title">Email</div>
+<div class="si-subtitle">frank@email.com</div>
+</div>
+<svg class="settings-item-arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+<div class="settings-item">
+<div class="settings-item-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+<polyline points="22 4 12 14.01 9 11.01"></polyline>
+</svg>
+</div>
+<div class="settings-item-info">
+<div class="si-title">Identity Status</div>
+<div class="si-subtitle">Basic Verified</div>
+</div>
+<span class="settings-item-value" style="color: var(--accent-warm);">Upgrade</span>
+</div>
+</div>
+</div>
+<!-- Notifications -->
+<div class="settings-group animate-in delay-3">
+<div class="settings-group-title">Notifications</div>
+<div class="settings-card">
+<div class="settings-item">
+<div class="settings-item-info" style="margin-left: 0;">
+<div class="si-title">Push Notifications</div>
+<div class="si-subtitle">Property alerts, messages</div>
+</div>
+<div class="toggle-switch on" id="toggle-push" onclick="toggleSwitch(this)">
+<div class="toggle-knob"></div>
+</div>
+</div>
+<div class="settings-item">
+<div class="settings-item-info" style="margin-left: 0;">
+<div class="si-title">Email Notifications</div>
+<div class="si-subtitle">Weekly digest, updates</div>
+</div>
+<div class="toggle-switch on" id="toggle-email" onclick="toggleSwitch(this)">
+<div class="toggle-knob"></div>
+</div>
+</div>
+<div class="settings-item">
+<div class="settings-item-info" style="margin-left: 0;">
+<div class="si-title">SMS Alerts</div>
+<div class="si-subtitle">Payment reminders, codes</div>
+</div>
+<div class="toggle-switch" id="toggle-sms" onclick="toggleSwitch(this)">
+<div class="toggle-knob"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Security -->
+<div class="settings-group animate-in delay-4">
+<div class="settings-group-title">Security</div>
+<div class="settings-card">
+<div class="settings-item">
+<div class="settings-item-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<rect height="11" rx="2" ry="2" width="18" x="3" y="11"></rect>
+<path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+</svg>
+</div>
+<div class="settings-item-info">
+<div class="si-title">Change PIN</div>
+<div class="si-subtitle">Update your app PIN</div>
+</div>
+<svg class="settings-item-arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+<div class="settings-item">
+<div class="settings-item-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+</svg>
+</div>
+<div class="settings-item-info" style="margin-left: 0;">
+<div class="si-title">Biometrics</div>
+<div class="si-subtitle">Face ID / Fingerprint</div>
+</div>
+<div class="toggle-switch on" id="toggle-bio" onclick="toggleSwitch(this)">
+<div class="toggle-knob"></div>
+</div>
+</div>
+<div class="settings-item">
+<div class="settings-item-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<rect height="14" rx="2" ry="2" width="20" x="2" y="3"></rect>
+<line x1="8" x2="16" y1="21" y2="21"></line>
+<line x1="12" x2="12" y1="17" y2="21"></line>
+</svg>
+</div>
+<div class="settings-item-info">
+<div class="si-title">Session Management</div>
+<div class="si-subtitle">2 active devices</div>
+</div>
+<svg class="settings-item-arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+</div>
+</div>
+<!-- Connected Accounts -->
+<div class="settings-group animate-in delay-4">
+<div class="settings-group-title">Connected Accounts</div>
+<div class="settings-card">
+<div class="settings-item">
+<div class="settings-item-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<rect height="14" rx="2" ry="2" width="20" x="2" y="3"></rect>
+<line x1="8" x2="16" y1="21" y2="21"></line>
+<line x1="12" x2="12" y1="17" y2="21"></line>
+</svg>
+</div>
+<div class="settings-item-info">
+<div class="si-title">OPay</div>
+<div class="si-subtitle">Connected</div>
+</div>
+<span class="settings-item-value" style="color: var(--accent-red);">Disconnect</span>
+</div>
+<div class="settings-item">
+<div class="settings-item-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<line x1="1" x2="23" y1="12" y2="12"></line>
+<path d="M5 12v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"></path>
+<path d="M12 2L2 12h20L12 2z"></path>
+</svg>
+</div>
+<div class="settings-item-info">
+<div class="si-title">First Bank</div>
+<div class="si-subtitle">****4521</div>
+</div>
+<svg class="settings-item-arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+<div class="settings-item">
+<div class="settings-item-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<rect height="16" rx="2" ry="2" width="22" x="1" y="4"></rect>
+<line x1="1" x2="23" y1="10" y2="10"></line>
+</svg>
+</div>
+<div class="settings-item-info">
+<div class="si-title">Cards</div>
+<div class="si-subtitle">1 card linked</div>
+</div>
+<svg class="settings-item-arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+</div>
+</div>
+<!-- Privacy -->
+<div class="settings-group animate-in delay-5">
+<div class="settings-group-title">Privacy</div>
+<div class="settings-card">
+<div class="settings-item">
+<div class="settings-item-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+</svg>
+</div>
+<div class="settings-item-info">
+<div class="si-title">Data Sharing</div>
+<div class="si-subtitle">Control what landlords see</div>
+</div>
+<svg class="settings-item-arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+<div class="settings-item">
+<div class="settings-item-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+<circle cx="12" cy="12" r="3"></circle>
+</svg>
+</div>
+<div class="settings-item-info">
+<div class="si-title">Visibility</div>
+<div class="si-subtitle">Profile visibility settings</div>
+</div>
+<svg class="settings-item-arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+</div>
+</div>
+<!-- About -->
+<div class="settings-group animate-in delay-5">
+<div class="settings-group-title">About</div>
+<div class="settings-card">
+<div class="settings-item">
+<div class="settings-item-info" style="margin-left: 0;">
+<div class="si-title">Domot Version</div>
+<div class="si-subtitle">v2.4.1 (Build 2026.06.01)</div>
+</div>
+</div>
+<div class="settings-item">
+<div class="settings-item-info" style="margin-left: 0;">
+<div class="si-title">Terms of Service</div>
+</div>
+<svg class="settings-item-arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+<div class="settings-item">
+<div class="settings-item-info" style="margin-left: 0;">
+<div class="si-title">Privacy Policy</div>
+</div>
+<svg class="settings-item-arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+</div>
+</div>
+<!-- Logout -->
+<button class="logout-btn animate-in delay-5" onclick="handleLogout()">Log Out</button>
+<div style="height: 24px;"></div>
+</div>
+<!-- Bottom Navigation — floating pill -->
+<nav class="bottom-nav">
+<div class="nav-item active" data-tab="discover">
+<svg class="nav-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="8"></circle>
+<line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+</svg>
+<span class="nav-label">Discover</span>
+</div>
+<div class="nav-item" data-tab="trust">
+<svg class="nav-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+</svg>
+<span class="nav-label">Trust</span>
+</div>
+<div class="nav-item" data-tab="wallet">
+<svg class="nav-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M21 4H3a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"></path>
+<path d="M16 10a4 4 0 0 1-8 0"></path>
+</svg>
+<span class="nav-label">Wallet</span>
+</div>
+<div class="nav-item" data-tab="hub">
+<svg class="nav-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<rect height="7" width="7" x="3" y="3"></rect>
+<rect height="7" width="7" x="14" y="3"></rect>
+<rect height="7" width="7" x="14" y="14"></rect>
+<rect height="7" width="7" x="3" y="14"></rect>
+</svg>
+<span class="nav-label">Hub</span>
+</div>
+</nav>
+
+<!-- Amount Popup -->
+<div class="amount-popup-overlay" id="amountPopupOverlay" onclick="hideAmountPopup(event)">
+<div class="amount-popup" onclick="event.stopPropagation()">
+<div class="amount-popup-label" id="popupLabel">Available Balance</div>
+<div class="amount-popup-value" id="popupValue">₦245,000</div>
+<div class="amount-popup-sub" id="popupSub">Tap anywhere to close</div>
+<button class="amount-popup-close" onclick="hideAmountPopup()">Done</button>
+</div>
+</div>
+<script src="thf.js"></script></body>
+</html>

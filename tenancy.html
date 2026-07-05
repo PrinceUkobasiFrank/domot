@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Domot! — My Home</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet"/>
+
+<link href="tenancy.css" rel="stylesheet"/></head>
+<body>
+<div class="ambient">
+<div class="ambient-orb ambient-orb-1"></div>
+<div class="ambient-orb ambient-orb-2"></div>
+</div>
+<!-- ==================== HOME TAB ==================== -->
+<div class="tab-panel active" id="tab-home">
+<div class="header">
+<div class="header-top">
+<div class="greeting animate-in">
+<div class="greeting-eyebrow">Good Evening</div>
+<h1><span class="name-accent">Frank</span></h1>
+<div class="greeting-sub">Current Home</div>
+</div>
+<div class="profile-btn animate-in delay-1">
+<img alt="Profile" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="profile.jpg"/>
+<span class="profile-initial" style="display:none;">F</span>
+<div class="verification-badge">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</div>
+</div>
+</div>
+</div>
+<div class="feed-content">
+<!-- Property Hero -->
+<div class="property-hero animate-in delay-1">
+<img alt="Shelter Afrique" class="property-hero-img" onerror="this.style.background='linear-gradient(135deg,#161624,#2a2044)'; this.style.display='block'; this.style.height='200px';" src="h1.jpg"/>
+<div class="property-hero-overlay"></div>
+<div class="property-hero-badge">
+<div class="dot"></div>
+<span>Active Tenancy</span>
+</div>
+<div class="property-hero-content">
+<div class="property-hero-type">Self Contain</div>
+<div class="property-hero-name">Shelter Afrique</div>
+<div class="property-hero-meta">
+<div class="property-hero-meta-item">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+<span>Move-In <strong>15 Jul 2026</strong></span>
+</div>
+<div class="property-hero-meta-item">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+<span>Uyo, Akwa Ibom</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Tenancy Health -->
+<div class="dash-card health-card animate-in delay-2" id="healthCard">
+<div class="health-card-inner">
+<div class="health-score-wrap">
+<svg class="health-score-ring" id="healthRing" viewbox="0 0 76 76">
+<circle class="health-ring-bg" cx="38" cy="38" r="33"></circle>
+<circle class="health-ring-fill" cx="38" cy="38" r="33"></circle>
+</svg>
+<div class="health-score-num">
+<span id="healthNum">96</span>
+<small>health</small>
+</div>
+</div>
+<div class="health-info">
+<div class="health-label">Tenancy Health</div>
+<div class="health-title">Excellent Standing</div>
+<div class="health-checks">
+<div class="health-check">
+<svg stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Rent Up To Date
+                            </div>
+<div class="health-check">
+<svg stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                No Open Issues
+                            </div>
+<div class="health-check">
+<svg stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Verified Property
+                            </div>
+<div class="health-check">
+<svg stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Agreement Active
+                            </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Rent Countdown -->
+<div class="dash-card countdown-card animate-in delay-3" id="countdownCard">
+<div class="countdown-inner">
+<div class="countdown-ring-wrap">
+<svg class="countdown-ring" id="countdownRing" viewbox="0 0 84 84">
+<circle class="countdown-ring-bg" cx="42" cy="42" r="36"></circle>
+<circle class="countdown-ring-fill" cx="42" cy="42" r="36"></circle>
+</svg>
+<div class="countdown-ring-num">
+<div class="countdown-days" id="countdownNum">142</div>
+<div class="countdown-days-label">days</div>
+</div>
+</div>
+<div class="countdown-info">
+<div class="countdown-eyebrow">Until Next Rent</div>
+<div class="countdown-title">Annual Renewal</div>
+<div class="countdown-date">Due 15 Jul 2027 · ₦450,000</div>
+<div class="countdown-bar-wrap">
+<div class="countdown-bar" id="countdownBar"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Actions -->
+<div class="quick-actions animate-in delay-4">
+<div class="quick-actions-label">Quick Actions</div>
+<div class="quick-grid">
+<div class="quick-tile qt-maintenance" onclick="window.location.href='maintenance.html#maintenance'">
+<div class="quick-tile-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+</div>
+<span>Maintenance</span>
+</div>
+<div class="quick-tile qt-docs" onclick="window.location.href='maintenance.html#documents'">
+<div class="quick-tile-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+</div>
+<span>Documents</span>
+</div>
+<div class="quick-tile qt-contact" onclick="window.location.href='maintenance.html#contact'">
+<div class="quick-tile-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l.81-.81a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+</div>
+<span>Contact Manager</span>
+</div>
+<div class="quick-tile qt-report" onclick="window.location.href='maintenance.html#report'">
+<div class="quick-tile-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="8" y2="12"></line><line x1="12" x2="12.01" y1="16" y2="16"></line></svg>
+</div>
+<span>Report Issue</span>
+</div>
+</div>
+</div>
+<div class="section-spacer"></div>
+<!-- Property Status Timeline -->
+<div class="section-header">
+<h2 class="section-title">Property Status</h2>
+</div>
+<div class="dash-card timeline-card" style="margin-top:0;">
+<div class="dash-card-inner">
+<div class="timeline" id="timeline">
+<div class="timeline-item">
+<div class="timeline-line-wrap">
+<div class="timeline-dot"><svg stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="timeline-connector"></div>
+</div>
+<div class="timeline-text">
+<div class="timeline-text-main">Agreement Active</div>
+<div class="timeline-text-sub">1-year tenancy in effect</div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-line-wrap">
+<div class="timeline-dot"><svg stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="timeline-connector"></div>
+</div>
+<div class="timeline-text">
+<div class="timeline-text-main">Property Verified</div>
+<div class="timeline-text-sub">Trust Score 92 · Shelter Afrique</div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-line-wrap">
+<div class="timeline-dot"><svg stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="timeline-connector"></div>
+</div>
+<div class="timeline-text">
+<div class="timeline-text-main">Move-In Completed</div>
+<div class="timeline-text-sub">Inspection report filed</div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-line-wrap">
+<div class="timeline-dot"><svg stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="timeline-connector"></div>
+</div>
+<div class="timeline-text">
+<div class="timeline-text-main">Escrow Closed</div>
+<div class="timeline-text-sub">₦450,000 released to landlord</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section-spacer"></div>
+<!-- Upcoming -->
+<div class="section-header">
+<h2 class="section-title">Upcoming</h2>
+<span class="section-action">See All</span>
+</div>
+<div class="dash-card upcoming-card" style="margin-top:0;">
+<div class="dash-card-inner">
+<div class="upcoming-list">
+<div class="upcoming-item ui-inspection">
+<div class="upcoming-left">
+<div class="upcoming-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+</div>
+<div>
+<div class="upcoming-text-main">Annual Inspection</div>
+<div class="upcoming-text-sub">Landlord-requested</div>
+</div>
+</div>
+<div class="upcoming-date">
+<span class="date-main">15 Oct</span>
+<span>2026</span>
+</div>
+</div>
+<div class="upcoming-item ui-rent">
+<div class="upcoming-left">
+<div class="upcoming-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+</div>
+<div>
+<div class="upcoming-text-main">Rent Reminder</div>
+<div class="upcoming-text-sub">₦450,000 due</div>
+</div>
+</div>
+<div class="upcoming-date">
+<span class="date-main">142</span>
+<span>days</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section-spacer"></div>
+<!-- Area Updates -->
+<div class="section-header">
+<h2 class="section-title">Area Updates</h2>
+<span class="section-action">Full Report</span>
+</div>
+<div class="dash-card area-card" style="margin-top:0;">
+<div class="dash-card-inner">
+<div class="area-list">
+<div class="area-item">
+<div class="area-item-left">
+<div class="area-dot excellent"></div>
+<div class="area-label">Power Stability</div>
+</div>
+<div class="area-status excellent">Excellent</div>
+</div>
+<div class="area-item">
+<div class="area-item-left">
+<div class="area-dot scheduled"></div>
+<div class="area-label">Road Maintenance</div>
+</div>
+<div class="area-status scheduled">Scheduled</div>
+</div>
+<div class="area-item">
+<div class="area-item-left">
+<div class="area-dot available"></div>
+<div class="area-label">Community Notice</div>
+</div>
+<div class="area-status available">Available</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section-spacer"></div>
+</div>
+</div>
+<!-- ==================== TRUST TAB ==================== -->
+<div class="tab-panel" id="tab-trust">
+<div class="simple-header animate-in">
+<div class="simple-header-eyebrow">Your Profile</div>
+<div class="simple-header-title"><span class="name-accent">Trust</span></div>
+</div>
+<!-- Trust Score Hero -->
+<div class="trust-hero-card animate-in delay-1">
+<div class="trust-score-label">Your Trust Profile</div>
+<div class="trust-score-big" id="trustScoreBig">92</div>
+<div class="trust-score-label" style="margin-bottom:12px;">/ 100</div>
+<div class="trust-score-bar-wrap">
+<div class="trust-score-bar" id="trustScoreBar"></div>
+</div>
+</div>
+<!-- Verification Status -->
+<div class="section-spacer"></div>
+<div class="section-header" style="margin-top:4px;">
+<h2 class="section-title">Verification</h2>
+</div>
+<div class="verif-grid" style="margin-top:0;">
+<div class="verif-card animate-in delay-1">
+<div class="verif-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div>
+<div><div class="verif-text-main">Identity</div><div class="verif-text-sub">Verified</div></div>
+</div>
+<div class="verif-card animate-in delay-2">
+<div class="verif-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l.81-.81a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></div>
+<div><div class="verif-text-main">Phone</div><div class="verif-text-sub">Verified</div></div>
+</div>
+<div class="verif-card animate-in delay-3">
+<div class="verif-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="16" rx="2" ry="2" width="22" x="1" y="4"></rect><line x1="1" x2="23" y1="10" y2="10"></line></svg></div>
+<div><div class="verif-text-main">Payment</div><div class="verif-text-sub">Verified</div></div>
+</div>
+<div class="verif-card animate-in delay-4">
+<div class="verif-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div>
+<div><div class="verif-text-main">Address</div><div class="verif-text-sub">Verified</div></div>
+</div>
+</div>
+<!-- Reputation -->
+<div class="section-spacer"></div>
+<div class="section-header" style="margin-top:4px;">
+<h2 class="section-title">Reputation</h2>
+</div>
+<div class="dash-card reputation-card" style="margin-top:0;">
+<div class="dash-card-inner">
+<div class="rep-item">
+<div class="rep-num green" id="repTenancies">1</div>
+<div class="rep-label">Successful<br/>Tenancies</div>
+</div>
+<div class="rep-divider"></div>
+<div class="rep-item">
+<div class="rep-num muted" id="repLate">0</div>
+<div class="rep-label">Late<br/>Payments</div>
+</div>
+<div class="rep-divider"></div>
+<div class="rep-item">
+<div class="rep-num muted" id="repDisputes">0</div>
+<div class="rep-label">Open<br/>Disputes</div>
+</div>
+</div>
+</div>
+<!-- Ratings -->
+<div class="rating-row">
+<div class="rating-card animate-in delay-1">
+<div class="stars">★★★★★</div>
+<div class="rating-num violet" id="landlordRating">4.8</div>
+<div class="rating-label">Landlord Rating</div>
+</div>
+<div class="rating-card animate-in delay-2">
+<div class="stars">★★★★★</div>
+<div class="rating-num green" id="yourRating">4.9</div>
+<div class="rating-label">Your Rating</div>
+</div>
+</div>
+<!-- Trust History -->
+<div class="section-spacer"></div>
+<div class="section-header" style="margin-top:4px;">
+<h2 class="section-title">History</h2>
+</div>
+<div class="dash-card timeline-card" style="margin-top:0;">
+<div class="dash-card-inner">
+<div class="timeline" id="trustTimeline">
+<div class="timeline-item">
+<div class="timeline-line-wrap">
+<div class="timeline-dot"><svg stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="timeline-connector"></div>
+</div>
+<div class="timeline-text">
+<div class="timeline-text-main">Move-In Confirmed</div>
+<div class="timeline-text-sub">15 Jul 2026</div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-line-wrap">
+<div class="timeline-dot"><svg stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="timeline-connector"></div>
+</div>
+<div class="timeline-text">
+<div class="timeline-text-main">Rent Paid</div>
+<div class="timeline-text-sub">₦450,000 via OPay · 10 Jul 2026</div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-line-wrap">
+<div class="timeline-dot"><svg stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="timeline-connector"></div>
+</div>
+<div class="timeline-text">
+<div class="timeline-text-main">Agreement Signed</div>
+<div class="timeline-text-sub">5 Jul 2026</div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-line-wrap">
+<div class="timeline-dot"><svg stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="timeline-connector"></div>
+</div>
+<div class="timeline-text">
+<div class="timeline-text-main">Property Verified</div>
+<div class="timeline-text-sub">Trust Score 92 confirmed</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section-spacer"></div>
+</div>
+<!-- ==================== WALLET TAB ==================== -->
+<div class="tab-panel" id="tab-wallet">
+<div class="simple-header animate-in">
+<div class="simple-header-eyebrow">Payments</div>
+<div class="simple-header-title"><span class="name-accent">Wallet</span></div>
+</div>
+<!-- Balance -->
+<div class="wallet-balance-card animate-in delay-1">
+<div class="wallet-eyebrow">Wallet Balance</div>
+<div class="wallet-amount" id="walletAmount">₦0</div>
+<div class="wallet-badges">
+<div class="wallet-badge escrow">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="11" rx="2" ry="2" width="18" x="3" y="11"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    Escrow Protected
+                </div>
+<div class="wallet-badge protected">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    Escrow Closed
+                </div>
+</div>
+</div>
+<!-- Linked Accounts -->
+<div class="section-spacer"></div>
+<div class="section-header" style="margin-top:4px;">
+<h2 class="section-title">Linked Accounts</h2>
+</div>
+<div class="dash-card linked-accounts-card" style="margin-top:0;">
+<div class="dash-card-inner">
+<div class="linked-item">
+<img alt="Opay" class="linked-icon" src="opay.jpg"/>
+<div class="linked-info">
+<div class="linked-name">OPay</div>
+<div class="linked-detail">****4821</div>
+</div>
+<div class="linked-status connected">Connected</div>
+</div>
+<div class="linked-item">
+<div class="linked-icon linked-add-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width:16px;height:16px;" viewbox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+</div>
+<div class="linked-info">
+<div class="linked-name" style="color:var(--text-muted);">Add Bank Account</div>
+</div>
+<div class="linked-add">+ Add</div>
+</div>
+<div class="linked-item">
+<div class="linked-icon linked-add-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width:16px;height:16px;" viewbox="0 0 24 24"><rect height="16" rx="2" ry="2" width="22" x="1" y="4"></rect><line x1="1" x2="23" y1="10" y2="10"></line></svg>
+</div>
+<div class="linked-info">
+<div class="linked-name" style="color:var(--text-muted);">Add Card</div>
+</div>
+<div class="linked-add">+ Add</div>
+</div>
+</div>
+</div>
+<!-- Transactions -->
+<div class="section-spacer"></div>
+<div class="section-header" style="margin-top:4px;">
+<h2 class="section-title">Transactions</h2>
+<span class="section-action">Download All</span>
+</div>
+<div class="dash-card txn-card" style="margin-top:0;">
+<div class="dash-card-inner">
+<div class="txn-list">
+<div class="txn-item">
+<div class="txn-icon rent">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+</div>
+<div class="txn-info">
+<div class="txn-name">Annual Rent</div>
+<div class="txn-date">10 Jul 2026 · OPay</div>
+</div>
+<div>
+<div class="txn-amount out">₦450,000</div>
+<div class="txn-receipt">Receipt ↓</div>
+</div>
+</div>
+<div class="txn-item">
+<div class="txn-icon legal">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+</div>
+<div class="txn-info">
+<div class="txn-name">Legal Fee</div>
+<div class="txn-date">5 Jul 2026 · OPay</div>
+</div>
+<div>
+<div class="txn-amount out">₦25,000</div>
+<div class="txn-receipt">Receipt ↓</div>
+</div>
+</div>
+<div class="txn-item">
+<div class="txn-icon escrow-ic">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="11" rx="2" ry="2" width="18" x="3" y="11"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+</div>
+<div class="txn-info">
+<div class="txn-name">Escrow Released</div>
+<div class="txn-date">15 Jul 2026 · Protected</div>
+</div>
+<div>
+<div class="txn-amount out">₦450,000</div>
+<div class="txn-receipt">Receipt ↓</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Spending Insights -->
+<div class="section-spacer"></div>
+<div class="section-header" style="margin-top:4px;">
+<h2 class="section-title">Spending Insights</h2>
+</div>
+<div class="dash-card spending-card" style="margin-top:0;">
+<div class="dash-card-inner">
+<div class="spending-title">Housing Cost · This Year</div>
+<div class="spending-item">
+<div class="spending-row">
+<div class="spending-cat">Annual Rent</div>
+<div class="spending-val">₦450,000</div>
+</div>
+<div class="spending-bar-bg">
+<div class="spending-bar violet" id="sbar1"></div>
+</div>
+</div>
+<div class="spending-item">
+<div class="spending-row">
+<div class="spending-cat">Legal &amp; Admin</div>
+<div class="spending-val">₦25,000</div>
+</div>
+<div class="spending-bar-bg">
+<div class="spending-bar blue" id="sbar2"></div>
+</div>
+</div>
+<div class="spending-item">
+<div class="spending-row">
+<div class="spending-cat">Maintenance</div>
+<div class="spending-val">₦0</div>
+</div>
+<div class="spending-bar-bg">
+<div class="spending-bar green" id="sbar3"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section-spacer"></div>
+</div>
+<!-- ==================== HUB TAB ==================== -->
+<div class="tab-panel" id="tab-hub">
+<div class="hub-header animate-in">
+<div class="simple-header-eyebrow" style="font-size:11px;font-weight:500;letter-spacing:1.2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:5px;">Archive</div>
+<div class="hub-title"><span class="name-accent">Hub</span></div>
+</div>
+<!-- Agreements & Documents -->
+<div class="hub-section">
+<div class="hub-section-title">Documents</div>
+<div class="hub-list">
+<div class="hub-item">
+<div class="hub-item-icon hi-doc"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+<div class="hub-item-text">
+<div class="hub-item-name">Rental Agreement</div>
+<div class="hub-item-sub">1-year · Jul 2026 – Jul 2027</div>
+</div>
+<div class="hub-item-badge">PDF</div>
+</div>
+<div class="hub-item">
+<div class="hub-item-icon hi-inspect"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg></div>
+<div class="hub-item-text">
+<div class="hub-item-name">Inspection Report</div>
+<div class="hub-item-sub">Move-in · 15 Jul 2026</div>
+</div>
+<div class="hub-item-badge">PDF</div>
+</div>
+<div class="hub-item">
+<div class="hub-item-icon hi-receipt"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></div>
+<div class="hub-item-text">
+<div class="hub-item-name">Payment Receipt</div>
+<div class="hub-item-sub">₦450,000 · Jul 2026</div>
+</div>
+<div class="hub-item-badge">PDF</div>
+</div>
+<div class="hub-item">
+<div class="hub-item-icon hi-verify"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+<div class="hub-item-text">
+<div class="hub-item-name">Property Verification</div>
+<div class="hub-item-sub">Trust Score 92 · Shelter Afrique</div>
+</div>
+<div class="hub-item-badge">PDF</div>
+</div>
+</div>
+</div>
+<!-- Saved & Applications -->
+<div class="hub-section">
+<div class="hub-section-title">History</div>
+<div class="hub-list">
+<div class="hub-item">
+<div class="hub-item-icon hi-saved"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></div>
+<div class="hub-item-text">
+<div class="hub-item-name">Saved Properties</div>
+<div class="hub-item-sub">3 saved before renting</div>
+</div>
+<div class="hub-item-arrow"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+</div>
+<div class="hub-item">
+<div class="hub-item-icon hi-applied"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect></svg></div>
+<div class="hub-item-text">
+<div class="hub-item-name">Applications</div>
+<div class="hub-item-sub">1 approved · 0 rejected</div>
+</div>
+<div class="hub-item-badge approved">1 Active</div>
+</div>
+</div>
+</div>
+<!-- Support -->
+<div class="hub-section">
+<div class="hub-section-title">Support</div>
+<div class="hub-list">
+<div class="hub-item">
+<div class="hub-item-icon hi-help"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" x2="12.01" y1="17" y2="17"></line></svg></div>
+<div class="hub-item-text">
+<div class="hub-item-name">Help Centre</div>
+<div class="hub-item-sub">FAQs &amp; guides</div>
+</div>
+<div class="hub-item-arrow"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+</div>
+<div class="hub-item">
+<div class="hub-item-icon hi-doc" style="background:rgba(240,165,0,0.1);color:var(--accent-warm);"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div>
+<div class="hub-item-text">
+<div class="hub-item-name">Contact Support</div>
+<div class="hub-item-sub">Live chat · Mon–Fri</div>
+</div>
+<div class="hub-notif-dot"></div>
+</div>
+<div class="hub-item">
+<div class="hub-item-icon hi-doc" style="background:rgba(255,255,255,0.04);color:var(--text-muted);"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" x2="6" y1="1" y2="4"></line><line x1="10" x2="10" y1="1" y2="4"></line><line x1="14" x2="14" y1="1" y2="4"></line></svg></div>
+<div class="hub-item-text">
+<div class="hub-item-name">Notifications</div>
+<div class="hub-item-sub">Full history</div>
+</div>
+<div class="hub-item-arrow"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+</div>
+</div>
+</div>
+<!-- Settings -->
+<div class="hub-section">
+<div class="hub-section-title">Account</div>
+<div class="hub-list">
+<div class="hub-item">
+<div class="hub-item-icon hi-settings"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.07 4.93l-1.41 1.41M4.93 4.93l1.41 1.41M19.07 19.07l-1.41-1.41M4.93 19.07l1.41-1.41M12 2v2M12 20v2M2 12h2M20 12h2"></path></svg></div>
+<div class="hub-item-text">
+<div class="hub-item-name">Settings</div>
+<div class="hub-item-sub">Profile · Security · Preferences</div>
+</div>
+<div class="hub-item-arrow"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+</div>
+<div class="hub-item">
+<div class="hub-item-icon hi-logout"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" x2="9" y1="12" y2="12"></line></svg></div>
+<div class="hub-item-text">
+<div class="hub-item-name" style="color:var(--accent-red);">Log Out</div>
+<div class="hub-item-sub">frank@domot.ng</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section-spacer"></div>
+</div>
+<!-- ==================== FAB (Home only) ==================== -->
+<div class="fab-menu" id="fabMenu">
+<div class="fab-menu-item" onclick="window.location.href='maintenance.html#report'">
+<div class="fab-menu-label">Report Issue</div>
+<div class="fab-menu-btn fmb-report">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="8" y2="12"></line><line x1="12" x2="12.01" y1="16" y2="16"></line></svg>
+</div>
+</div>
+<div class="fab-menu-item" onclick="window.location.href='maintenance.html#contact'">
+<div class="fab-menu-label">Contact Manager</div>
+<div class="fab-menu-btn fmb-contact">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l.81-.81a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+</div>
+</div>
+<div class="fab-menu-item" onclick="window.location.href='maintenance.html#maintenance'">
+<div class="fab-menu-label">Request Maintenance</div>
+<div class="fab-menu-btn fmb-maintenance">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+</div>
+</div>
+</div>
+<button class="fab" id="fab">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<line x1="12" x2="12" y1="5" y2="19"></line>
+<line x1="5" x2="19" y1="12" y2="12"></line>
+</svg>
+</button>
+<!-- ==================== BOTTOM NAV ==================== -->
+<nav class="bottom-nav" id="bottomNav">
+<div class="nav-item active" data-tab="home">
+<svg class="nav-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+<span class="nav-label">Home</span>
+</div>
+<div class="nav-item" data-tab="trust">
+<svg class="nav-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+<span class="nav-label">Trust</span>
+</div>
+<div class="nav-item" data-tab="wallet">
+<svg class="nav-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="16" rx="2" ry="2" width="22" x="1" y="4"></rect><line x1="1" x2="23" y1="10" y2="10"></line></svg>
+<span class="nav-label">Wallet</span>
+</div>
+<div class="nav-item" data-tab="hub">
+<svg class="nav-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="8" y2="16"></line><line x1="8" x2="16" y1="12" y2="12"></line></svg>
+<span class="nav-label">Hub</span>
+</div>
+</nav>
+
+<script src="tenancy.js"></script></body>
+</html>
