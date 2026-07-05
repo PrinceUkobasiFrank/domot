@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Domot! — What are you looking for?</title>
+
+<link href="pref.css" rel="stylesheet"/></head>
+<body>
+<div class="app" id="app">
+<!-- Progress bar -->
+<div class="progress-bar">
+<div class="progress-fill" id="progressFill"></div>
+</div>
+<!-- Background with PARALLAX -->
+<div class="bg-layer" id="bgLayer">
+<img alt="Hero Illustration" src="bg3.jpg"/>
+</div>
+<!-- Luxury floating glow -->
+<div class="luxury-glow" style="top: 20%; left: 10%;"></div>
+<div class="luxury-glow" style="top: 60%; right: 5%; animation-delay: -4s;"></div>
+<div class="ambient" id="ambient"></div>
+<!-- Bottom frost panel -->
+<div class="frost-panel">
+<div class="content">
+<div class="header">
+<h1 id="typeTitle"></h1>
+<p id="typeSubtitle"></p>
+</div>
+<div class="chips-container" id="chipsContainer">
+<button class="chip" data-value="student-lodge" id="chipStudentLodge">
+<span class="chip-check">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</span>
+                        Student Lodge
+                    </button>
+<button class="chip" data-value="self-contain" id="chipSelfContain">
+<span class="chip-check">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</span>
+                        Self Contain
+                    </button>
+<button class="chip" data-value="1-bedroom" id="chip1Bedroom">
+<span class="chip-check">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</span>
+                        1 Bedroom
+                    </button>
+<button class="chip" data-value="2-bedroom" id="chip2Bedroom">
+<span class="chip-check">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</span>
+                        2 Bedroom
+                    </button>
+<button class="chip" data-value="3-bedroom" id="chip3Bedroom">
+<span class="chip-check">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</span>
+                        3 Bedroom
+                    </button>
+<button class="chip" data-value="duplex" id="chipDuplex">
+<span class="chip-check">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</span>
+                        Duplex
+                    </button>
+<button class="chip" data-value="studio-flat" id="chipShared">
+<span class="chip-check">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</span>
+                        Studio Flat
+                    </button>
+<button class="chip" data-value="short-let" id="chipShortLet">
+<span class="chip-check">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</span>
+                        Short Let
+                    </button>
+</div>
+<div class="cta-wrapper" id="ctaWrapper">
+<button class="cta-btn" disabled="" id="ctaBtn">
+<span>Continue</span>
+<svg class="cta-arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<line x1="5" x2="19" y1="12" y2="12"></line>
+<polyline points="12 5 19 12 12 19"></polyline>
+</svg>
+</button>
+</div>
+<div class="footer-note" id="footerNote">
+                    You can update these preferences anytime.
+                </div>
+</div>
+</div>
+</div>
+
+<script src="pref.js"></script></body>
+</html>

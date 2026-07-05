@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Domot! — Schedule Inspection</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet"/>
+
+<link href="pi.css" rel="stylesheet"/></head>
+<body>
+<div class="ambient">
+<div class="ambient-orb ambient-orb-1"></div>
+<div class="ambient-orb ambient-orb-2"></div>
+</div>
+<!-- Main Schedule Container -->
+<div class="schedule-container" id="scheduleContainer">
+<!-- Floating Nav -->
+<div class="float-nav">
+<button class="nav-btn" id="backBtn">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+</button>
+<div class="nav-right">
+<button class="nav-btn" id="shareBtn">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="18" cy="5" r="3"></circle>
+<circle cx="6" cy="12" r="3"></circle>
+<circle cx="18" cy="19" r="3"></circle>
+<line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line>
+<line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line>
+</svg>
+</button>
+</div>
+</div>
+<!-- Header Text -->
+<div class="header-text animate-in">
+<h1>Schedule Inspection</h1>
+<p>Choose a convenient date and time.</p>
+</div>
+<!-- Property Summary Card -->
+<div class="property-summary-card animate-in delay-1">
+<img alt="Property" class="summary-thumb" onerror="this.style.background='linear-gradient(135deg,#161624,#2a2044)'" src="h2.jpg"/>
+<div class="summary-info">
+<div class="summary-type">Self Contain</div>
+<div class="summary-title">Shelter Afrique Estate</div>
+<div class="summary-price">₦450,000/year</div>
+<div class="summary-trust">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+</svg>
+<span>92</span>
+</div>
+</div>
+</div>
+<!-- Date Picker -->
+<div class="section-label animate-in delay-2">Select Date</div>
+<div class="date-scroll animate-in delay-2" id="dateScroll">
+<div class="date-pill selected" data-date="2026-06-12">
+<span class="day-name">Mon</span>
+<span class="day-num">12</span>
+<span class="month">Jun</span>
+</div>
+<div class="date-pill" data-date="2026-06-13">
+<span class="day-name">Tue</span>
+<span class="day-num">13</span>
+<span class="month">Jun</span>
+</div>
+<div class="date-pill" data-date="2026-06-14">
+<span class="day-name">Wed</span>
+<span class="day-num">14</span>
+<span class="month">Jun</span>
+</div>
+<div class="date-pill" data-date="2026-06-15">
+<span class="day-name">Thu</span>
+<span class="day-num">15</span>
+<span class="month">Jun</span>
+</div>
+<div class="date-pill" data-date="2026-06-16">
+<span class="day-name">Fri</span>
+<span class="day-num">16</span>
+<span class="month">Jun</span>
+</div>
+<div class="date-pill" data-date="2026-06-17">
+<span class="day-name">Sat</span>
+<span class="day-num">17</span>
+<span class="month">Jun</span>
+</div>
+<div class="date-pill" data-date="2026-06-18">
+<span class="day-name">Sun</span>
+<span class="day-num">18</span>
+<span class="month">Jun</span>
+</div>
+</div>
+<!-- Time Slots -->
+<div class="section-label animate-in delay-3">Select Time</div>
+<div class="time-grid animate-in delay-3" id="timeGrid">
+<div class="time-slot" data-time="09:00">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+<span>09:00 AM</span>
+</div>
+<div class="time-slot" data-time="11:00">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+<span>11:00 AM</span>
+</div>
+<div class="time-slot selected" data-time="15:00">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+<span>03:00 PM</span>
+</div>
+<div class="time-slot unavailable" data-time="17:00">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+<span>05:00 PM</span>
+</div>
+</div>
+<!-- Inspection Type -->
+<div class="section-label animate-in delay-4">Inspection Type</div>
+<div class="inspection-type-card animate-in delay-4" id="inspectionTypeCard">
+<div class="type-option selected" data-type="physical">
+<div class="type-radio">
+<div class="type-radio-inner"></div>
+</div>
+<div class="type-info">
+<div class="type-title">Physical Inspection</div>
+<div class="type-desc">Visit the property in person with a Domot! agent</div>
+</div>
+<div class="type-icon-wrap">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+<circle cx="12" cy="10" r="3"></circle>
+</svg>
+</div>
+</div>
+<div class="type-option" data-type="virtual">
+<div class="type-radio">
+<div class="type-radio-inner"></div>
+</div>
+<div class="type-info">
+<div class="type-title">Virtual Inspection</div>
+<div class="type-desc">Live video walkthrough via WhatsApp or Zoom</div>
+</div>
+<div class="type-icon-wrap">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<polygon points="23 7 16 12 23 17 23 7"></polygon>
+<rect height="14" rx="2" ry="2" width="15" x="1" y="5"></rect>
+</svg>
+</div>
+</div>
+</div>
+<!-- Attendee Count -->
+<div class="section-label animate-in delay-4">Attendees</div>
+<div class="attendee-scroll animate-in delay-4" id="attendeeScroll">
+<div class="attendee-pill selected" data-count="1">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+<circle cx="12" cy="7" r="4"></circle>
+</svg>
+                Just Me
+            </div>
+<div class="attendee-pill" data-count="2">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+<circle cx="9" cy="7" r="4"></circle>
+<path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+<path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+</svg>
+                2 People
+            </div>
+<div class="attendee-pill" data-count="3">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+<circle cx="9" cy="7" r="4"></circle>
+<path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+<path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+</svg>
+                3+ People
+            </div>
+</div>
+<!-- Contact Confirmation -->
+<div class="section-label animate-in delay-5">Contact Details</div>
+<div class="contact-card animate-in delay-5">
+<div class="contact-field">
+<label class="contact-label">Phone Number</label>
+<div class="contact-input-wrap">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
+</svg>
+<input class="contact-input" placeholder="Enter phone number" type="tel" value="+234 803 456 7890"/>
+</div>
+</div>
+<div class="contact-field">
+<label class="contact-label">Email Address</label>
+<div class="contact-input-wrap">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+<polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+<input class="contact-input" placeholder="Enter email address" type="email" value="frank@email.com"/>
+</div>
+</div>
+</div>
+<!-- Trust Banner -->
+<div class="trust-banner animate-in delay-5">
+<div class="trust-banner-title">Domot! Protected</div>
+<div class="trust-check-item">
+<div class="trust-check-icon">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</div>
+<span class="trust-check-text">Verified Property</span>
+</div>
+<div class="trust-check-item">
+<div class="trust-check-icon">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</div>
+<span class="trust-check-text">Verified Landlord</span>
+</div>
+<div class="trust-check-item">
+<div class="trust-check-icon">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</div>
+<span class="trust-check-text">Inspection Logged By Domot!</span>
+</div>
+</div>
+<div style="height: 16px;"></div>
+</div>
+<!-- Sticky Bottom CTA -->
+<div class="action-bar">
+<button class="confirm-btn" id="confirmBtn">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+            Confirm Inspection
+        </button>
+</div>
+<!-- Confirmation Overlay -->
+<div class="confirmation-overlay" id="confirmationOverlay">
+<div class="checkmark-circle">
+<svg viewbox="0 0 24 24">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+</div>
+<div class="confirm-title">Inspection Scheduled</div>
+<div class="confirm-subtitle">We'll send you a reminder 24 hours before</div>
+<!-- Inspection Pass -->
+<div class="inspection-pass">
+<div class="pass-header">
+<span class="pass-brand">Domot!</span>
+<div>
+<div class="pass-id-label">Inspection ID</div>
+<div class="pass-id-value">DMT-28471</div>
+</div>
+</div>
+<div class="pass-divider"></div>
+<div class="pass-details">
+<div class="pass-detail">
+<div class="pass-detail-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect>
+<line x1="16" x2="16" y1="2" y2="6"></line>
+<line x1="8" x2="8" y1="2" y2="6"></line>
+<line x1="3" x2="21" y1="10" y2="10"></line>
+</svg>
+</div>
+<div class="pass-detail-text">
+<div class="pass-detail-label">Date</div>
+<div class="pass-detail-value" id="passDate">Monday, 12 June</div>
+</div>
+</div>
+<div class="pass-detail">
+<div class="pass-detail-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+</div>
+<div class="pass-detail-text">
+<div class="pass-detail-label">Time</div>
+<div class="pass-detail-value" id="passTime">3:00 PM</div>
+</div>
+</div>
+<div class="pass-detail">
+<div class="pass-detail-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+<circle cx="12" cy="10" r="3"></circle>
+</svg>
+</div>
+<div class="pass-detail-text">
+<div class="pass-detail-label">Property</div>
+<div class="pass-detail-value">Shelter Afrique</div>
+</div>
+</div>
+</div>
+<div class="pass-barcode">
+<div class="barcode-lines" id="barcodeLines"></div>
+<div class="barcode-text">DMT-28471</div>
+</div>
+</div>
+<div class="confirm-actions">
+<button class="btn-primary" id="doneBtn">Done</button>
+<button class="btn-secondary" id="addCalendarBtn">Add to Calendar</button>
+</div>
+</div>
+
+<script src="pi.js"></script></body>
+</html>

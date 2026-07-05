@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Domot! — Property Detail</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet"/>
+
+<link href="property_detail.css" rel="stylesheet"/></head>
+<body>
+<div class="ambient">
+<div class="ambient-orb ambient-orb-1"></div>
+<div class="ambient-orb ambient-orb-2"></div>
+</div>
+<!-- Main scroll container -->
+<div class="detail-container" id="detailContainer">
+<!-- ==================== HERO GALLERY ==================== -->
+<div class="gallery-wrap" id="galleryWrap">
+<!-- Floating nav -->
+<div class="float-nav">
+<button class="nav-btn" id="backBtn">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+</button>
+<div class="nav-right">
+<button class="nav-btn" id="shareBtn">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="18" cy="5" r="3"></circle>
+<circle cx="6" cy="12" r="3"></circle>
+<circle cx="18" cy="19" r="3"></circle>
+<line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line>
+<line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line>
+</svg>
+</button>
+</div>
+</div>
+<!-- Gallery slides -->
+<div class="gallery-track" id="galleryTrack">
+<div class="gallery-slide active">
+<img alt="Property photo 1" onerror="this.parentElement.style.background='linear-gradient(135deg,#161624,#2a2044)'" src="h2.jpg"/>
+</div>
+<div class="gallery-slide">
+<img alt="Property photo 2" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1628,#0f1a22)'" src="h3.jpg"/>
+</div>
+<div class="gallery-slide">
+<img alt="Property photo 3" onerror="this.parentElement.style.background='linear-gradient(135deg,#0f1a16,#16241c)'" src="h4.jpg"/>
+</div>
+<div class="gallery-slide">
+<img alt="Property photo 4" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1414,#241616)'" src="h5.jpg"/>
+</div>
+</div>
+<!-- Verified badge overlay -->
+<div class="float-trust-badge">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+</svg>
+<span>Verified by Domot!</span>
+</div>
+<!-- Counter -->
+<div class="gallery-counter"><span id="currentSlide">1</span> / 4</div>
+<!-- Dots -->
+<div class="gallery-dots" id="galleryDots">
+<div class="dot active"></div>
+<div class="dot"></div>
+<div class="dot"></div>
+<div class="dot"></div>
+</div>
+</div>
+<!-- ==================== DETAIL BODY ==================== -->
+<div class="detail-body">
+<!-- Property Summary -->
+<div class="property-summary animate-in">
+<div class="summary-type-row">
+<span class="property-type-tag">Self Contain</span>
+<span class="available-tag">● Available Now</span>
+</div>
+<h1 class="property-title">Shelter Afrique Estate</h1>
+<div class="property-location-row">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+<circle cx="12" cy="10" r="3"></circle>
+</svg>
+<span>Shelter Afrique, Uyo, Akwa Ibom</span>
+</div>
+<div class="property-price">
+                    ₦450,000
+                    <span class="price-period"> / year</span>
+</div>
+</div>
+<!-- Trust Score Card -->
+<div class="section-spacer">
+<div class="section-label">Intelligence Report</div>
+<div class="trust-score-card animate-in delay-1" id="trustScoreCard">
+<div class="trust-score-label">Trust Score</div>
+<div class="trust-score-main">
+<span class="trust-score-num">92</span>
+<span class="trust-score-denom">/ 100</span>
+</div>
+<div class="trust-score-verdict">Excellent — Top 5% in Uyo</div>
+<div class="trust-divider"></div>
+<div class="trust-checks">
+<div class="trust-check">
+<div class="check-icon">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</div>
+<span class="check-text">Landlord Identity Verified</span>
+</div>
+<div class="trust-check">
+<div class="check-icon">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</div>
+<span class="check-text">Property Ownership Verified</span>
+</div>
+<div class="trust-check">
+<div class="check-icon">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</div>
+<span class="check-text">Physical Inspection Complete</span>
+</div>
+<div class="trust-check">
+<div class="check-icon">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</div>
+<span class="check-text">Digital Contract Ready</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Neighbourhood Intelligence -->
+<div class="section-spacer animate-in delay-2">
+<div class="section-label">Neighbourhood</div>
+<div class="info-card">
+<div class="info-card-header">
+<span class="info-card-title">Shelter Afrique Report</span>
+<span class="info-card-badge">Domot! Intel</span>
+</div>
+<div class="neighbourhood-grid">
+<div class="nb-item">
+<div class="nb-item-label">Safety</div>
+<div class="nb-item-value">
+<div class="nb-dot high"></div>
+<span class="nb-value-text">High</span>
+</div>
+</div>
+<div class="nb-item">
+<div class="nb-item-label">Electricity</div>
+<div class="nb-item-value">
+<div class="nb-dot reliable"></div>
+<span class="nb-value-text">Reliable</span>
+</div>
+</div>
+<div class="nb-item">
+<div class="nb-item-label">Road Access</div>
+<div class="nb-item-value">
+<div class="nb-dot good"></div>
+<span class="nb-value-text">Good</span>
+</div>
+</div>
+<div class="nb-item">
+<div class="nb-item-label">Flood Risk</div>
+<div class="nb-item-value">
+<div class="nb-dot low-risk"></div>
+<span class="nb-value-text">Low</span>
+</div>
+</div>
+<div class="nb-item">
+<div class="nb-item-label">Water Access</div>
+<div class="nb-item-value">
+<div class="nb-dot available"></div>
+<span class="nb-value-text">Available</span>
+</div>
+</div>
+<div class="nb-item">
+<div class="nb-item-label">Noise Level</div>
+<div class="nb-item-value">
+<div class="nb-dot good"></div>
+<span class="nb-value-text">Quiet</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Financial Transparency -->
+<div class="section-spacer animate-in delay-3">
+<div class="section-label">Financial Breakdown</div>
+<div class="info-card">
+<div class="info-card-header">
+<span class="info-card-title">Total Move-in Cost</span>
+</div>
+<div class="finance-rows">
+<div class="finance-row">
+<span class="finance-row-label">Annual Rent</span>
+<span class="finance-row-value">₦450,000</span>
+</div>
+<div class="finance-row">
+<span class="finance-row-label">Agency Fee</span>
+<span class="finance-row-value">₦45,000</span>
+</div>
+<div class="finance-row">
+<span class="finance-row-label">Legal Fee</span>
+<span class="finance-row-value">₦25,000</span>
+</div>
+<div class="finance-row">
+<span class="finance-row-label">Caution Deposit</span>
+<span class="finance-row-value">₦75,000</span>
+</div>
+</div>
+<div class="finance-total-row">
+<div class="finance-total-label">
+                            Total Move-in Cost
+                            <span>No hidden fees, guaranteed</span>
+</div>
+<span class="finance-total-value">₦595,000</span>
+</div>
+</div>
+</div>
+<!-- Property Features -->
+<div class="section-spacer animate-in delay-4">
+<div class="section-label">Features</div>
+<div class="features-grid">
+<div class="feature-item">
+<div class="feature-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+</div>
+<span class="feature-label">1 Bedroom</span>
+</div>
+<div class="feature-item">
+<div class="feature-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M5 12H2a10 10 0 0 0 20 0h-3"></path>
+<path d="M12 2v4"></path>
+</svg>
+</div>
+<span class="feature-label">1 Bathroom</span>
+</div>
+<div class="feature-item">
+<div class="feature-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M3 11l19-9-9 19-2-8-8-2z"></path>
+</svg>
+</div>
+<span class="feature-label">Kitchen</span>
+</div>
+<div class="feature-item">
+<div class="feature-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<rect height="13" width="15" x="1" y="3"></rect>
+<polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+<circle cx="5.5" cy="18.5" r="2.5"></circle>
+<circle cx="18.5" cy="18.5" r="2.5"></circle>
+</svg>
+</div>
+<span class="feature-label">Parking</span>
+</div>
+<div class="feature-item">
+<div class="feature-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+</svg>
+</div>
+<span class="feature-label">Borehole</span>
+</div>
+<div class="feature-item">
+<div class="feature-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<rect height="11" rx="2" ry="2" width="18" x="3" y="11"></rect>
+<path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+</svg>
+</div>
+<span class="feature-label">Fenced</span>
+</div>
+</div>
+</div>
+<!-- Description -->
+<div class="section-spacer animate-in delay-4">
+<div class="section-label">About This Property</div>
+<div class="description-body" id="descBody">
+                    A well-maintained self-contained unit located within the prestigious Shelter Afrique Estate. The apartment is on the ground floor of a 4-unit building with 24-hour security and a reliable generator for uninterrupted power supply. The property has been recently painted and plumbed, with a modern kitchen and tiled bathroom. Ideal for a young professional or couple seeking a quiet, well-connected neighbourhood with easy access to Ring Road, Itam Market, and major schools.
+                </div>
+<button class="read-more-btn" id="readMoreBtn">Read more</button>
+</div>
+<!-- Landlord -->
+<div class="section-spacer animate-in delay-5">
+<div class="section-label">Listed By</div>
+<div class="info-card">
+<div class="landlord-card">
+<div class="landlord-avatar">J</div>
+<div class="landlord-info">
+<div class="landlord-name">John Etim</div>
+<div class="landlord-meta">
+<div class="landlord-verified">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+</svg>
+                                    Verified Landlord
+                                </div>
+</div>
+<div class="landlord-stats">
+<div class="landlord-stat">
+<svg fill="currentColor" stroke="none" viewbox="0 0 24 24">
+<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+</svg>
+                                    4.8 Rating
+                                </div>
+<div class="landlord-stat">
+                                    · 12 Rentals
+                                </div>
+</div>
+</div>
+<button class="landlord-contact-btn">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+</svg>
+</button>
+</div>
+</div>
+</div>
+<!-- Similar Properties -->
+<div class="section-spacer animate-in delay-6">
+<div style="display:flex; align-items:baseline; justify-content:space-between; padding-right:0; margin-bottom:16px;">
+<div class="section-label" style="margin-bottom:0;">Similar Properties</div>
+<span style="font-size:13px; font-weight:500; color:var(--accent-violet); cursor:pointer;">See All</span>
+</div>
+<div class="similar-scroll">
+<div class="similar-card">
+<img alt="Similar 1" class="similar-img" onerror="this.style.background='linear-gradient(135deg,#161624,#2a2044)'" src="h5.jpg"/>
+<div class="similar-info">
+<div class="similar-type">1 Bedroom</div>
+<div class="similar-location">Ewet Housing, Uyo</div>
+<div class="similar-bottom">
+<span class="similar-price">₦650k/yr</span>
+<div class="similar-trust">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+<span>88</span>
+</div>
+</div>
+</div>
+</div>
+<div class="similar-card">
+<img alt="Similar 2" class="similar-img" onerror="this.style.background='linear-gradient(135deg,#161624,#2a2044)'" src="h6.jpg"/>
+<div class="similar-info">
+<div class="similar-type">Self Contain</div>
+<div class="similar-location">Osongama, Uyo</div>
+<div class="similar-bottom">
+<span class="similar-price">₦380k/yr</span>
+<div class="similar-trust">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+<span>95</span>
+</div>
+</div>
+</div>
+</div>
+<div class="similar-card">
+<img alt="Similar 3" class="similar-img" onerror="this.style.background='linear-gradient(135deg,#161624,#2a2044)'" src="h7.jpg"/>
+<div class="similar-info">
+<div class="similar-type">Studio</div>
+<div class="similar-location">GRA, Uyo</div>
+<div class="similar-bottom">
+<span class="similar-price">₦300k/yr</span>
+<div class="similar-trust">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+<span>89</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div style="height: 8px;"></div>
+</div>
+</div>
+<!-- ==================== BOTTOM ACTION BAR ==================== -->
+<div class="action-bar">
+<div class="action-bar-inner">
+<button class="save-action-btn" id="saveBtn">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+</svg>
+</button>
+<button class="schedule-btn" id="scheduleBtn">Schedule Inspection</button>
+<button class="apply-btn" id="applyBtn">Apply Now</button>
+</div>
+</div>
+
+<script src="property_detail.js"></script></body>
+</html>

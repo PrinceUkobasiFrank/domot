@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Domot! — Secure Payment</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet"/>
+
+<link href="payment.css" rel="stylesheet"/></head>
+<body>
+<div class="ambient">
+<div class="orb o1"></div>
+<div class="orb o2"></div>
+<div class="orb o3"></div>
+</div>
+<!-- ══════════════════ MAIN SCREEN ══════════════════ -->
+<div class="scroll-root" id="mainScroll">
+<!-- Nav -->
+<div class="nav">
+<button class="nav-btn" onclick="goBack()">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+</button>
+<div class="nav-lock">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24">
+<rect height="11" rx="2" ry="2" width="18" x="3" y="11"></rect>
+<path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+</svg>
+<span>Secured by Domot!</span>
+</div>
+<button class="nav-btn">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle>
+</svg>
+</button>
+</div>
+<!-- Progress -->
+<div class="progress ai">
+<div class="ps done">
+<div class="pdot"><svg fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg></div>
+<span class="plabel">Application</span>
+</div>
+<div class="ps done">
+<div class="pdot"><svg fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg></div>
+<span class="plabel">Approval</span>
+</div>
+<div class="ps done">
+<div class="pdot"><svg fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg></div>
+<span class="plabel">Agreement</span>
+</div>
+<div class="ps active">
+<div class="pdot"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 12 12"><circle cx="6" cy="6" fill="currentColor" r="2" stroke="none"></circle></svg></div>
+<span class="plabel">Payment</span>
+</div>
+<div class="ps">
+<div class="pdot"></div>
+<span class="plabel">Move-in</span>
+</div>
+</div>
+<!-- Header -->
+<div class="hd ai d1">
+<h1>Secure Payment</h1>
+<p>Your payment is protected until all transaction conditions are met.</p>
+</div>
+<!-- Payment Summary Card -->
+<div class="slabel ai d2">Payment Summary</div>
+<div class="pay-card ai d2">
+<div class="pay-card-header">
+<span class="pay-card-label">Shelter Afrique Estate</span>
+<div class="pay-card-badge">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 12 12"><path d="M6 11s4-2 4-5V2.5L6 1 2 2.5V6c0 3 4 5 4 5z"></path></svg>
+<span>Escrow</span>
+</div>
+</div>
+<div class="pay-line">
+<span class="pay-line-key">Annual Rent</span>
+<span class="pay-line-val">₦450,000</span>
+</div>
+<div class="pay-line">
+<span class="pay-line-key">Agency Fee</span>
+<span class="pay-line-val">₦50,000</span>
+</div>
+<div class="pay-line">
+<span class="pay-line-key">Legal Fee</span>
+<span class="pay-line-val">₦25,000</span>
+</div>
+<div class="pay-line">
+<span class="pay-line-key">Security Deposit</span>
+<span class="pay-line-val">₦100,000</span>
+</div>
+<div class="pay-divider"></div>
+<div class="pay-total-row">
+<span class="pay-total-key">Total Due</span>
+<span class="pay-total-amount">₦625,000</span>
+</div>
+<div class="pay-breakdown-toggle" id="breakdownToggle" onclick="toggleBreakdown()">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<polyline points="6 9 12 15 18 9"></polyline>
+</svg>
+            View Full Breakdown
+        </div>
+<div class="pay-breakdown-detail" id="breakdownDetail">
+<div class="breakdown-inner">
+<div class="bd-row">
+<span class="bd-key">Annual Rent</span><span class="bd-val">₦450,000</span>
+</div>
+<div class="bd-row">
+<span class="bd-key">Agency Fee (one-time)</span><span class="bd-val">₦50,000</span>
+</div>
+<div class="bd-row">
+<span class="bd-key">Legal / Agreement Fee</span><span class="bd-val">₦25,000</span>
+</div>
+<div class="bd-row">
+<span class="bd-key">Security Deposit (refundable)</span><span class="bd-val">₦100,000</span>
+</div>
+<div class="bd-row">
+<span class="bd-key">Domot! Service Fee</span><span class="bd-val">₦0</span>
+</div>
+<div class="bd-row">
+<span class="bd-key" style="color:var(--t2);font-weight:600;">Total</span>
+<span class="bd-val" style="color:var(--t1);font-size:14px;">₦625,000</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Escrow Protection Card -->
+<div class="escrow-card ai d3">
+<div class="escrow-top">
+<div class="escrow-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24">
+<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+<path d="M9 12l2 2 4-4"></path>
+</svg>
+</div>
+<div>
+<div class="escrow-title">Escrow Protected</div>
+<div class="escrow-sub">Secured by OPay OWealth · Domot! Infrastructure</div>
+</div>
+</div>
+<div class="escrow-desc">
+            Funds are securely held in a Domot! escrow account, secured by OPay OWealth infrastructure until all move-in conditions are confirmed by both parties. Neither the landlord nor agent can access funds until you approve.
+        </div>
+<div class="escrow-learn" onclick="openWhyOverlay()">
+            Why is my payment protected?
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+</div>
+<!-- Escrow Flow Timeline -->
+<div class="slabel ai d3">Where Your Money Goes</div>
+<div class="escrow-flow ai d3">
+<div class="flow-title">Escrow Protection Flow</div>
+<div class="flow-steps">
+<div class="flow-step">
+<div class="flow-left">
+<div class="flow-node fn-done">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 16 16"><polyline points="3,8 6,11 13,4"></polyline></svg>
+</div>
+<div class="flow-connector fc-fade"></div>
+</div>
+<div class="flow-content">
+<div class="flow-step-title fst-green">You Send Funds</div>
+<div class="flow-step-desc">Payment leaves your account directly into Domot! Escrow — not the landlord's account.</div>
+<div class="flow-step-time">Instant</div>
+</div>
+</div>
+<div class="flow-step">
+<div class="flow-left">
+<div class="flow-node fn-hold">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 16 16">
+<path d="M8 11s4-2 4-5V3L8 1 4 3v3c0 3 4 5 4 5z"></path>
+</svg>
+</div>
+<div class="flow-connector fc-none"></div>
+</div>
+<div class="flow-content">
+<div class="flow-step-title fst-violet">Escrow Holding</div>
+<div class="flow-step-desc">Funds sit securely in Domot! escrow. Locked until you confirm move-in completion.</div>
+<div class="flow-step-time fst-violet" style="color:rgba(124,92,250,.7)">Awaiting your confirmation</div>
+</div>
+</div>
+<div class="flow-step">
+<div class="flow-left">
+<div class="flow-node fn-pend">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 16 16">
+<polyline points="3,8 6,11 13,4"></polyline>
+</svg>
+</div>
+<div class="flow-connector fc-none"></div>
+</div>
+<div class="flow-content">
+<div class="flow-step-title fst-dim">Landlord Confirmation</div>
+<div class="flow-step-desc">Landlord confirms property handover and keys are transferred.</div>
+<div class="flow-step-time">—</div>
+</div>
+</div>
+<div class="flow-step">
+<div class="flow-left">
+<div class="flow-node fn-pend">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 16 16">
+<path d="M3 8l3 3 7-7"></path>
+</svg>
+</div>
+</div>
+<div class="flow-content">
+<div class="flow-step-title fst-dim">Funds Released</div>
+<div class="flow-step-desc">Only after both parties confirm — funds are released to the landlord. Zero risk to you.</div>
+<div class="flow-step-time">—</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Payment Methods -->
+<div class="slabel ai d4">Payment Method</div>
+<div class="methods-card ai d4" id="methodsCard">
+<!-- OPay -->
+<div class="method-row selected" data-method="opay" onclick="selectMethod(this)">
+<div class="method-icon" style="padding:0;overflow:hidden;">
+<img alt="OPay" src="opay.jpg" style="width:100%;height:100%;object-fit:contain;border-radius:13px;"/>
+</div>
+<div class="method-info">
+<div class="method-name">OPay Account</div>
+<div class="method-sub">**** 4821 · Linked</div>
+</div>
+<div class="method-right">
+<div class="method-badge-rec">Recommended</div>
+<div class="method-badge-conn">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+<span>Connected</span>
+</div>
+<div class="method-radio"><div class="method-radio-dot"></div></div>
+</div>
+</div>
+<!-- Bank Transfer -->
+<div class="method-row" data-method="bank" onclick="selectMethod(this)">
+<div class="method-icon">🏦</div>
+<div class="method-info">
+<div class="method-name">Bank Transfer</div>
+<div class="method-sub">NEFT · 1–2 business hours</div>
+</div>
+<div class="method-right">
+<div class="method-radio"><div class="method-radio-dot"></div></div>
+</div>
+</div>
+<!-- Debit Card -->
+<div class="method-row" data-method="card" onclick="selectMethod(this)">
+<div class="method-icon">💳</div>
+<div class="method-info">
+<div class="method-name">Debit Card</div>
+<div class="method-sub">Visa · Mastercard · Verve</div>
+</div>
+<div class="method-right">
+<div class="method-radio"><div class="method-radio-dot"></div></div>
+</div>
+</div>
+<!-- More Rails -->
+<div class="method-row" data-method="more" onclick="selectMethod(this)" style="opacity:.5; pointer-events:none;">
+<div class="method-icon">＋</div>
+<div class="method-info">
+<div class="method-name">PalmPay · Moniepoint · Kuda</div>
+<div class="method-sub">More options coming soon</div>
+</div>
+<div class="method-right">
+<div class="method-radio"><div class="method-radio-dot"></div></div>
+</div>
+</div>
+</div>
+<!-- OPay Detail (visible when OPay selected) -->
+<div class="opay-detail visible ai d5" id="opayDetail">
+<div class="opay-balance-row">
+<div>
+<div class="opay-bal-label">OPay Balance</div>
+<div>
+<span class="opay-bal-amount">₦780,000</span>
+<span class="opay-bal-suffix">available</span>
+</div>
+</div>
+<div style="width:42px;height:42px;border-radius:13px;background:rgba(14,201,127,.1);border:1px solid rgba(14,201,127,.2);display:flex;align-items:center;justify-content:center;">
+<svg fill="none" height="18" stroke="var(--green)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+</div>
+</div>
+<div class="opay-perks">
+<div class="opay-perk">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+<span>Instant Verification</span>
+</div>
+<div class="opay-perk">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+<span>Fast Settlement</span>
+</div>
+<div class="opay-perk">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+<span>Protected Transaction</span>
+</div>
+</div>
+</div>
+<!-- Why Protected -->
+<button class="why-btn ai d6" onclick="openWhyOverlay()">
+<svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16">
+<circle cx="12" cy="12" r="10"></circle>
+<line x1="12" x2="12" y1="8" y2="12"></line>
+<line x1="12" x2="12.01" y1="16" y2="16"></line>
+</svg>
+        Why is my payment protected?
+    </button>
+<div style="height:12px"></div>
+<!-- CTA -->
+<div class="action-bar">
+<button class="pay-btn" onclick="initiatePayment()">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+<path d="M9 12l2 2 4-4"></path>
+</svg>
+            Pay Securely with Domot!
+        </button>
+<div class="pay-btn-sub">OPay · ₦625,000 · Escrow Protected</div>
+</div>
+</div>
+<!-- ══════════════════ WHY PROTECTED OVERLAY ══════════════════ -->
+<div class="overlay" id="whyOverlay">
+<div class="overlay-bar"></div>
+<div class="overlay-nav">
+<span class="overlay-title">How Escrow Works</span>
+<button class="overlay-close" onclick="closeWhyOverlay()">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line>
+</svg>
+</button>
+</div>
+<div class="overlay-body">
+<div class="why-diagram">
+<div class="diag-row">
+<div class="diag-pill dp-you">You</div>
+<div class="diag-arrow">→</div>
+<div class="diag-pill dp-esc">Domot! Escrow</div>
+<div class="diag-arrow">→</div>
+<div class="diag-pill dp-lock">Locked 🔒</div>
+</div>
+<div class="diag-row" style="margin-left:12px; margin-top:6px;">
+<div class="diag-label" style="font-size:12px; color:var(--t4);">After move-in confirmed by both parties:</div>
+</div>
+<div class="diag-row" style="margin-top:8px;">
+<div class="diag-pill dp-esc">Domot! Escrow</div>
+<div class="diag-arrow">→</div>
+<div class="diag-pill dp-ll">Landlord</div>
+</div>
+</div>
+<div class="why-step">
+<div class="why-num">01</div>
+<div class="why-content">
+<div class="why-step-title">Your money never goes directly to the landlord</div>
+<div class="why-step-desc">When you pay, funds go into a secure Domot! escrow account, secured by OPay OWealth infrastructure — not the landlord's personal or business account. The landlord cannot touch your money until you confirm everything is in order.</div>
+</div>
+</div>
+<div class="why-step">
+<div class="why-num">02</div>
+<div class="why-content">
+<div class="why-step-title">Domot! holds funds as a neutral party</div>
+<div class="why-step-desc">Neither the landlord, agent, nor Domot! staff can move funds unilaterally. Release requires confirmation from both the tenant and landlord through the app.</div>
+</div>
+</div>
+<div class="why-step">
+<div class="why-num">03</div>
+<div class="why-content">
+<div class="why-step-title">You control the release</div>
+<div class="why-step-desc">After you inspect the property on move-in day and confirm everything is as agreed, you tap "Confirm Move-in" in the app. That's when funds are released. Not a second before.</div>
+</div>
+</div>
+<div class="why-step">
+<div class="why-num">04</div>
+<div class="why-content">
+<div class="why-step-title">Disputes are handled inside Domot!</div>
+<div class="why-step-desc">If something isn't right, you can raise a dispute directly in the app before confirming. Funds remain frozen until the issue is resolved — no need for police stations or legal threats.</div>
+</div>
+</div>
+<div class="why-step" style="margin-bottom:0">
+<div class="why-num">05</div>
+<div class="why-content">
+<div class="why-step-title">Your security deposit is also protected</div>
+<div class="why-step-desc">The ₦100,000 deposit is held separately in escrow and automatically refunded within 7 days of tenancy end — unless there's documented damage. Fully transparent. Fully traceable.</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ══════════════════ SUCCESS OVERLAY ══════════════════ -->
+<div class="success-overlay" id="successOverlay">
+<div class="vault-wrap">
+<div class="vault">
+<div class="coin-drop"></div>
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 50 50">
+<path d="M25 46s16-8 16-20V10L25 4 9 10v16c0 12 16 20 16 20z"></path>
+<path d="M18 25l5 5 9-9"></path>
+</svg>
+<div class="vault-ring"></div>
+</div>
+</div>
+<div class="success-title">Funds Secured</div>
+<div class="success-sub">Your payment is being held under Domot! escrow protection. The landlord cannot access funds until you confirm move-in.</div>
+<!-- Status Ring -->
+<div class="status-ring-wrap">
+<svg class="status-ring-svg" viewbox="0 0 110 110">
+<circle class="ring-bg" cx="55" cy="55" r="45"></circle>
+<circle class="ring-fill" cx="55" cy="55" r="45"></circle>
+<text class="ring-label" font-size="20" x="55" y="52">100%</text>
+<text class="ring-sub" x="55" y="66">SECURED</text>
+</svg>
+</div>
+<!-- Receipt -->
+<div class="receipt-card">
+<div class="receipt-heads">
+<span class="receipt-brand">Domot!</span>
+<div class="receipt-secured">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+<span>SECURED</span>
+</div>
+</div>
+<div class="receipt-divider"></div>
+<div class="receipt-rows">
+<div class="rr">
+<div class="rr-icon"><svg fill="none" height="64" viewbox="0 0 64 64" width="64" xmlns="http://www.w3.org/2000/svg">
+<path d="M16 12V52M48 12V52M16 16L48 48M16 24H48M16 40H48" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"></path>
+</svg></div>
+<div>
+<div class="rr-lbl">Amount Secured</div>
+<div class="rr-val">₦625,000</div>
+</div>
+</div>
+<div class="rr">
+<div class="rr-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" width="18" x="3" y="4"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg></div>
+<div>
+<div class="rr-lbl">Secured On</div>
+<div class="rr-val" id="receiptDate">—</div>
+</div>
+</div>
+<div class="rr">
+<div class="rr-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg></div>
+<div>
+<div class="rr-lbl">Transaction ID</div>
+<div class="rr-val txid">DMT-2026-48392</div>
+</div>
+</div>
+<div class="rr">
+<div class="rr-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div>
+<div>
+<div class="rr-lbl">Property</div>
+<div class="rr-val">Shelter Afrique Estate</div>
+</div>
+</div>
+</div>
+<div class="receipt-barcode">
+<div class="bc-lines" id="bcLines"></div>
+<div class="bc-text">DMT-2026-48392</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="success-actions">
+<button class="btn-p" onclick="goToMoveIn()">Continue to Move-in</button>
+<button class="btn-g" onclick="saveReceipt()">Save Receipt</button>
+</div>
+</div>
+
+<script src="payment.js"></script></body>
+</html>

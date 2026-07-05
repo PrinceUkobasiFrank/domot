@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Domot! — Ownership Transfer</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet"/>
+
+<link href="ownership_transfer.css" rel="stylesheet"/></head>
+<body>
+<div class="ambient">
+<div class="ambient-orb ambient-orb-1"></div>
+<div class="ambient-orb ambient-orb-2"></div>
+</div>
+<div class="transfer-container" id="transferContainer">
+<!-- HEADER -->
+<div class="transfer-header">
+<div class="header-top">
+<button class="back-btn" id="backBtn">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+</button>
+<div class="header-title">Ownership Transfer</div>
+</div>
+<div class="header-sub">Track the final stage of your property acquisition.</div>
+</div>
+<!-- HERO STATUS (IN PROGRESS) -->
+<div class="section-spacer animate-in" id="heroProgress" style="margin-top:16px;">
+<div class="section-label">Transfer Status</div>
+<div class="hero-card">
+<div class="hero-label">Transfer In Progress</div>
+<div class="hero-title">Verification Active</div>
+<div class="hero-badge">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+Verification Active
+</div>
+<div class="hero-id">Reference: <span>DOM-OWN-2026-001</span></div>
+</div>
+</div>
+<!-- HERO SUCCESS (hidden initially) -->
+<div class="section-spacer" id="heroSuccess" style="margin-top:16px; display:none;">
+<div class="section-label">Transfer Status</div>
+<div class="hero-success">
+<div class="hero-success-label">Ownership Confirmed</div>
+<div class="hero-success-title">Congratulations</div>
+<div class="hero-success-body">You are now the recorded owner of this property.</div>
+</div>
+</div>
+<!-- PROPERTY SUMMARY -->
+<div class="section-spacer animate-in delay-1">
+<div class="section-label">Property Summary</div>
+<div class="prop-card">
+<img alt="Property" class="prop-img" onerror="this.style.background='linear-gradient(135deg,#161624,#2a2044)'" src="h2.jpg"/>
+<div class="prop-info">
+<div class="prop-type">4 Bedroom Duplex</div>
+<div class="prop-name">Shelter Afrique Estate</div>
+<div class="prop-location">Uyo, Akwa Ibom</div>
+<div class="prop-price">₦65,000,000</div>
+<div class="prop-badges">
+<div class="prop-badge verified"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Ownership Verified</div>
+<div class="prop-badge funded"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><rect height="16" rx="2" ry="2" width="22" x="1" y="4"></rect><line x1="1" x2="23" y1="10" y2="10"></line></svg>Escrow Funded</div>
+<div class="prop-badge active"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>Transfer Active</div>
+</div>
+</div>
+</div>
+</div>
+<!-- OWNERSHIP TIMELINE -->
+<div class="section-spacer animate-in delay-2">
+<div class="section-label">Ownership Journey</div>
+<div class="ownership-timeline">
+<div class="ownership-timeline-title">Transaction Timeline</div>
+<div class="ownership-flow" id="ownershipFlow">
+<div class="own-step">
+<div class="own-dot completed"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="own-label">Offer Accepted</div>
+<div class="own-sub">Seller accepted your offer</div>
+</div>
+<div class="own-step">
+<div class="own-dot completed"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="own-label">Agreement Signed</div>
+<div class="own-sub">Both parties executed the agreement</div>
+</div>
+<div class="own-step">
+<div class="own-dot completed"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="own-label">Escrow Funded</div>
+<div class="own-sub">Deposit secured in protected escrow</div>
+</div>
+<div class="own-step">
+<div class="own-dot active"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></div>
+<div class="own-label">Transfer Verification</div>
+<div class="own-sub">Registry reviewing documentation</div>
+<div class="own-current">Current Stage</div>
+</div>
+<div class="own-step">
+<div class="own-dot pending"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div>
+<div class="own-label pending">Ownership Registration</div>
+<div class="own-sub">Recording new ownership</div>
+</div>
+<div class="own-step">
+<div class="own-dot pending"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
+<div class="own-label pending">Ownership Complete</div>
+<div class="own-sub">Transfer finalized</div>
+</div>
+</div>
+</div>
+</div>
+<!-- TRANSFER PROGRESS -->
+<div class="section-spacer animate-in delay-3">
+<div class="section-label">Transfer Progress</div>
+<div class="progress-card">
+<div class="progress-ring-wrap">
+<svg class="progress-ring-svg" height="140" viewbox="0 0 140 140" width="140">
+<defs><lineargradient id="progressGradient" x1="0%" x2="100%" y1="0%" y2="0%"><stop offset="0%" style="stop-color:#7c5cfa"></stop><stop offset="100%" style="stop-color:#0ec97f"></stop></lineargradient></defs>
+<circle class="progress-ring-bg" cx="70" cy="70" r="60"></circle>
+<circle class="progress-ring-fill" cx="70" cy="70" id="progressRing" r="60"></circle>
+</svg>
+<div class="progress-percent" id="progressPercent">0%</div>
+</div>
+<div class="progress-label">Transfer Progress</div>
+<div class="progress-sub">Documentation and ownership verification are currently being processed.</div>
+</div>
+</div>
+<!-- OWNERSHIP CHECKLIST -->
+<div class="section-spacer animate-in delay-4">
+<div class="section-label">Transfer Checklist</div>
+<div class="checklist-card">
+<div class="checklist-title">Verification Status</div>
+<div class="checklist-item">
+<div class="checklist-icon done"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<span class="checklist-text done">Escrow Funding Confirmed</span>
+<span class="checklist-status done">Done</span>
+</div>
+<div class="checklist-item">
+<div class="checklist-icon done"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<span class="checklist-text done">Seller Verification Confirmed</span>
+<span class="checklist-status done">Done</span>
+</div>
+<div class="checklist-item">
+<div class="checklist-icon done"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<span class="checklist-text done">Title Documents Reviewed</span>
+<span class="checklist-status done">Done</span>
+</div>
+<div class="checklist-item">
+<div class="checklist-icon pending"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+<span class="checklist-text">Transfer Registration Pending</span>
+<span class="checklist-status pending">Pending</span>
+</div>
+<div class="checklist-item">
+<div class="checklist-icon pending"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+<span class="checklist-text">Final Ownership Certificate Pending</span>
+<span class="checklist-status pending">Pending</span>
+</div>
+</div>
+</div>
+<!-- DOCUMENT TRANSFER CENTER -->
+<div class="section-spacer animate-in delay-5">
+<div class="section-label">Transfer Documents</div>
+<div class="doc-grid">
+<div class="doc-item">
+<div class="doc-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+<span class="doc-name">Title Transfer Package</span>
+<div class="doc-status"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Available</div>
+</div>
+<div class="doc-item">
+<div class="doc-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+<span class="doc-name">Ownership Verification Report</span>
+<div class="doc-status"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Verified</div>
+</div>
+<div class="doc-item">
+<div class="doc-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+<span class="doc-name">Escrow Completion Report</span>
+<div class="doc-status"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Complete</div>
+</div>
+<div class="doc-item locked" id="transferCert">
+<div class="doc-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><rect height="11" rx="2" ry="2" width="18" x="3" y="11"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></div>
+<span class="doc-name">Transfer Certificate</span>
+<div class="doc-status locked"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Locked until completion</div>
+</div>
+</div>
+</div>
+<!-- TRANSFER CONFIDENCE -->
+<div class="section-spacer animate-in delay-5">
+<div class="section-label">Transfer Confidence</div>
+<div class="confidence-hero">
+<div class="confidence-hero-label">Confidence Score</div>
+<div class="confidence-score-wrap">
+<span class="confidence-num" id="confidenceNum">0</span>
+<span class="confidence-denom">/ 100</span>
+</div>
+<div class="confidence-status">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+High Confidence
+</div>
+<div class="confidence-breakdown">
+<div class="conf-break-item"><div class="conf-break-label">Documentation</div><div class="conf-break-bar-bg"><div class="conf-break-bar-fill" data-width="98%" style="width:0%"></div></div><div class="conf-break-value">98</div></div>
+<div class="conf-break-item"><div class="conf-break-label">Ownership</div><div class="conf-break-bar-bg"><div class="conf-break-bar-fill" data-width="96%" style="width:0%"></div></div><div class="conf-break-value">96</div></div>
+<div class="conf-break-item"><div class="conf-break-label">Escrow</div><div class="conf-break-bar-bg"><div class="conf-break-bar-fill" data-width="100%" style="width:0%"></div></div><div class="conf-break-value">100</div></div>
+<div class="conf-break-item"><div class="conf-break-label">Verification</div><div class="conf-break-bar-bg"><div class="conf-break-bar-fill" data-width="92%" style="width:0%"></div></div><div class="conf-break-value">92</div></div>
+</div>
+</div>
+</div>
+<!-- ACTIVITY FEED -->
+<div class="section-spacer animate-in delay-6">
+<div class="section-label">Activity Feed</div>
+<div class="activity-card">
+<div class="activity-title">Recent Updates</div>
+<div class="activity-item">
+<div class="activity-dot done"></div>
+<div class="activity-text">Ownership verification completed.<div class="activity-time">2 hours ago</div></div>
+</div>
+<div class="activity-item">
+<div class="activity-dot done"></div>
+<div class="activity-text">Transfer documents reviewed.<div class="activity-time">5 hours ago</div></div>
+</div>
+<div class="activity-item">
+<div class="activity-dot done"></div>
+<div class="activity-text">Registration request submitted.<div class="activity-time">8 hours ago</div></div>
+</div>
+<div class="activity-item">
+<div class="activity-dot"></div>
+<div class="activity-text">Awaiting final registry confirmation.<div class="activity-time">In progress</div></div>
+</div>
+</div>
+</div>
+<!-- EXPECTED COMPLETION -->
+<div class="section-spacer animate-in delay-6">
+<div class="section-label">Expected Completion</div>
+<div class="completion-card">
+<div class="completion-label">Estimated Time Remaining</div>
+<div class="completion-days" id="completionDays">3</div>
+<div class="completion-sub">Days Remaining</div>
+<div class="completion-ring">
+<svg height="80" viewbox="0 0 80 80" width="80">
+<circle class="completion-ring-bg" cx="40" cy="40" r="36"></circle>
+<circle class="completion-ring-fill" cx="40" cy="40" r="36"></circle>
+</svg>
+</div>
+</div>
+</div>
+<!-- DOMOT! INSIGHT -->
+<div class="section-spacer animate-in delay-7">
+<div class="section-label">Domot! Assessment</div>
+<div class="insight-card">
+<div class="insight-label">Transfer Intelligence</div>
+<div class="insight-title">Transfer Requirements Satisfied</div>
+<div class="insight-body">Transfer requirements have been satisfied. Final registration steps are currently underway. All documentation has been verified, escrow funding is secured, and the registry has received the transfer application. The remaining processing time reflects standard government registry procedures.</div>
+</div>
+</div>
+<!-- DIGITAL OWNERSHIP CERTIFICATE (hidden initially) -->
+<div class="section-spacer" id="certSection" style="display:none;">
+<div class="section-label">Ownership Certificate</div>
+<div class="certificate-card cert-slide">
+<div class="cert-icon-wrap">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+</div>
+<div class="cert-label">Digital Ownership Certificate</div>
+<div class="cert-title">Verified Owner</div>
+<div class="cert-owner">
+<div class="cert-owner-label">Registered Owner</div>
+<div class="cert-owner-name">Prince Frank</div>
+</div>
+<div class="cert-property">4 Bedroom Duplex<br/>Shelter Afrique Estate, Uyo<br/>Akwa Ibom State<br/>Certificate of Occupancy Verified</div>
+</div>
+</div>
+<!-- PORTFOLIO PREVIEW (hidden initially) -->
+<div class="section-spacer" id="portfolioSection" style="display:none;">
+<div class="section-label">Your Portfolio</div>
+<div class="portfolio-card">
+<div class="portfolio-label">Property Added To Portfolio</div>
+<div class="portfolio-title">Ownership Hub</div>
+<div class="portfolio-preview">
+<img alt="Property" class="portfolio-img" onerror="this.style.background='linear-gradient(135deg,#161624,#2a2044)'" src="h2.jpg"/>
+<div class="portfolio-info">
+<div class="portfolio-type">4 Bedroom Duplex</div>
+<div class="portfolio-name">Shelter Afrique Estate</div>
+<div class="portfolio-location">Uyo, Akwa Ibom</div>
+</div>
+<div class="portfolio-badge"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Owned</div>
+</div>
+</div>
+</div>
+<!-- COMPLETION TIMELINE (hidden initially) -->
+<div class="section-spacer" id="completeTimelineSection" style="display:none;">
+<div class="section-label">Completion Timeline</div>
+<div class="complete-timeline">
+<div class="complete-title">All Stages Complete</div>
+<div class="complete-flow">
+<div class="comp-step">
+<div class="comp-dot"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="comp-label">Offer Accepted</div>
+<div class="comp-sub">Seller accepted your offer</div>
+</div>
+<div class="comp-step">
+<div class="comp-dot"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="comp-label">Agreement Signed</div>
+<div class="comp-sub">Both parties executed the agreement</div>
+</div>
+<div class="comp-step">
+<div class="comp-dot"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="comp-label">Escrow Funded</div>
+<div class="comp-sub">Deposit secured in protected escrow</div>
+</div>
+<div class="comp-step">
+<div class="comp-dot"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="comp-label">Transfer Verified</div>
+<div class="comp-sub">Registry confirmed documentation</div>
+</div>
+<div class="comp-step">
+<div class="comp-dot"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="comp-label">Ownership Complete</div>
+<div class="comp-sub">You are now the recorded owner</div>
+</div>
+</div>
+</div>
+</div>
+<div style="height:8px;"></div>
+</div>
+<!-- STICKY ACTION BAR -->
+<div class="action-bar" id="actionBar">
+<div class="action-bar-inner">
+<button class="secondary-btn" id="secondaryBtn">Download Documents</button>
+<button class="primary-btn" id="primaryBtn">Track Progress</button>
+</div>
+</div>
+
+<script src="ownership_transfer.js"></script></body>
+</html>
