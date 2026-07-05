@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Domot! — Landlord Dashboard</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet"/>
+
+<link href="landlord_dashboard.css" rel="stylesheet"/></head>
+<body>
+<div class="ambient">
+<div class="ambient-orb ambient-orb-1"></div>
+<div class="ambient-orb ambient-orb-2"></div>
+</div>
+<div class="dashboard-container" id="dashboardContainer">
+<!-- ===== PROPERTIES TAB ===== -->
+<div class="tab-content active" id="tab-properties">
+<!-- HEADER -->
+<div class="dashboard-header">
+<div class="greeting-time" id="greetingTime">Good Evening</div>
+<div class="greeting-name">Frank</div>
+<div class="greeting-sub">Manage your portfolio</div>
+</div>
+<!-- PORTFOLIO HERO -->
+<div class="section-spacer animate-in" style="margin-top:16px;">
+<div class="section-label">Portfolio Overview</div>
+<div class="portfolio-hero">
+<div class="hero-label">Portfolio Value</div>
+<div class="hero-value" id="portfolioValue">₦0</div>
+<div class="hero-meta">
+<div class="hero-meta-item"><div class="hero-meta-dot"></div><span>4</span> Active Properties</div>
+<div class="hero-meta-item"><span>92%</span> Occupancy</div>
+</div>
+</div>
+</div>
+<!-- QUICK KPIs -->
+<div class="section-spacer animate-in delay-1">
+<div class="section-label">Key Metrics</div>
+<div class="kpi-scroll">
+<div class="kpi-card">
+<div class="kpi-label">Monthly Revenue</div>
+<div class="kpi-value green" id="revenueValue">₦0</div>
+<div class="kpi-sub">This month</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Pending Applications</div>
+<div class="kpi-value blue" id="applicationsValue">0</div>
+<div class="kpi-sub">Awaiting review</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Maintenance</div>
+<div class="kpi-value warm" id="maintenanceValue">0</div>
+<div class="kpi-sub">Open requests</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Trust Score</div>
+<div class="kpi-value green" id="trustValue">0</div>
+<div class="kpi-sub">Out of 100</div>
+</div>
+</div>
+</div>
+<!-- MY PROPERTIES -->
+<div class="section-spacer animate-in delay-2">
+<div class="section-label">My Properties</div>
+<div class="prop-card">
+<img alt="Property" class="prop-img" onerror="this.style.background='linear-gradient(135deg,#161624,#2a2044)'" src="h2.jpg"/>
+<div class="prop-info">
+<div class="prop-name">Sunrise Apartments</div>
+<div class="prop-location">Shelter Afrique, Uyo</div>
+<div class="prop-meta">
+<div class="prop-meta-item units"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>12 Units</div>
+<div class="prop-meta-item occupied"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>10 Occupied</div>
+<div class="prop-meta-item available"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="8" y2="16"></line><line x1="8" x2="16" y1="12" y2="12"></line></svg>2 Available</div>
+<div class="prop-meta-item rent">₦650K/year</div>
+</div>
+<div class="prop-badge"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>Verified Property</div>
+</div>
+<div class="prop-cta"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+</div>
+<div class="prop-card">
+<img alt="Property" class="prop-img" onerror="this.style.background='linear-gradient(135deg,#161624,#2a2044)'" src="h3.jpg"/>
+<div class="prop-info">
+<div class="prop-name">Ibom Heights</div>
+<div class="prop-location">Ewet Housing, Uyo</div>
+<div class="prop-meta">
+<div class="prop-meta-item units"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>8 Units</div>
+<div class="prop-meta-item occupied"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>8 Occupied</div>
+<div class="prop-meta-item available"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="8" y2="16"></line><line x1="8" x2="16" y1="12" y2="12"></line></svg>0 Available</div>
+<div class="prop-meta-item rent">₦850K/year</div>
+</div>
+<div class="prop-badge"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>Verified Property</div>
+</div>
+<div class="prop-cta"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+</div>
+</div>
+<!-- PROPERTY HEALTH -->
+<div class="section-spacer animate-in delay-3">
+<div class="section-label">Property Health</div>
+<div class="health-grid">
+<div class="health-card">
+<div class="health-ring-wrap">
+<svg class="health-ring-svg" viewbox="0 0 64 64"><circle class="health-ring-bg" cx="32" cy="32" r="26"></circle><circle class="health-ring-fill" cx="32" cy="32" data-target="92" r="26" stroke-dasharray="163.36" stroke-dashoffset="163.36"></circle></svg>
+<div class="health-ring-text">92%</div>
+</div>
+<div class="health-label">Occupancy</div>
+</div>
+<div class="health-card">
+<div class="health-ring-wrap">
+<svg class="health-ring-svg" viewbox="0 0 64 64"><circle class="health-ring-bg" cx="32" cy="32" r="26"></circle><circle class="health-ring-fill" cx="32" cy="32" data-target="98" r="26" stroke-dasharray="163.36" stroke-dashoffset="163.36"></circle></svg>
+<div class="health-ring-text">98%</div>
+</div>
+<div class="health-label">Rent Collection</div>
+</div>
+<div class="health-card">
+<div class="health-ring-wrap">
+<svg class="health-ring-svg" viewbox="0 0 64 64"><circle class="health-ring-bg" cx="32" cy="32" r="26"></circle><circle class="health-ring-fill green" cx="32" cy="32" data-target="100" r="26" stroke-dasharray="163.36" stroke-dashoffset="163.36"></circle></svg>
+<div class="health-ring-text">A+</div>
+</div>
+<div class="health-label">Maintenance</div>
+</div>
+<div class="health-card">
+<div class="health-ring-wrap">
+<svg class="health-ring-svg" viewbox="0 0 64 64"><circle class="health-ring-bg" cx="32" cy="32" r="26"></circle><circle class="health-ring-fill violet" cx="32" cy="32" data-target="96" r="26" stroke-dasharray="163.36" stroke-dashoffset="163.36"></circle></svg>
+<div class="health-ring-text">4.8</div>
+</div>
+<div class="health-label">Satisfaction</div>
+</div>
+</div>
+</div>
+<!-- NEW APPLICATIONS PREVIEW -->
+<div class="section-spacer animate-in delay-4">
+<div class="section-label">New Applications</div>
+<div class="app-preview-card">
+<div class="app-preview-title">Latest Applicants</div>
+<div class="app-item">
+<div class="app-avatar">MJ</div>
+<div class="app-info">
+<div class="app-name">Michael Johnson</div>
+<div class="app-prop">2 Bedroom Apartment — Sunrise</div>
+</div>
+<div class="app-status complete"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>Verified</div>
+</div>
+<div class="app-item">
+<div class="app-avatar" style="background:linear-gradient(135deg,rgba(240,165,0,0.3),rgba(240,68,68,0.2));">SU</div>
+<div class="app-info">
+<div class="app-name">Sarah Udo</div>
+<div class="app-prop">Self Contain — Ibom Heights</div>
+</div>
+<div class="app-status review"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>Review</div>
+</div>
+<button class="app-cta" id="viewAllAppsBtn">View All Applications</button>
+</div>
+</div>
+<!-- MAINTENANCE PREVIEW -->
+<div class="section-spacer animate-in delay-5">
+<div class="section-label">Maintenance</div>
+<div class="maint-preview-card">
+<div class="maint-preview-title">Open Requests</div>
+<div class="maint-item">
+<div class="maint-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg></div>
+<div class="maint-info">
+<div class="maint-title">Leaking Tap</div>
+<div class="maint-prop">Unit 4B — Sunrise Apartments</div>
+</div>
+<div class="maint-status">Open</div>
+</div>
+<div class="maint-item">
+<div class="maint-icon warn"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg></div>
+<div class="maint-info">
+<div class="maint-title">Electrical Fault</div>
+<div class="maint-prop">Unit 2A — Sunrise Apartments</div>
+</div>
+<div class="maint-status">In Progress</div>
+</div>
+<div class="maint-item">
+<div class="maint-icon ok"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><rect height="15" rx="2" ry="2" width="20" x="2" y="7"></rect><polyline points="17 2 12 7 7 2"></polyline></svg></div>
+<div class="maint-info">
+<div class="maint-title">Generator Service</div>
+<div class="maint-prop">Common — Ibom Heights</div>
+</div>
+<div class="maint-status">Scheduled</div>
+</div>
+<button class="maint-cta" id="openMaintHubBtn">Open Maintenance Hub</button>
+</div>
+</div>
+<!-- RECENT ACTIVITY -->
+<div class="section-spacer animate-in delay-6">
+<div class="section-label">Recent Activity</div>
+<div class="activity-card">
+<div class="activity-title">Activity Feed</div>
+<div class="activity-item">
+<div class="activity-dot green"></div>
+<div>
+<div class="activity-text">Rent payment received from Unit 3B.</div>
+<div class="activity-time">Today — 09:15 WAT</div>
+</div>
+</div>
+<div class="activity-item">
+<div class="activity-dot"></div>
+<div>
+<div class="activity-text">Application submitted for Unit 2C.</div>
+<div class="activity-time">Yesterday — 16:42 WAT</div>
+</div>
+</div>
+<div class="activity-item">
+<div class="activity-dot warm"></div>
+<div>
+<div class="activity-text">Maintenance ticket resolved — Leaking Tap.</div>
+<div class="activity-time">Yesterday — 11:20 WAT</div>
+</div>
+</div>
+<div class="activity-item">
+<div class="activity-dot green"></div>
+<div>
+<div class="activity-text">Property verified — Ibom Heights.</div>
+<div class="activity-time">3 days ago</div>
+</div>
+</div>
+</div>
+</div>
+<div style="height:8px;"></div>
+</div>
+<!-- ===== APPLICATIONS TAB ===== -->
+<div class="tab-content" id="tab-applications">
+<div class="dashboard-header">
+<div class="greeting-time">Applications</div>
+<div class="greeting-name" style="font-size:24px;">Review &amp; Manage</div>
+<div class="greeting-sub">Incoming tenant and buyer requests</div>
+</div>
+<div class="section-spacer animate-in" style="margin-top:16px;">
+<div class="app-filter-scroll">
+<button class="app-filter active" data-filter="all">All</button>
+<button class="app-filter" data-filter="new">New</button>
+<button class="app-filter" data-filter="review">Under Review</button>
+<button class="app-filter" data-filter="approved">Approved</button>
+<button class="app-filter" data-filter="rejected">Rejected</button>
+</div>
+</div>
+<div class="section-spacer animate-in delay-1">
+<div class="section-label">New Applications</div>
+<div class="app-card">
+<div class="app-card-avatar" style="background:linear-gradient(135deg,rgba(124,92,250,0.3),rgba(59,130,246,0.2));">MJ</div>
+<div class="app-card-info">
+<div class="app-card-name">Michael Johnson</div>
+<div class="app-card-prop">2 Bedroom Apartment — Sunrise</div>
+<div class="app-card-score">Score: <span>87/100</span></div>
+</div>
+<div class="app-card-status new">New</div>
+</div>
+<div class="app-card">
+<div class="app-card-avatar" style="background:linear-gradient(135deg,rgba(14,201,127,0.3),rgba(124,92,250,0.2));">AO</div>
+<div class="app-card-info">
+<div class="app-card-name">Amaka Obi</div>
+<div class="app-card-prop">Self Contain — Ibom Heights</div>
+<div class="app-card-score">Score: <span>92/100</span></div>
+</div>
+<div class="app-card-status new">New</div>
+</div>
+</div>
+<div class="section-spacer animate-in delay-2">
+<div class="section-label">Under Review</div>
+<div class="app-card">
+<div class="app-card-avatar" style="background:linear-gradient(135deg,rgba(240,165,0,0.3),rgba(240,68,68,0.2));">SU</div>
+<div class="app-card-info">
+<div class="app-card-name">Sarah Udo</div>
+<div class="app-card-prop">Self Contain — Ibom Heights</div>
+<div class="app-card-score">Score: <span>74/100</span></div>
+</div>
+<div class="app-card-status review">Review</div>
+</div>
+</div>
+<div class="section-spacer animate-in delay-3">
+<div class="section-label">Approved</div>
+<div class="app-card">
+<div class="app-card-avatar" style="background:linear-gradient(135deg,rgba(14,201,127,0.3),rgba(59,130,246,0.2));">EO</div>
+<div class="app-card-info">
+<div class="app-card-name">Emmanuel Okon</div>
+<div class="app-card-prop">3 Bedroom Flat — Sunrise</div>
+<div class="app-card-score">Score: <span>95/100</span></div>
+</div>
+<div class="app-card-status approved">Approved</div>
+</div>
+</div>
+<div class="section-spacer animate-in delay-4">
+<div class="section-label">Rejected</div>
+<div class="app-card">
+<div class="app-card-avatar" style="background:linear-gradient(135deg,rgba(240,68,68,0.3),rgba(240,165,0,0.2));">JA</div>
+<div class="app-card-info">
+<div class="app-card-name">John Akpan</div>
+<div class="app-card-prop">2 Bedroom — Sunrise</div>
+<div class="app-card-score">Score: <span>52/100</span></div>
+</div>
+<div class="app-card-status rejected">Rejected</div>
+</div>
+</div>
+<div style="height:8px;"></div>
+</div>
+<!-- ===== WALLET TAB ===== -->
+<div class="tab-content" id="tab-wallet">
+<div class="dashboard-header">
+<div class="greeting-time">Wallet</div>
+<div class="greeting-name" style="font-size:24px;">Income &amp; Payouts</div>
+<div class="greeting-sub">Track your property revenue</div>
+</div>
+<div class="section-spacer animate-in" style="margin-top:16px;">
+<div class="section-label">Available Balance</div>
+<div class="wallet-hero">
+<div class="wallet-label">Total Available</div>
+<div class="wallet-balance" id="walletBalance">₦0</div>
+<div class="wallet-sub">Ready for withdrawal</div>
+</div>
+</div>
+<div class="section-spacer animate-in delay-1">
+<div class="section-label">This Month</div>
+<div class="wallet-grid">
+<div class="wallet-stat">
+<div class="wallet-stat-value green" id="monthRevenue">₦0</div>
+<div class="wallet-stat-label">Revenue</div>
+</div>
+<div class="wallet-stat">
+<div class="wallet-stat-value red" id="monthWithdrawals">₦0</div>
+<div class="wallet-stat-label">Withdrawals</div>
+</div>
+<div class="wallet-stat">
+<div class="wallet-stat-value warm" id="monthPending">₦0</div>
+<div class="wallet-stat-label">Pending</div>
+</div>
+</div>
+</div>
+<div class="section-spacer animate-in delay-2">
+<div class="section-label">Payment Method</div>
+<div class="opay-card">
+<div class="opay-icon"><img alt="OPay" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#1a73e8,#4285f4)';this.parentElement.innerHTML='&lt;span style=font-size:10px;font-weight:700;color:#fff;&gt;OPay&lt;/span&gt;'" src="opay.jpg" style="width:100%;height:100%;object-fit:cover;"/></div>
+<div class="opay-info">
+<div class="opay-name">OPay</div>
+<div class="opay-status">Connected Account</div>
+</div>
+<button class="opay-action">Manage</button>
+</div>
+</div>
+<div class="section-spacer animate-in delay-3">
+<div class="section-label">Recent Transactions</div>
+<div class="txn-card">
+<div class="txn-title">Transaction History</div>
+<div class="txn-item">
+<div class="txn-icon in"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><line x1="12" x2="12" y1="5" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg></div>
+<div class="txn-info">
+<div class="txn-desc">Rent Payment — Unit 3B</div>
+<div class="txn-date">Today — 09:15 WAT</div>
+</div>
+<div class="txn-amount in">+₦650K</div>
+</div>
+<div class="txn-item">
+<div class="txn-icon in"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><line x1="12" x2="12" y1="5" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg></div>
+<div class="txn-info">
+<div class="txn-desc">Rent Payment — Unit 1A</div>
+<div class="txn-date">Yesterday — 14:30 WAT</div>
+</div>
+<div class="txn-amount in">+₦850K</div>
+</div>
+<div class="txn-item">
+<div class="txn-icon out"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><line x1="12" x2="12" y1="19" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg></div>
+<div class="txn-info">
+<div class="txn-desc">Withdrawal to OPay</div>
+<div class="txn-date">3 days ago</div>
+</div>
+<div class="txn-amount out">-₦1.2M</div>
+</div>
+<div class="txn-item">
+<div class="txn-icon pending"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+<div class="txn-info">
+<div class="txn-desc">Pending Transfer — Unit 5C</div>
+<div class="txn-date">Processing</div>
+</div>
+<div class="txn-amount pending">₦650K</div>
+</div>
+</div>
+</div>
+<div style="height:8px;"></div>
+</div>
+<!-- ===== HUB TAB ===== -->
+<div class="tab-content" id="tab-hub">
+<div class="dashboard-header">
+<div class="greeting-time">Hub</div>
+<div class="greeting-name" style="font-size:24px;">Control Center</div>
+<div class="greeting-sub">Manage your account and operations</div>
+</div>
+<div class="section-spacer animate-in" style="margin-top:16px;">
+<div class="section-label">Account</div>
+<div class="hub-grid">
+<div class="hub-card">
+<div class="hub-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div>
+<div class="hub-label">Profile &amp; Verification</div>
+</div>
+<div class="hub-card">
+<div class="hub-icon green"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
+<div class="hub-label">Property Verification</div>
+</div>
+</div>
+</div>
+<div class="section-spacer animate-in delay-1">
+<div class="section-label">Operations</div>
+<div class="hub-grid">
+<div class="hub-card">
+<div class="hub-icon warm"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg></div>
+<div class="hub-label">Maintenance Center</div>
+</div>
+<div class="hub-card">
+<div class="hub-icon blue"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+<div class="hub-label">Legal Documents</div>
+</div>
+</div>
+</div>
+<div class="section-spacer animate-in delay-2">
+<div class="section-label">Preferences</div>
+<div class="hub-grid">
+<div class="hub-card">
+<div class="hub-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></div>
+<div class="hub-label">Settings</div>
+</div>
+<div class="hub-card">
+<div class="hub-icon red"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></div>
+<div class="hub-label">Support</div>
+</div>
+</div>
+</div>
+<div class="section-spacer animate-in delay-3">
+<div class="section-label">Appearance</div>
+<div class="appearance-card">
+<div class="appearance-title">Theme</div>
+<div class="appearance-options">
+<button class="appearance-option selected" data-theme="dark">
+<div class="appearance-option-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></div>
+<div class="appearance-option-label">Dark Mode</div>
+</button>
+<button class="appearance-option" data-theme="light">
+<div class="appearance-option-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line><line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line><line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line></svg></div>
+<div class="appearance-option-label">Light Mode</div>
+</button>
+</div>
+</div>
+</div>
+<div style="height:8px;"></div>
+</div>
+<!-- ===== FLOATING ACTION BUTTON ===== -->
+<button class="fab" id="fabBtn">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><line x1="12" x2="12" y1="5" y2="19"></line><line x1="5" x2="19" y1="12" y2="12"></line></svg>
+</button>
+<div class="fab-overlay" id="fabOverlay"></div>
+<div class="fab-menu" id="fabMenu">
+<button class="fab-item" id="addPropertyBtn">
+<div class="fab-item-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div>
+Add Property
+</button>
+</div>
+<!-- ===== BOTTOM NAVIGATION ===== -->
+<div class="bottom-nav">
+<div class="bottom-nav-inner">
+<button class="nav-item active" data-tab="tab-properties">
+<svg class="nav-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+<span class="nav-label">Properties</span>
+</button>
+<button class="nav-item" data-tab="tab-applications">
+<svg class="nav-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+<span class="nav-label">Applications</span>
+</button>
+<button class="nav-item" data-tab="tab-wallet">
+<svg class="nav-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="16" rx="2" ry="2" width="22" x="1" y="4"></rect><line x1="1" x2="23" y1="10" y2="10"></line></svg>
+<span class="nav-label">Wallet</span>
+</button>
+<button class="nav-item" data-tab="tab-hub">
+<svg class="nav-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+<span class="nav-label">Hub</span>
+</button>
+</div>
+</div>
+
+</div><script src="landlord_dashboard.js"></script></body>
+</html>

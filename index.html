@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Domot!</title>
+
+<link href="index.css" rel="stylesheet"/></head>
+<body>
+<!-- ==================== SPLASH SCREEN ==================== -->
+<div class="splash-screen" id="splash">
+<div class="splash-logo-wrap">
+<img alt="Logo" class="splash-logo" id="splashLogo" src="logo.svg"/>
+</div>
+<div class="splash-footer" id="splashFooter">A PR3NC2 Product</div>
+</div>
+<!-- ==================== BIOMETRIC PROMPT ==================== -->
+<div class="bio-prompt" id="bioPrompt">
+<div class="bio-card">
+<div class="bio-icon">🔐</div>
+<h3>Quick Sign In</h3>
+<p>Use Face ID to continue</p>
+<button class="bio-btn" id="bioYes">Use Face ID</button>
+<button class="bio-btn secondary" id="bioNo">Use Password</button>
+</div>
+</div>
+<!-- ==================== MAIN APP ==================== -->
+<div class="app" id="app">
+<!-- Background with PARALLAX -->
+<div class="bg-layer" id="bgLayer">
+<img alt="Background" src="bg.jpg"/>
+</div>
+<!-- Ambient particles -->
+<div class="ambient" id="ambient"></div>
+<!-- Bottom glass panel (frost only here) -->
+<div class="glass-panel">
+<div class="auth-section">
+<div class="welcome">
+<h1>Welcome</h1>
+<p>Get started with your journey</p>
+</div>
+<button class="btn-glass" data-provider="google" id="btnGoogle">
+<img alt="" src="google-icon.svg"/>
+<span class="btn-text">Continue with Google</span>
+<span class="btn-skeleton"></span>
+</button>
+<button class="btn-glass" data-provider="apple" id="btnApple">
+<img alt="" src="apple-icon.svg"/>
+<span class="btn-text">Continue with Apple</span>
+<span class="btn-skeleton"></span>
+</button>
+<div class="login-prompt">
+                    Already have an account? <a href="#" id="loginLink">Log in</a>
+</div>
+</div>
+</div>
+</div>
+
+<script src="index.js"></script></body>
+</html>

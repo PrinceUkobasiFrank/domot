@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Domot! — Agreement Center</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet"/>
+
+<link href="landlord_agreement.css" rel="stylesheet"/></head>
+<body>
+<div class="page-container" id="pageContainer">
+<!-- HEADER -->
+<div class="page-header">
+<div class="header-back">
+<button class="back-btn" onclick="goBack()">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+</button>
+<div class="header-badge">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line></svg>
+        AGR-2026-001
+      </div>
+</div>
+<div class="header-title">Agreement Center</div>
+<div class="header-sub">Create and manage tenancy agreements securely.</div>
+</div>
+<!-- HERO STATUS CARD -->
+<div class="sec animate-in delay-1">
+<div class="hero-status-card">
+<div class="hero-glow"></div>
+<div class="hero-glow2"></div>
+<div class="hero-ref">REF · AGR-2026-001</div>
+<div class="hero-title">Agreement Ready</div>
+<div class="hero-awaiting">
+<span class="hero-awaiting-dot"></span>
+        Awaiting Signatures
+      </div>
+<div class="hero-meta">
+<div class="hero-meta-item">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+          Created 5 Jun 2026
+        </div>
+<div class="hero-meta-item">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          Expires in 14 days
+        </div>
+</div>
+</div>
+</div>
+<!-- PARTICIPANTS -->
+<div class="sec animate-in delay-2">
+<div class="section-label">Agreement Parties</div>
+<div class="participants-card">
+<div class="participant">
+<div class="participant-avatar landlord">PF</div>
+<div class="participant-name">Prince Frank</div>
+<div class="participant-role">Property Owner</div>
+</div>
+<div class="connector">
+<div class="connector-line"></div>
+<div class="verified-badge">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          Verified Match
+        </div>
+<div class="connector-line"></div>
+</div>
+<div class="participant">
+<div class="participant-avatar tenant">MJ</div>
+<div class="participant-name">Michael Johnson</div>
+<div class="participant-role">Approved Applicant</div>
+</div>
+</div>
+</div>
+<!-- PROPERTY SUMMARY -->
+<div class="sec animate-in delay-3">
+<div class="section-label">Property</div>
+<div class="property-card">
+<div class="property-img-wrap">
+<svg class="property-svg" fill="none" stroke="rgba(255,255,255,0.4)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 64 64">
+<path d="M8 32 L32 10 L56 32"></path>
+<rect height="22" rx="2" width="40" x="12" y="32"></rect>
+<rect height="10" rx="1" width="10" x="24" y="38"></rect>
+<rect height="10" rx="1" width="10" x="38" y="38"></rect>
+<path d="M12 54 L52 54"></path>
+</svg>
+</div>
+<div class="property-info">
+<div class="property-name">2 Bedroom Apartment</div>
+<div class="property-loc">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          Shelter Afrique, Uyo
+        </div>
+<div class="property-stats">
+<div class="prop-stat">
+<div class="prop-stat-val green">₦650k</div>
+<div class="prop-stat-lbl">Annual Rent</div>
+</div>
+<div class="prop-stat">
+<div class="prop-stat-val violet">1 Year</div>
+<div class="prop-stat-lbl">Lease Duration</div>
+</div>
+<div class="prop-stat">
+<div class="prop-stat-val">15 Aug</div>
+<div class="prop-stat-lbl">Move-In 2026</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- AGREEMENT OVERVIEW -->
+<div class="sec animate-in delay-3">
+<div class="section-label">Agreement Overview</div>
+<div class="overview-card">
+<div class="overview-row">
+<div class="overview-key">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" viewbox="0 0 64 64"><path d="M16 12V52M48 12V52M16 16L48 48M16 24H48M16 40H48"></path></svg>
+          Rent Amount
+        </div>
+<div class="overview-val green">₦650,000 / year</div>
+</div>
+<div class="overview-row">
+<div class="overview-key">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" viewbox="0 0 64 64"><path d="M16 12V52M48 12V52M16 16L48 48M16 24H48M16 40H48"></path></svg>
+          Security Deposit
+        </div>
+<div class="overview-val violet">₦65,000</div>
+</div>
+<div class="overview-row">
+<div class="overview-key">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          Lease Period
+        </div>
+<div class="overview-val">15 Aug 2026 – 14 Aug 2027</div>
+</div>
+<div class="overview-row">
+<div class="overview-key">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+          Maintenance
+        </div>
+<div class="overview-val">Tenant: Minor repairs</div>
+</div>
+<div class="overview-row">
+<div class="overview-key">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" x2="6" y1="1" y2="4"></line><line x1="10" x2="10" y1="1" y2="4"></line><line x1="14" x2="14" y1="1" y2="4"></line></svg>
+          Notice Requirement
+        </div>
+<div class="overview-val">30 days written notice</div>
+</div>
+</div>
+</div>
+<!-- AGREEMENT DOCUMENT -->
+<div class="sec animate-in delay-4">
+<div class="section-label">Agreement Document</div>
+<div class="agree-section" onclick="toggleSection(this)">
+<div class="agree-sec-header">
+<div class="agree-sec-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+</div>
+<div class="agree-sec-label">Lease Terms</div>
+<div class="agree-sec-arrow">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+</div>
+<div class="agree-sec-body">
+<div class="agree-sec-content">
+<p>This tenancy agreement commences on 15 August 2026 and terminates on 14 August 2027, constituting a fixed-term lease of one (1) year. The lease may be renewed by mutual written agreement no fewer than 30 days prior to expiration.</p>
+<ul>
+<li>Fixed-term: 12 months</li>
+<li>Auto-renewal requires written confirmation</li>
+<li>Holdover tenancy charged at 125% of monthly rate</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="agree-section" onclick="toggleSection(this)">
+<div class="agree-sec-header">
+<div class="agree-sec-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+</div>
+<div class="agree-sec-label">Property Rules</div>
+<div class="agree-sec-arrow">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+</div>
+<div class="agree-sec-body">
+<div class="agree-sec-content">
+<p>The tenant shall keep the property in a clean and habitable condition at all times, and must not make structural alterations without the landlord's prior written consent.</p>
+<ul>
+<li>No unauthorized subletting</li>
+<li>Pets by written agreement only</li>
+<li>Noise curfew: 10 PM – 7 AM</li>
+<li>Outdoor spaces kept tidy at all times</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="agree-section" onclick="toggleSection(this)">
+<div class="agree-sec-header">
+<div class="agree-sec-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+</div>
+<div class="agree-sec-label">Maintenance Responsibilities</div>
+<div class="agree-sec-arrow">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+</div>
+<div class="agree-sec-body">
+<div class="agree-sec-content">
+<p>The landlord is responsible for structural maintenance and major repairs. The tenant is responsible for minor day-to-day maintenance and keeping fixtures in working order.</p>
+<ul>
+<li>Landlord: plumbing, roofing, structural integrity</li>
+<li>Tenant: light fixtures, door handles, minor leaks</li>
+<li>Tenant reports damage within 48 hours of discovery</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="agree-section" onclick="toggleSection(this)">
+<div class="agree-sec-header">
+<div class="agree-sec-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" viewbox="0 0 64 64"><path d="M16 12V52M48 12V52M16 16L48 48M16 24H48M16 40H48"></path></svg>
+</div>
+<div class="agree-sec-label">Payment Terms</div>
+<div class="agree-sec-arrow">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+</div>
+<div class="agree-sec-body">
+<div class="agree-sec-content">
+<p>Annual rent of ₦650,000 is payable in advance. A security deposit of ₦65,000 is due upon signing. Late payment attracts a 5% penalty after a 7-day grace period.</p>
+<ul>
+<li>Rent due: 15th of each applicable month (if split)</li>
+<li>Accepted payment via Domot! platform</li>
+<li>Receipts issued within 24 hours</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="agree-section" onclick="toggleSection(this)">
+<div class="agree-sec-header">
+<div class="agree-sec-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+</div>
+<div class="agree-sec-label">Termination Conditions</div>
+<div class="agree-sec-arrow">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+</div>
+<div class="agree-sec-body">
+<div class="agree-sec-content">
+<p>Either party may terminate this agreement with 30 days' written notice. Early termination by the tenant forfeits the security deposit. The landlord may terminate immediately for material breach.</p>
+<ul>
+<li>30 days notice required from either party</li>
+<li>Property returned in original condition</li>
+<li>Deposit refunded within 14 days of key handover</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- DOCUMENT STATUS -->
+<div class="sec animate-in delay-4">
+<div class="section-label">Document Status</div>
+<div class="doc-timeline">
+<div class="doc-tl-item done">
+<div class="doc-tl-dot done">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+</div>
+<div class="doc-tl-body">
+<div class="doc-tl-title done">Draft Created</div>
+<div class="doc-tl-sub">5 Jun 2026 · Auto-generated</div>
+</div>
+</div>
+<div class="doc-tl-item done">
+<div class="doc-tl-dot done">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+</div>
+<div class="doc-tl-body">
+<div class="doc-tl-title done">Landlord Reviewed</div>
+<div class="doc-tl-sub">5 Jun 2026 · Prince Frank</div>
+</div>
+</div>
+<div class="doc-tl-item active">
+<div class="doc-tl-dot active">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+</div>
+<div class="doc-tl-body">
+<div class="doc-tl-title active">Tenant Review</div>
+<div class="doc-tl-sub">In progress · Sent to Michael Johnson</div>
+</div>
+</div>
+<div class="doc-tl-item pending">
+<div class="doc-tl-dot pending">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M17 6.1H3"></path><path d="M21 12.1H3"></path><path d="M15.1 18H3"></path></svg>
+</div>
+<div class="doc-tl-body">
+<div class="doc-tl-title pending">Digital Signatures</div>
+<div class="doc-tl-sub">Pending · Both parties</div>
+</div>
+</div>
+<div class="doc-tl-item pending">
+<div class="doc-tl-dot pending">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path></svg>
+</div>
+<div class="doc-tl-body">
+<div class="doc-tl-title pending">Agreement Active</div>
+<div class="doc-tl-sub">Awaiting completion</div>
+</div>
+</div>
+</div>
+</div>
+<!-- AGREEMENT HEALTH -->
+<div class="sec animate-in delay-5">
+<div class="section-label">Agreement Readiness</div>
+<div class="health-card">
+<div class="health-label">Readiness Score</div>
+<div style="margin-bottom:4px;">
+<span class="health-num" id="healthDisplay">0</span><span class="health-denom">/100</span>
+</div>
+<div class="health-tag">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        Almost Complete
+      </div>
+<div class="health-factors">
+<div class="health-factor">
+<div class="health-factor-dot green"></div>
+<div class="health-factor-label">Property Details</div>
+<div class="health-factor-tick green"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+</div>
+<div class="health-factor">
+<div class="health-factor-dot green"></div>
+<div class="health-factor-label">Tenant Approved</div>
+<div class="health-factor-tick green"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+</div>
+<div class="health-factor">
+<div class="health-factor-dot green"></div>
+<div class="health-factor-label">Terms Defined</div>
+<div class="health-factor-tick green"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+</div>
+<div class="health-factor">
+<div class="health-factor-dot warm"></div>
+<div class="health-factor-label">Awaiting Signature</div>
+<div class="health-factor-tick warm"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+</div>
+</div>
+</div>
+</div>
+<!-- DOMOT INSIGHT -->
+<div class="sec animate-in delay-5">
+<div class="section-label">Domot! Intelligence</div>
+<div class="insight-card">
+<div class="insight-header">
+<div class="insight-logo">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+</div>
+<div>
+<div class="insight-title">Domot! Review</div>
+<div class="insight-sub">AI-assisted analysis · Not legal advice</div>
+</div>
+</div>
+<div class="insight-text">All required tenancy information has been completed and the agreement is ready for signature. Both parties have been verified, the property details are confirmed, and the terms have been clearly defined. The only remaining step is obtaining digital signatures from both the landlord and tenant to activate the agreement.</div>
+</div>
+</div>
+<!-- TENANT ACKNOWLEDGEMENT -->
+<div class="sec animate-in delay-5">
+<div class="section-label">Tenant Acknowledgements</div>
+<div class="ack-card">
+<div class="ack-item">
+<div class="ack-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+</div>
+<div class="ack-text">I understand the lease duration of one year, commencing 15 August 2026.</div>
+</div>
+<div class="ack-item">
+<div class="ack-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><line x1="12" x2="12" y1="1" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+</div>
+<div class="ack-text">I understand my payment obligations, including annual rent and security deposit.</div>
+</div>
+<div class="ack-item">
+<div class="ack-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+</div>
+<div class="ack-text">I agree to comply with all tenancy terms, property rules, and maintenance responsibilities outlined in this agreement.</div>
+</div>
+</div>
+</div>
+<!-- SIGNATURE CENTER -->
+<div class="sec animate-in delay-6">
+<div class="section-label">Signature Center</div>
+<div class="sig-grid">
+<!-- Landlord Signature -->
+<div class="sig-card landlord" onclick="openSignModal('landlord')">
+<div class="sig-label">Landlord</div>
+<div class="sig-name">Prince Frank</div>
+<div class="sig-role">Property Owner</div>
+<div class="sig-visual">
+<svg class="sig-svg" fill="none" viewbox="0 0 120 44">
+<path d="M10 32 C20 20 25 28 35 22 C45 16 48 30 58 26 C68 22 70 34 80 28 C90 22 95 30 110 25" fill="none" id="landlordSigPath" stroke="rgba(124,92,250,0.6)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M10 35 C20 23 25 31 35 25 C45 19 48 33 58 29 C68 25 70 37 80 31 C90 25 95 33 110 28" fill="none" stroke="rgba(124,92,250,0.3)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
+</svg>
+</div>
+<div class="sig-status signed" id="landlordSigStatus">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          Signed
+        </div>
+</div>
+<!-- Tenant Signature -->
+<div class="sig-card tenant" onclick="openSignModal('tenant')">
+<div class="sig-label">Tenant</div>
+<div class="sig-name">Michael Johnson</div>
+<div class="sig-role">Approved Applicant</div>
+<div class="sig-visual">
+<svg class="sig-svg" fill="none" viewbox="0 0 120 44">
+<path d="M10 30 L110 30" id="tenantSigPath" stroke="rgba(240,165,0,0.2)" stroke-dasharray="4 4" stroke-linecap="round" stroke-width="1.5"></path>
+<text fill="rgba(240,165,0,0.45)" font-family="DM Sans,sans-serif" font-size="9" font-weight="600" text-anchor="middle" x="55" y="22">Tap to sign</text>
+</svg>
+</div>
+<div class="sig-status pending" id="tenantSigStatus">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          Pending
+        </div>
+</div>
+</div>
+</div>
+<!-- DOCUMENT VAULT -->
+<div class="sec animate-in delay-6">
+<div class="section-label">Document Vault</div>
+<div class="vault-card">
+<div class="vault-icon active">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+</div>
+<div class="vault-info">
+<div class="vault-name">Agreement Draft</div>
+<div class="vault-status green">Ready for review</div>
+</div>
+<button class="vault-action" onclick="haptic('light')">View</button>
+</div>
+<div class="vault-card">
+<div class="vault-icon locked">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="11" rx="2" ry="2" width="18" x="3" y="11"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+</div>
+<div class="vault-info">
+<div class="vault-name">Final Agreement</div>
+<div class="vault-status muted">Locked until completion</div>
+</div>
+<button class="vault-action" onclick="haptic('light')" style="opacity:0.4;cursor:not-allowed;">Locked</button>
+</div>
+<div class="vault-card">
+<div class="vault-icon warm">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+</div>
+<div class="vault-info">
+<div class="vault-name">Supporting Documents</div>
+<div class="vault-status warm">3 files attached</div>
+</div>
+<button class="vault-action" onclick="haptic('light')">Open</button>
+</div>
+</div>
+<!-- ACTIVITY FEED -->
+<div class="sec animate-in delay-7">
+<div class="section-label">Activity</div>
+<div class="activity-card">
+<div class="activity-item">
+<div class="activity-dot-wrap"><div class="activity-dot violet"></div></div>
+<div class="activity-body">
+<div class="activity-text">Awaiting tenant signature</div>
+<div class="activity-time">Just now</div>
+</div>
+</div>
+<div class="activity-item">
+<div class="activity-dot-wrap"><div class="activity-dot green"></div></div>
+<div class="activity-body">
+<div class="activity-text">Terms finalized and confirmed</div>
+<div class="activity-time">2 minutes ago</div>
+</div>
+</div>
+<div class="activity-item">
+<div class="activity-dot-wrap"><div class="activity-dot warm"></div></div>
+<div class="activity-body">
+<div class="activity-text">Tenant invited to review agreement</div>
+<div class="activity-time">5 Jun 2026 · 14:22</div>
+</div>
+</div>
+<div class="activity-item">
+<div class="activity-dot-wrap"><div class="activity-dot blue"></div></div>
+<div class="activity-body">
+<div class="activity-text">Agreement draft generated</div>
+<div class="activity-time">5 Jun 2026 · 14:18</div>
+</div>
+</div>
+<div class="activity-item">
+<div class="activity-dot-wrap"><div class="activity-dot green"></div></div>
+<div class="activity-body">
+<div class="activity-text">Application approved — Michael Johnson</div>
+<div class="activity-time">5 Jun 2026 · 14:10</div>
+</div>
+</div>
+</div>
+</div>
+<!-- NEXT STEP -->
+<div class="sec animate-in delay-8">
+<div class="section-label">Up Next</div>
+<div class="next-card">
+<div class="next-header">
+<div class="next-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</div>
+<div class="next-title">Next Step</div>
+</div>
+<div class="next-step-name">Rent Payment Setup</div>
+<div class="next-timeline">
+<div class="next-tl-step">
+<div class="next-tl-dot done"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="next-tl-label" style="color:var(--accent-green);">Signed</div>
+</div>
+<div class="next-tl-line"></div>
+<div class="next-tl-step">
+<div class="next-tl-dot done"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="next-tl-label" style="color:var(--accent-green);">Active</div>
+</div>
+<div class="next-tl-line"></div>
+<div class="next-tl-step">
+<div class="next-tl-dot pending"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" viewbox="0 0 64 64"><path d="M16 12V52M48 12V52M16 16L48 48M16 24H48M16 40H48"></path></svg></div>
+<div class="next-tl-label">Payment</div>
+</div>
+<div class="next-tl-line"></div>
+<div class="next-tl-step">
+<div class="next-tl-dot pending"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg></div>
+<div class="next-tl-label">Move-In</div>
+</div>
+</div>
+</div>
+</div>
+</div><!-- end page-container -->
+<!-- STICKY BAR -->
+<div class="sticky-bar" id="stickyBar">
+<button class="btn-secondary" onclick="saveDraft()">Save Draft</button>
+<button class="btn-primary" onclick="sendForSignature()">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><line x1="22" x2="11" y1="2" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+    Send For Signature
+  </button>
+<button class="btn-proceed" id="proceedBtn" onclick="goToPayment()">
+    Proceed To Payments
+    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+</div>
+<!-- SIGNED CONFIRMATION SCREEN -->
+<div class="signed-screen" id="signedScreen">
+<canvas class="signed-confetti" id="confettiCanvas"></canvas>
+<div class="signed-screen-inner">
+<div class="signed-badge-wrap">
+<div class="signed-badge-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><polyline points="9 15 11 17 15 13"></polyline></svg>
+<div class="signed-ring1"></div>
+<div class="signed-ring2"></div>
+</div>
+</div>
+<div class="signed-eyebrow">Congratulations</div>
+<div class="signed-headline">You've Signed the Agreement</div>
+<div class="signed-sub">AGR-2026-001 has been signed by you. Both parties have completed their digital signatures and the tenancy is now formally established.</div>
+<div class="signed-ref-pill">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+      AGR-2026-001 · Verified &amp; Sealed
+    </div>
+<div class="signed-details-card">
+<div class="signed-detail-row">
+<div class="signed-detail-key">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+          Property
+        </div>
+<div class="signed-detail-val">2 Bed · Shelter Afrique, Uyo</div>
+</div>
+<div class="signed-detail-row">
+<div class="signed-detail-key">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width:14px;height:14px;" viewbox="0 0 24 64"><path d="M4 3V13M12 3V13M4 4L12 12M4 6H12M4 10H12"></path></svg>
+          Annual Rent
+        </div>
+<div class="signed-detail-val green">₦650,000</div>
+</div>
+<div class="signed-detail-row">
+<div class="signed-detail-key">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+          Move-In Date
+        </div>
+<div class="signed-detail-val">15 August 2026</div>
+</div>
+<div class="signed-detail-row">
+<div class="signed-detail-key">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          Lease Duration
+        </div>
+<div class="signed-detail-val violet">1 Year</div>
+</div>
+<div class="signed-detail-row">
+<div class="signed-detail-key">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect></svg>
+          Signed On
+        </div>
+<div class="signed-detail-val">5 Jun 2026 · 14:47</div>
+</div>
+</div>
+<div class="signed-sigs-row">
+<div class="signed-sig-chip landlord">
+<div class="signed-sig-check landlord">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+</div>
+<div class="signed-sig-name">Prince Frank</div>
+<div class="signed-sig-role">Landlord · Signed</div>
+</div>
+<div class="signed-sig-chip tenant">
+<div class="signed-sig-check tenant">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+</div>
+<div class="signed-sig-name">Michael Johnson</div>
+<div class="signed-sig-role">Tenant · Signed</div>
+</div>
+</div>
+<div class="signed-actions">
+<button class="signed-btn-dl" onclick="downloadAgreement()">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg>
+        Download Agreement
+      </button>
+<button class="signed-btn-share" onclick="shareAgreement()">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line></svg>
+        Share with Tenant
+      </button>
+<button class="signed-btn-pay" onclick="goToPayment()">
+        Proceed to Payments
+        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+</div>
+<div class="signed-timestamp">Secured by Domot! · Digital Agreement Infrastructure · 5 Jun 2026</div>
+</div>
+</div>
+<!-- AGREEMENT ACTIVATION MODAL -->
+<div class="modal-overlay" id="activationModal" onclick="closeModals(event)">
+<div class="modal-sheet">
+<div class="modal-handle"></div>
+<div class="success-anim">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+<div class="success-ring"></div>
+<div class="success-ring2"></div>
+</div>
+<div class="modal-title">Agreement Activated</div>
+<div class="modal-sub">The tenancy agreement between Prince Frank and Michael Johnson is now formally active. The tenancy is established.</div>
+<button class="modal-btn" onclick="activationComplete()">Continue to Payments</button>
+<button class="modal-btn ghost" onclick="closeModal('activationModal')">View Agreement</button>
+</div>
+</div>
+<!-- SIGNATURE MODAL -->
+<div class="modal-overlay" id="signModal" onclick="closeModals(event)">
+<div class="sign-modal-sheet">
+<div class="modal-handle"></div>
+<div id="signModalTitle" style="font-size:18px;font-weight:800;letter-spacing:-0.4px;margin-bottom:4px;">Landlord Signature</div>
+<div style="font-size:13px;color:var(--text-muted);font-weight:500;margin-bottom:0;">Draw your signature below</div>
+<canvas class="sign-canvas" height="140" id="signCanvas" width="340"></canvas>
+<div class="sign-label">Draw in the box above · Your signature is legally binding</div>
+<div class="sign-row">
+<button class="sign-clear" onclick="clearCanvas()">Clear</button>
+<button class="sign-confirm" onclick="confirmSignature()">Confirm Signature</button>
+</div>
+</div>
+</div>
+
+<script src="landlord_agreement.js"></script></body>
+</html>
