@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Domot! — Escrow Funding</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet"/>
+
+<link href="buyer_payment.css" rel="stylesheet"/></head>
+<body>
+<div class="ambient">
+<div class="ambient-orb ambient-orb-1"></div>
+<div class="ambient-orb ambient-orb-2"></div>
+</div>
+<div class="payment-container" id="paymentContainer">
+<!-- HEADER -->
+<div class="payment-header">
+<div class="header-top">
+<button class="back-btn" id="backBtn">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+</button>
+<div class="header-title">Escrow Funding</div>
+</div>
+<div class="header-sub">Secure your purchase funds through Domot! protected escrow.</div>
+</div>
+<!-- TRANSACTION STATUS HERO -->
+<div class="section-spacer animate-in" style="margin-top:16px;">
+<div class="section-label">Transaction Status</div>
+<div class="status-hero">
+<div class="status-label">Transaction Active</div>
+<div class="status-title">Awaiting Escrow Funding</div>
+<div class="status-badge">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+Awaiting Escrow Funding
+</div>
+<div class="status-id">Transaction ID: <span>DOM-BUY-2026-001</span></div>
+</div>
+</div>
+<!-- PROPERTY SUMMARY -->
+<div class="section-spacer animate-in delay-1">
+<div class="section-label">Property Summary</div>
+<div class="prop-card">
+<img alt="Property" class="prop-img" onerror="this.style.background='linear-gradient(135deg,#161624,#2a2044)'" src="h2.jpg"/>
+<div class="prop-info">
+<div class="prop-type">4 Bedroom Duplex</div>
+<div class="prop-name">Shelter Afrique Estate</div>
+<div class="prop-location">Uyo, Akwa Ibom</div>
+<div class="prop-price">₦65,000,000</div>
+<div class="prop-badges">
+<div class="prop-badge verified"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Ownership Verified</div>
+<div class="prop-badge signed"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>Agreement Signed</div>
+<div class="prop-badge escrow"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><rect height="16" rx="2" ry="2" width="22" x="1" y="4"></rect><line x1="1" x2="23" y1="10" y2="10"></line></svg>Escrow Protected</div>
+</div>
+</div>
+</div>
+</div>
+<!-- PAYMENT PROGRESS -->
+<div class="section-spacer animate-in delay-2">
+<div class="section-label">Transaction Progress</div>
+<div class="timeline-card">
+<div class="timeline-title">Your Journey</div>
+<div class="timeline-flow" id="timelineFlow">
+<div class="timeline-step">
+<div class="timeline-dot completed"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="timeline-label">Offer Accepted</div>
+<div class="timeline-sub">Seller accepted your offer</div>
+</div>
+<div class="timeline-step">
+<div class="timeline-dot completed"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="timeline-label">Agreement Signed</div>
+<div class="timeline-sub">Both parties signed</div>
+</div>
+<div class="timeline-step">
+<div class="timeline-dot active"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><rect height="16" rx="2" ry="2" width="22" x="1" y="4"></rect><line x1="1" x2="23" y1="10" y2="10"></line></svg></div>
+<div class="timeline-label">Escrow Funding</div>
+<div class="timeline-sub">Deposit required now</div>
+<div class="timeline-current">Current Stage</div>
+</div>
+<div class="timeline-step">
+<div class="timeline-dot pending"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div>
+<div class="timeline-label pending">Ownership Transfer</div>
+<div class="timeline-sub">After verification</div>
+</div>
+<div class="timeline-step">
+<div class="timeline-dot pending"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
+<div class="timeline-label pending">Completed</div>
+<div class="timeline-sub">Transaction finalized</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ESCROW EXPLANATION -->
+<div class="section-spacer animate-in delay-3">
+<div class="section-label">How It Works</div>
+<div class="escrow-explain-card">
+<div class="escrow-explain-label">Escrow Protection</div>
+<div class="escrow-explain-title">Your Funds Are Protected</div>
+<div class="escrow-explain-body">Escrow ensures your money remains secure until all transaction conditions are satisfied. Neither party can unilaterally access protected funds. Escrow secured by OPay OWealth infrastructure.</div>
+<div class="escrow-explain-list">
+<div class="escrow-explain-item"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Funds remain protected until ownership verification and transfer requirements are completed.</div>
+<div class="escrow-explain-item"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>The seller cannot access escrow funds until transaction conditions are satisfied.</div>
+</div>
+</div>
+</div>
+<!-- PAYMENT BREAKDOWN -->
+<div class="section-spacer animate-in delay-4">
+<div class="section-label">Payment Breakdown</div>
+<div class="breakdown-card">
+<div class="breakdown-title">Financial Summary</div>
+<div class="breakdown-row">
+<span class="breakdown-key">Purchase Price</span>
+<span class="breakdown-value highlight" id="priceValue">₦65,000,000</span>
+</div>
+<div class="breakdown-row">
+<span class="breakdown-key">Deposit (10%)</span>
+<span class="breakdown-value green" id="depositValue">₦6,500,000</span>
+</div>
+<div class="breakdown-row">
+<span class="breakdown-key">Escrow Protection</span>
+<span class="breakdown-value green">Included</span>
+</div>
+<div class="breakdown-divider"></div>
+<div class="breakdown-due">
+<span class="breakdown-due-label">Current Amount Due</span>
+<span class="breakdown-due-value" id="dueValue">₦6,500,000</span>
+</div>
+</div>
+</div>
+<!-- PAYMENT METHODS -->
+<div class="section-spacer animate-in delay-5">
+<div class="section-label">Choose Payment Method</div>
+<div class="method-card selected" data-method="opay" id="opayMethod">
+<div class="method-icon-wrap"><img alt="OPay" onerror="this.parentElement.innerHTML='&lt;svg viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'&gt;&lt;rect x=\'1\' y=\'4\' width=\'22\' height=\'16\' rx=\'2\' ry=\'2\'&gt;&lt;/rect&gt;&lt;line x1=\'1\' y1=\'10\' x2=\'23\' y2=\'10\'&gt;&lt;/line&gt;&lt;/svg&gt;'" src="opay.jpg"/></div>
+<div class="method-info">
+<div class="method-name-row">
+<span class="method-name">OPay</span>
+<span class="method-badge">Recommended</span>
+</div>
+<div class="method-desc">Fast escrow funding through your linked OPay account.</div>
+<div class="method-account">Linked Account: ****4821</div>
+</div>
+<div class="method-check"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+</div>
+<div class="method-card" data-method="bank" id="bankMethod">
+<div class="method-icon-wrap"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11m16-11v11"></path></svg></div>
+<div class="method-info">
+<div class="method-name-row"><span class="method-name">Bank Transfer</span></div>
+<div class="method-desc">Transfer directly to the protected escrow account.</div>
+</div>
+<div class="method-check"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+</div>
+<div class="method-card" data-method="card" id="cardMethod">
+<div class="method-icon-wrap"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="16" rx="2" ry="2" width="22" x="1" y="4"></rect><line x1="1" x2="23" y1="10" y2="10"></line></svg></div>
+<div class="method-info">
+<div class="method-name-row"><span class="method-name">Debit Card</span></div>
+<div class="method-desc">Pay securely with your bank card.</div>
+</div>
+<div class="method-check"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+</div>
+</div>
+<!-- ESCROW ACCOUNT DETAILS -->
+<div class="section-spacer animate-in delay-5">
+<div class="section-label">Escrow Account</div>
+<div class="escrow-account-card">
+<div class="escrow-account-title">Protected Account Details</div>
+<div class="escrow-detail">
+<span class="escrow-detail-label">Account Name</span>
+<span class="escrow-detail-value">Domot Escrow Services</span>
+</div>
+<div class="escrow-detail">
+<span class="escrow-detail-label">Account Number</span>
+<span class="escrow-detail-value masked">**** **** 4821</span>
+</div>
+<div class="escrow-detail">
+<span class="escrow-detail-label">Bank</span>
+<span class="escrow-detail-value">Domot Trust Bank</span>
+</div>
+<div class="escrow-detail">
+<span class="escrow-detail-label">Reference</span>
+<span class="escrow-detail-value">DOM-BUY-2026-001</span>
+</div>
+</div>
+</div>
+<!-- PAYMENT CONFIDENCE -->
+<div class="section-spacer animate-in delay-6">
+<div class="section-label">Transaction Protection</div>
+<div class="confidence-card">
+<div class="confidence-label">Protected Transaction</div>
+<div class="confidence-title">Your Transaction is Monitored</div>
+<div class="confidence-list">
+<div class="confidence-item"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Ownership Verified</div>
+<div class="confidence-item"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>Agreement Signed</div>
+<div class="confidence-item"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><rect height="16" rx="2" ry="2" width="22" x="1" y="4"></rect><line x1="1" x2="23" y1="10" y2="10"></line></svg>Escrow Protected</div>
+<div class="confidence-item"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>Transfer Monitored</div>
+</div>
+</div>
+</div>
+<!-- PAYMENT SUMMARY -->
+<div class="section-spacer animate-in delay-6">
+<div class="section-label">Payment Summary</div>
+<div class="summary-card">
+<div class="summary-title">Review Before Funding</div>
+<div class="summary-row">
+<span class="summary-key">Property</span>
+<span class="summary-value">4 Bedroom Duplex, Shelter Afrique</span>
+</div>
+<div class="summary-row">
+<span class="summary-key">Amount</span>
+<span class="summary-value highlight">₦6,500,000</span>
+</div>
+<div class="summary-row">
+<span class="summary-key">Payment Method</span>
+<span class="summary-value" id="summaryMethod">OPay</span>
+</div>
+<div class="summary-row">
+<span class="summary-key">Escrow Status</span>
+<span class="summary-value">Protected</span>
+</div>
+</div>
+</div>
+<!-- ACKNOWLEDGEMENT -->
+<div class="section-spacer animate-in delay-7">
+<div class="section-label">Acknowledgements</div>
+<div class="terms-card">
+<div class="terms-title">Required Confirmations</div>
+<div class="terms-list">
+<div class="terms-item" id="term1">
+<div class="terms-check" id="check1"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<span class="terms-text">I understand funds will enter escrow protection.</span>
+</div>
+<div class="terms-item" id="term2">
+<div class="terms-check" id="check2"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<span class="terms-text">I understand escrow funding does not immediately transfer money to the seller.</span>
+</div>
+<div class="terms-item" id="term3">
+<div class="terms-check" id="check3"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<span class="terms-text">I agree to continue through Domot! protected transaction channels.</span>
+</div>
+</div>
+</div>
+</div>
+<div style="height:8px;"></div>
+</div>
+<!-- FUNDING ANIMATION OVERLAY -->
+<div class="funding-overlay" id="fundingOverlay">
+<div class="funding-orb">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="16" rx="2" ry="2" width="22" x="1" y="4"></rect><line x1="1" x2="23" y1="10" y2="10"></line></svg>
+</div>
+<div class="funding-title">Processing Escrow Funding</div>
+<div class="funding-sub">Securing your funds in protected escrow...</div>
+<div class="funding-progress"><div class="funding-progress-fill"></div></div>
+</div>
+<!-- SUCCESS OVERLAY -->
+<div class="success-overlay" id="successOverlay">
+<div class="success-orb success-pop">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+</div>
+<div class="success-title">Escrow Funded</div>
+<div class="success-sub">Your funds are now protected and awaiting ownership transfer.</div>
+<div class="next-step-card">
+<div class="next-step-label">Next Step</div>
+<div class="next-step-title">Ownership Transfer</div>
+<div class="next-step-flow">
+<div class="next-step-item">
+<div class="next-step-dot done"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="next-step-name">Escrow Funded</div>
+<div class="next-step-desc">Deposit secured</div>
+</div>
+<div class="next-step-item">
+<div class="next-step-dot next"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></div>
+<div class="next-step-name">Transfer Verification</div>
+<div class="next-step-desc">Ownership review</div>
+</div>
+<div class="next-step-item">
+<div class="next-step-dot pending"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div>
+<div class="next-step-name pending">Ownership Transfer</div>
+<div class="next-step-desc">Final handover</div>
+</div>
+<div class="next-step-item">
+<div class="next-step-dot pending"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
+<div class="next-step-name pending">Transaction Complete</div>
+<div class="next-step-desc">All done</div>
+</div>
+</div>
+</div>
+<button class="continue-btn" id="continueBtn">Continue</button>
+</div>
+<!-- STICKY ACTION BAR -->
+<div class="action-bar" id="actionBar">
+<div class="action-bar-inner">
+<button class="save-btn" id="saveBtn">Save Transaction</button>
+<button class="fund-btn" id="fundBtn">Fund Escrow</button>
+</div>
+</div>
+
+<script src="buyer_payment.js"></script></body>
+</html>

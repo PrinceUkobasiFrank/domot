@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Domot! — Due Diligence Report</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet"/>
+
+<link href="buyer_due_diligence.css" rel="stylesheet"/></head>
+<body>
+<div class="ambient">
+<div class="ambient-orb ambient-orb-1"></div>
+<div class="ambient-orb ambient-orb-2"></div>
+</div>
+<div class="dd-container" id="ddContainer">
+<!-- HEADER -->
+<div class="dd-header">
+<div class="header-top">
+<button class="back-btn" id="backBtn">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+</button>
+<div class="header-title">Due Diligence Report</div>
+</div>
+<div class="header-sub">Verification and risk assessment completed by Domot!</div>
+</div>
+<!-- PROPERTY SUMMARY -->
+<div class="section-spacer animate-in" style="margin-top:16px;">
+<div class="prop-card">
+<img alt="Property" class="prop-img" onerror="this.style.background='linear-gradient(135deg,#161624,#2a2044)'" src="h2.jpg"/>
+<div class="prop-info">
+<div class="prop-type">4 Bedroom Duplex</div>
+<div class="prop-name">Shelter Afrique Estate</div>
+<div class="prop-location">Uyo, Akwa Ibom</div>
+<div class="prop-price">₦65,000,000</div>
+</div>
+</div>
+</div>
+<!-- CONFIDENCE SCORE -->
+<div class="section-spacer">
+<div class="section-label">Overall Assessment</div>
+<div class="confidence-hero animate-in delay-1">
+<div class="confidence-label">Property Confidence Score</div>
+<div class="confidence-score-wrap">
+<span class="confidence-num" id="confidenceNum">0</span>
+<span class="confidence-denom">/ 100</span>
+</div>
+<div class="confidence-status">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+Low Risk
+</div>
+</div>
+</div>
+<!-- SCORE BREAKDOWN -->
+<div class="section-spacer animate-in delay-2">
+<div class="section-label">Score Breakdown</div>
+<div class="score-grid">
+<div class="score-item">
+<div class="score-item-label">Ownership Verification</div>
+<div class="score-item-value">98</div>
+<div class="score-item-bar-bg"><div class="score-item-bar-fill" style="width:98%"></div></div>
+</div>
+<div class="score-item">
+<div class="score-item-label">Documentation</div>
+<div class="score-item-value">95</div>
+<div class="score-item-bar-bg"><div class="score-item-bar-fill" style="width:95%"></div></div>
+</div>
+<div class="score-item">
+<div class="score-item-label">Location Risk</div>
+<div class="score-item-value">91</div>
+<div class="score-item-bar-bg"><div class="score-item-bar-fill" style="width:91%"></div></div>
+</div>
+<div class="score-item">
+<div class="score-item-label">Transaction Readiness</div>
+<div class="score-item-value">93</div>
+<div class="score-item-bar-bg"><div class="score-item-bar-fill" style="width:93%"></div></div>
+</div>
+<div class="score-item">
+<div class="score-item-label">Market Confidence</div>
+<div class="score-item-value">89</div>
+<div class="score-item-bar-bg"><div class="score-item-bar-fill" style="width:89%"></div></div>
+</div>
+</div>
+</div>
+<!-- OWNERSHIP VERIFICATION -->
+<div class="section-spacer animate-in delay-3">
+<div class="section-label">Ownership Verification</div>
+<div class="info-card">
+<div class="info-card-header">
+<span class="info-card-title">Ownership Status</span>
+<span class="info-card-badge">Verified</span>
+</div>
+<div class="verify-list">
+<div class="verify-item">
+<div class="verify-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div>
+<div class="verify-text"><div class="verify-label">Verified Owner</div><div class="verify-sub">Emmanuel Akpan — ID confirmed</div></div>
+<div class="verify-status">Clear</div>
+</div>
+<div class="verify-item">
+<div class="verify-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></div>
+<div class="verify-text"><div class="verify-label">Ownership History Available</div><div class="verify-sub">2 previous transfers on record</div></div>
+<div class="verify-status">Clear</div>
+</div>
+<div class="verify-item">
+<div class="verify-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+<div class="verify-text"><div class="verify-label">Government Records Matched</div><div class="verify-sub">Ministry of Lands — Akwa Ibom</div></div>
+<div class="verify-status">Matched</div>
+</div>
+<div class="verify-item">
+<div class="verify-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+<div class="verify-text"><div class="verify-label">No Active Ownership Conflicts</div><div class="verify-sub">No disputes or claims found</div></div>
+<div class="verify-status">Clear</div>
+</div>
+</div>
+</div>
+</div>
+<!-- DOCUMENTATION CENTER -->
+<div class="section-spacer animate-in delay-4">
+<div class="section-label">Documentation Center</div>
+<div class="info-card">
+<div class="info-card-header">
+<span class="info-card-title">Legal Documents</span>
+<span class="info-card-badge">All Verified</span>
+</div>
+<div class="doc-grid">
+<div class="doc-item" data-doc="survey">
+<div class="doc-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<span class="doc-name">Survey Plan</span>
+<div class="doc-status"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Verified</div>
+</div>
+<div class="doc-item" data-doc="coo">
+<div class="doc-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<span class="doc-name">Certificate of Occupancy</span>
+<div class="doc-status"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Verified</div>
+</div>
+<div class="doc-item" data-doc="building">
+<div class="doc-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<span class="doc-name">Building Approval</span>
+<div class="doc-status"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Verified</div>
+</div>
+<div class="doc-item" data-doc="tax">
+<div class="doc-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<span class="doc-name">Property Tax Status</span>
+<div class="doc-status"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Current</div>
+</div>
+<div class="doc-item" data-doc="deed">
+<div class="doc-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<span class="doc-name">Deed Status</span>
+<div class="doc-status"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Verified</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RISK ANALYSIS -->
+<div class="section-spacer animate-in delay-5">
+<div class="section-label">Risk Analysis</div>
+<div class="info-card">
+<div class="info-card-header">
+<span class="info-card-title">Professional Assessment</span>
+<span class="info-card-badge">Updated Today</span>
+</div>
+<div class="risk-grid">
+<div class="risk-item">
+<span class="risk-label">Ownership Risk</span>
+<div class="risk-meter">
+<div class="risk-bar-bg"><div class="risk-bar-fill low" style="width:12%"></div></div>
+<span class="risk-value low">Low</span>
+</div>
+</div>
+<div class="risk-item">
+<span class="risk-label">Legal Risk</span>
+<div class="risk-meter">
+<div class="risk-bar-bg"><div class="risk-bar-fill low" style="width:15%"></div></div>
+<span class="risk-value low">Low</span>
+</div>
+</div>
+<div class="risk-item">
+<span class="risk-label">Documentation Risk</span>
+<div class="risk-meter">
+<div class="risk-bar-bg"><div class="risk-bar-fill low" style="width:8%"></div></div>
+<span class="risk-value low">Low</span>
+</div>
+</div>
+<div class="risk-item">
+<span class="risk-label">Transaction Risk</span>
+<div class="risk-meter">
+<div class="risk-bar-bg"><div class="risk-bar-fill moderate" style="width:35%"></div></div>
+<span class="risk-value moderate">Moderate</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- MARKET INTELLIGENCE -->
+<div class="section-spacer animate-in delay-5">
+<div class="section-label">Market Intelligence</div>
+<div class="info-card">
+<div class="info-card-header">
+<span class="info-card-title">Uyo Market Report</span>
+<span class="info-card-badge">Domot Intel</span>
+</div>
+<div class="market-grid">
+<div class="market-item"><span class="market-label">Area Growth</span><span class="market-value positive">+12%</span><span class="market-trend">Year over year</span></div>
+<div class="market-item"><span class="market-label">Buyer Demand</span><span class="market-value high">High</span><span class="market-trend">Above market average</span></div>
+<div class="market-item"><span class="market-label">Price Trend</span><span class="market-value rising">Rising</span><span class="market-trend">Last 6 months</span></div>
+<div class="market-item"><span class="market-label">Liquidity</span><span class="market-value strong">Strong</span><span class="market-trend">Avg. 45 days to sell</span></div>
+</div>
+</div>
+</div>
+<!-- COMPARABLE SALES -->
+<div class="section-spacer animate-in delay-6">
+<div class="section-label">Recent Comparable Transactions</div>
+<div class="comp-scroll">
+<div class="comp-card"><img alt="Comp 1" class="comp-img" onerror="this.style.background='linear-gradient(135deg,#161624,#2a2044)'" src="h5.jpg"/><div class="comp-info"><div class="comp-type">4 Bedroom Duplex</div><div class="comp-location">Shelter Afrique, Uyo</div><div class="comp-bottom"><span class="comp-price">₦63M</span><span class="comp-time">3 months ago</span></div></div></div>
+<div class="comp-card"><img alt="Comp 2" class="comp-img" onerror="this.style.background='linear-gradient(135deg,#161624,#2a2044)'" src="h6.jpg"/><div class="comp-info"><div class="comp-type">4 Bedroom Duplex</div><div class="comp-location">Ewet Housing, Uyo</div><div class="comp-bottom"><span class="comp-price">₦67M</span><span class="comp-time">5 months ago</span></div></div></div>
+<div class="comp-card"><img alt="Comp 3" class="comp-img" onerror="this.style.background='linear-gradient(135deg,#161624,#2a2044)'" src="h7.jpg"/><div class="comp-info"><div class="comp-type">5 Bedroom Duplex</div><div class="comp-location">GRA, Uyo</div><div class="comp-bottom"><span class="comp-price">₦72M</span><span class="comp-time">8 months ago</span></div></div></div>
+</div>
+</div>
+<!-- AREA INTELLIGENCE -->
+<div class="section-spacer animate-in delay-6">
+<div class="section-label">Area Intelligence</div>
+<div class="info-card">
+<div class="area-grid">
+<div class="area-item"><div class="area-label">Road Access</div><div class="area-value"><div class="area-dot green"></div><span class="area-text">Excellent</span></div></div>
+<div class="area-item"><div class="area-label">Power Reliability</div><div class="area-value"><div class="area-dot green"></div><span class="area-text">Good</span></div></div>
+<div class="area-item"><div class="area-label">Security</div><div class="area-value"><div class="area-dot blue"></div><span class="area-text">Strong</span></div></div>
+<div class="area-item"><div class="area-label">Flood Risk</div><div class="area-value"><div class="area-dot green"></div><span class="area-text">Low</span></div></div>
+</div>
+</div>
+</div>
+<!-- VERIFICATION TIMELINE -->
+<div class="section-spacer animate-in delay-7">
+<div class="section-label">Verification Timeline</div>
+<div class="info-card">
+<div class="timeline" id="timeline">
+<div class="timeline-item">
+<div class="timeline-dot"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="timeline-label">Ownership Checked</div>
+<div class="timeline-sub">Government records verified</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="timeline-label">Survey Verified</div>
+<div class="timeline-sub">Land boundaries confirmed</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="timeline-label">Documentation Verified</div>
+<div class="timeline-sub">All legal documents authenticated</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="timeline-label">Risk Assessment Completed</div>
+<div class="timeline-sub">No critical risks identified</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="timeline-label">Transaction Ready</div>
+<div class="timeline-sub">Property cleared for acquisition</div>
+</div>
+</div>
+</div>
+</div>
+<!-- DOMOT! OPINION -->
+<div class="section-spacer animate-in delay-7">
+<div class="section-label">Domot! Assessment</div>
+<div class="opinion-card">
+<div class="opinion-label">Professional Opinion</div>
+<div class="opinion-title">Favorable Acquisition Profile</div>
+<div class="opinion-body">This property demonstrates strong ownership confidence with verified documentation and a clear title history. Market indicators show sustained demand in the Shelter Afrique area with above-average liquidity. The moderate transaction risk reflects standard due diligence requirements rather than property-specific concerns. Buyers should proceed with standard legal review and financing confirmation.</div>
+</div>
+</div>
+<!-- DOCUMENT VAULT -->
+<div class="section-spacer animate-in delay-7">
+<div class="section-label">Document Vault</div>
+<div class="info-card">
+<div class="vault-grid">
+<div class="vault-item" data-doc="survey">
+<div class="vault-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+<span class="vault-name">Survey Plan</span>
+</div>
+<div class="vault-item" data-doc="title">
+<div class="vault-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+<span class="vault-name">Title Documents</span>
+</div>
+<div class="vault-item" data-doc="report">
+<div class="vault-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+<span class="vault-name">Verification Report</span>
+</div>
+<div class="vault-item" data-doc="history">
+<div class="vault-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+<span class="vault-name">Ownership History</span>
+</div>
+</div>
+</div>
+</div>
+<!-- QUESTIONS TO RESOLVE -->
+<div class="section-spacer animate-in delay-7">
+<div class="section-label">Before You Proceed</div>
+<div class="info-card">
+<div class="question-list">
+<div class="question-item">
+<div class="question-check" id="q1"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" style="display:none;width:14px;height:14px;margin:1px;" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<span class="question-text">Confirm financing readiness</span>
+</div>
+<div class="question-item">
+<div class="question-check" id="q2"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" style="display:none;width:14px;height:14px;margin:1px;" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<span class="question-text">Review transfer timeline</span>
+</div>
+<div class="question-item">
+<div class="question-check" id="q3"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" style="display:none;width:14px;height:14px;margin:1px;" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<span class="question-text">Review legal agreement</span>
+</div>
+</div>
+</div>
+</div>
+<div style="height:8px;"></div>
+</div>
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+<div class="modal-sheet">
+<div class="modal-header">
+<div class="modal-title" id="modalTitle">Document Preview</div>
+<button class="modal-close" id="modalClose"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg></button>
+</div>
+<div class="modal-preview"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+<div class="modal-body" id="modalBody">Document preview placeholder. In production, this would display the verified document with watermark and tamper-evident seal.</div>
+</div>
+</div>
+<!-- STICKY ACTION BAR -->
+<div class="action-bar">
+<div class="action-bar-inner">
+<button class="save-btn" id="saveBtn">Save Report</button>
+<button class="share-btn" id="shareBtn">Share</button>
+<button class="offer-btn" id="offerBtn">Make Offer</button>
+</div>
+</div>
+
+<script src="buyer_due_diligence.js"></script></body>
+</html>

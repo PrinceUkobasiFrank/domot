@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Domot! — Submit Offer</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet"/>
+
+<link href="buyer_offer.css" rel="stylesheet"/></head>
+<body>
+<div class="ambient">
+<div class="ambient-orb ambient-orb-1"></div>
+<div class="ambient-orb ambient-orb-2"></div>
+</div>
+<div class="offer-container" id="offerContainer">
+<!-- HEADER -->
+<div class="offer-header">
+<div class="header-top">
+<button class="back-btn" id="backBtn">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+</button>
+<div class="header-title">Submit Offer</div>
+</div>
+<div class="header-sub">Begin the acquisition process for this property.</div>
+</div>
+<!-- PROPERTY SUMMARY CARD -->
+<div class="section-spacer animate-in" style="margin-top:16px;">
+<div class="section-label">Property Summary</div>
+<div class="prop-card">
+<img alt="Property" class="prop-img" onerror="this.style.background='linear-gradient(135deg,#161624,#2a2044)'" src="h2.jpg"/>
+<div class="prop-info">
+<div class="prop-type">4 Bedroom Duplex</div>
+<div class="prop-name">Shelter Afrique Estate</div>
+<div class="prop-location">Uyo, Akwa Ibom</div>
+<div class="prop-price">₦65,000,000</div>
+<div class="prop-badges">
+<div class="prop-badge"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Ownership Verified</div>
+<div class="prop-badge"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Due Diligence Complete</div>
+</div>
+</div>
+</div>
+</div>
+<!-- MARKET PRICE CARD -->
+<div class="section-spacer animate-in delay-1">
+<div class="section-label">Market Context</div>
+<div class="market-price-card">
+<div class="market-price-row">
+<span class="market-price-label">Asking Price</span>
+<span class="market-price-value">₦65,000,000</span>
+</div>
+<div class="market-range-divider"></div>
+<div class="market-range-label">Comparable Market Range</div>
+<div class="market-range-bar">
+<span class="market-range-min">₦62M</span>
+<div class="market-range-track">
+<div class="market-range-fill"></div>
+<div class="market-range-dot"></div>
+</div>
+<span class="market-range-max">₦68M</span>
+</div>
+</div>
+</div>
+<!-- OFFER AMOUNT SECTION -->
+<div class="section-spacer animate-in delay-2">
+<div class="section-label">Your Offer</div>
+<div class="offer-amount-card">
+<div class="offer-amount-label">Enter Offer Amount</div>
+<div class="offer-input-wrap">
+<span class="offer-currency">₦</span>
+<input autocomplete="off" class="offer-input" id="offerInput" inputmode="numeric" placeholder="0" type="text"/>
+</div>
+<div class="offer-suggested">Suggested range: ₦62,000,000 — ₦68,000,000</div>
+</div>
+</div>
+<!-- OFFER ANALYSIS -->
+<div class="section-spacer animate-in delay-3" id="analysisSection" style="display:none;">
+<div class="offer-analysis" id="offerAnalysis">
+<div class="analysis-icon-wrap" id="analysisIconWrap">
+<svg fill="none" id="analysisIcon" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+</div>
+<div class="analysis-text">
+<div class="analysis-label">Offer Strength</div>
+<div class="analysis-value" id="analysisValue">Competitive</div>
+<div class="analysis-sub" id="analysisSub">Within market expectations</div>
+</div>
+</div>
+</div>
+<!-- PURCHASE READINESS CARD -->
+<div class="section-spacer animate-in delay-3">
+<div class="section-label">Purchase Readiness</div>
+<div class="readiness-card">
+<div class="readiness-title">Buyer Status</div>
+<div class="readiness-list">
+<div class="readiness-item">
+<div class="readiness-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div>
+<span class="readiness-text">Identity Verified</span>
+<span class="readiness-status">Complete</span>
+</div>
+<div class="readiness-item">
+<div class="readiness-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><rect height="16" rx="2" ry="2" width="22" x="1" y="4"></rect><line x1="1" x2="23" y1="10" y2="10"></line></svg></div>
+<span class="readiness-text">Payment Method Connected</span>
+<span class="readiness-status">Active</span>
+</div>
+<div class="readiness-item">
+<div class="readiness-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<span class="readiness-text">Due Diligence Complete</span>
+<span class="readiness-status">Verified</span>
+</div>
+<div class="readiness-item">
+<div class="readiness-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+<span class="readiness-text">Agreement Eligibility Confirmed</span>
+<span class="readiness-status">Ready</span>
+</div>
+</div>
+</div>
+</div>
+<!-- PROPOSED TIMELINE -->
+<div class="section-spacer animate-in delay-4">
+<div class="section-label">Proposed Timeline</div>
+<div class="timeline-card">
+<div class="timeline-options" id="timelineOptions">
+<button class="timeline-option selected" data-value="immediate">Ready Immediately</button>
+<button class="timeline-option" data-value="30days">Within 30 Days</button>
+<button class="timeline-option" data-value="60days">Within 60 Days</button>
+<button class="timeline-option" data-value="custom">Custom</button>
+</div>
+</div>
+</div>
+<!-- BUYER NOTE -->
+<div class="section-spacer animate-in delay-4">
+<div class="section-label">Message to Seller</div>
+<div class="note-card">
+<textarea class="note-textarea" id="buyerNote" placeholder="Provide additional context regarding your offer."></textarea>
+</div>
+</div>
+<!-- OFFER PROTECTION CARD -->
+<div class="section-spacer animate-in delay-5">
+<div class="section-label">Transaction Protection</div>
+<div class="protection-card">
+<div class="protection-label">Domot! Protection</div>
+<div class="protection-title">Your Offer is Protected</div>
+<div class="protection-list">
+<div class="protection-item"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Offers are submitted through Domot!</div>
+<div class="protection-item"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>All negotiations are recorded.</div>
+<div class="protection-item"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Ownership verification remains attached to the transaction.</div>
+<div class="protection-item"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><rect height="16" rx="2" ry="2" width="22" x="1" y="4"></rect><line x1="1" x2="23" y1="10" y2="10"></line></svg>Escrow protection becomes available after acceptance.</div>
+</div>
+</div>
+</div>
+<!-- OFFER SUMMARY -->
+<div class="section-spacer animate-in delay-5">
+<div class="section-label">Offer Summary</div>
+<div class="summary-card">
+<div class="summary-title">Review Before Submission</div>
+<div class="summary-row">
+<span class="summary-key">Property</span>
+<span class="summary-value">4 Bedroom Duplex, Shelter Afrique</span>
+</div>
+<div class="summary-row">
+<span class="summary-key">Offer Amount</span>
+<span class="summary-value highlight" id="summaryAmount">—</span>
+</div>
+<div class="summary-row">
+<span class="summary-key">Timeline</span>
+<span class="summary-value" id="summaryTimeline">Ready Immediately</span>
+</div>
+<div class="summary-row">
+<span class="summary-key">Buyer Status</span>
+<span class="summary-value">Verified &amp; Ready</span>
+</div>
+<div class="summary-row">
+<span class="summary-key">Due Diligence</span>
+<span class="summary-value">Complete (94/100)</span>
+</div>
+</div>
+</div>
+<!-- TERMS ACKNOWLEDGEMENT -->
+<div class="section-spacer animate-in delay-6">
+<div class="section-label">Terms &amp; Conditions</div>
+<div class="terms-card">
+<div class="terms-title">Acknowledgements</div>
+<div class="terms-list">
+<div class="terms-item" id="term1">
+<div class="terms-check" id="check1"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<span class="terms-text">I have reviewed the due diligence report.</span>
+</div>
+<div class="terms-item" id="term2">
+<div class="terms-check" id="check2"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<span class="terms-text">I understand submission does not guarantee acceptance.</span>
+</div>
+<div class="terms-item" id="term3">
+<div class="terms-check" id="check3"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<span class="terms-text">I agree to continue through Domot! transaction channels.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- NEGOTIATION PREVIEW -->
+<div class="section-spacer animate-in delay-6">
+<div class="section-label">What Happens Next</div>
+<div class="negotiation-card">
+<div class="negotiation-title">Negotiation Process</div>
+<div class="negotiation-flow" id="negotiationFlow">
+<div class="negotiation-step">
+<div class="negotiation-dot"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="negotiation-label">Offer Submitted</div>
+<div class="negotiation-sub">Your formal offer is delivered</div>
+</div>
+<div class="negotiation-step">
+<div class="negotiation-dot"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+<div class="negotiation-label">Seller Reviews</div>
+<div class="negotiation-sub">Typically within 24–48 hours</div>
+</div>
+<div class="negotiation-step">
+<div class="negotiation-dot"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+<div class="negotiation-label">Counteroffer (Optional)</div>
+<div class="negotiation-sub">Seller may propose adjustments</div>
+</div>
+<div class="negotiation-step">
+<div class="negotiation-dot"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
+<div class="negotiation-label">Acceptance</div>
+<div class="negotiation-sub">Mutual agreement reached</div>
+</div>
+<div class="negotiation-step">
+<div class="negotiation-dot"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+<div class="negotiation-label">Purchase Agreement</div>
+<div class="negotiation-sub">Legally structured transaction</div>
+</div>
+</div>
+</div>
+</div>
+<!-- TRACK OFFER STATE (hidden initially) -->
+<div class="section-spacer" id="trackSection">
+<div class="section-label">Offer Status</div>
+<div class="track-card" id="trackCard">
+<div class="track-title">Tracking: <span style="color:var(--accent-violet);">DOM-OFR-2026-001</span></div>
+<div class="track-flow" id="trackFlow">
+<div class="track-step">
+<div class="track-dot active"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="track-label">Submitted</div>
+<div class="track-sub">Just now</div>
+</div>
+<div class="track-step">
+<div class="track-dot pending"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+<div class="track-label pending">Under Review</div>
+<div class="track-sub">Awaiting seller response</div>
+</div>
+<div class="track-step">
+<div class="track-dot pending"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+<div class="track-label pending">Counteroffer</div>
+<div class="track-sub">If applicable</div>
+</div>
+<div class="track-step">
+<div class="track-dot pending"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
+<div class="track-label pending">Accepted</div>
+<div class="track-sub">Mutual agreement</div>
+</div>
+<div class="track-step">
+<div class="track-dot pending"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+<div class="track-label pending">Agreement</div>
+<div class="track-sub">Legally structured</div>
+</div>
+</div>
+</div>
+</div>
+<div style="height:8px;"></div>
+</div>
+<!-- SUCCESS MODAL -->
+<div class="modal-overlay" id="successModal">
+<div class="success-sheet">
+<div class="success-icon-wrap success-pop" id="successIcon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+</div>
+<div class="success-title">Offer Submitted</div>
+<div class="success-sub">Your offer has been delivered to the seller.</div>
+<div class="tracking-card">
+<div class="tracking-label">Tracking Number</div>
+<div class="tracking-number">DOM-OFR-2026-001</div>
+</div>
+<button class="success-btn-primary" id="trackOfferBtn">Track Offer</button>
+<button class="success-btn-secondary" id="returnDashboardBtn">Return to Dashboard</button>
+</div>
+</div>
+<!-- CONFETTI CONTAINER -->
+<div class="confetti-container" id="confettiContainer"></div>
+<!-- STICKY ACTION BAR -->
+<div class="action-bar" id="actionBar">
+<div class="action-bar-inner">
+<button class="save-draft-btn" id="saveDraftBtn">Save Draft</button>
+<button class="submit-btn" id="submitBtn">Submit Offer</button>
+</div>
+</div>
+
+<script src="buyer_offer.js"></script></body>
+</html>

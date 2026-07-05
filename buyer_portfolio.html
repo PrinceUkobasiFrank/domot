@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Domot! — Your Property Portfolio</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet"/>
+
+<link href="buyer_portfolio.css" rel="stylesheet"/></head>
+<body>
+<div class="ambient">
+<div class="ambient-orb ambient-orb-1"></div>
+<div class="ambient-orb ambient-orb-2"></div>
+</div>
+<div class="portfolio-container" id="portfolioContainer">
+<!-- HEADER -->
+<div class="portfolio-header">
+<div class="header-top">
+<button class="back-btn" id="backBtn">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+</button>
+<div class="header-title">Portfolio</div>
+</div>
+<div class="header-sub">Your property ownership dashboard.</div>
+</div>
+<!-- GREETING -->
+<div class="greeting-section animate-in">
+<div class="greeting-time" id="greetingTime">Good Evening</div>
+<div class="greeting-name">Frank</div>
+<div class="greeting-sub">Your Property Portfolio</div>
+</div>
+<!-- PORTFOLIO HERO -->
+<div class="section-spacer animate-in delay-1">
+<div class="section-label">Portfolio Value</div>
+<div class="portfolio-hero">
+<div class="hero-label">Total Portfolio Value</div>
+<div class="hero-value" id="portfolioValue">₦0</div>
+<div class="hero-sub"><span id="propertyCount">0</span> Properties Owned</div>
+</div>
+</div>
+<!-- PORTFOLIO HEALTH -->
+<div class="section-spacer animate-in delay-2">
+<div class="section-label">Portfolio Health</div>
+<div class="health-card">
+<div class="health-label">Portfolio Health Score</div>
+<div class="health-score health-animate" id="healthScore">0<span>/100</span></div>
+<div class="health-title">Excellent Standing</div>
+<div class="health-breakdown">
+<div class="health-item"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Ownership Verified</div>
+<div class="health-item"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Documents Complete</div>
+<div class="health-item"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>No Open Issues</div>
+<div class="health-item"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Assets Active</div>
+</div>
+</div>
+</div>
+<!-- OWNED PROPERTIES -->
+<div class="section-spacer animate-in delay-3">
+<div class="section-label">Owned Properties</div>
+<div class="owned-card" id="ownedProperty">
+<img alt="Property" class="owned-img" onerror="this.style.background='linear-gradient(135deg,#161624,#2a2044)'" src="h2.jpg"/>
+<div class="owned-info">
+<div class="owned-type">4 Bedroom Duplex</div>
+<div class="owned-name">Shelter Afrique Estate</div>
+<div class="owned-location">Uyo, Akwa Ibom</div>
+<div class="owned-meta">
+<div class="owned-meta-item acquired"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>Acquired 15 July 2026</div>
+<div class="owned-meta-item value">₦65,000,000</div>
+<div class="owned-meta-item status"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>Verified</div>
+</div>
+</div>
+<div class="owned-cta">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</div>
+</div>
+</div>
+<!-- ASSET PERFORMANCE -->
+<div class="section-spacer animate-in delay-4">
+<div class="section-label">Asset Performance</div>
+<div class="performance-grid">
+<div class="perf-card acquisition">
+<div class="perf-label">Acquisition Price</div>
+<div class="perf-value" id="acquisitionPrice">₦0</div>
+<div class="perf-sub">Purchase price at closing</div>
+</div>
+<div class="perf-card estimate">
+<div class="perf-label">Current Estimate</div>
+<div class="perf-value green" id="currentEstimate">₦0</div>
+<div class="perf-sub">Market valuation estimate</div>
+<div class="perf-estimate-tag">Estimate</div>
+</div>
+<div class="perf-card growth">
+<div class="perf-label">Growth</div>
+<div class="perf-value warm" id="growthValue">+0%</div>
+<div class="perf-sub">Since acquisition</div>
+</div>
+<div class="perf-card demand">
+<div class="perf-label">Market Demand</div>
+<div class="perf-value blue">Strong</div>
+<div class="perf-sub">Buyer activity in area</div>
+</div>
+</div>
+</div>
+<!-- OWNERSHIP VAULT -->
+<div class="section-spacer animate-in delay-5">
+<div class="section-label">Ownership Records</div>
+<div class="vault-grid">
+<div class="vault-card">
+<div class="vault-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+<div class="vault-name">Ownership Certificate</div>
+<div class="vault-status"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>Verified</div>
+</div>
+<div class="vault-card">
+<div class="vault-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+<div class="vault-name">Transfer Documents</div>
+<div class="vault-status"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>Verified</div>
+</div>
+<div class="vault-card">
+<div class="vault-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+<div class="vault-name">Verification Report</div>
+<div class="vault-status"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>Verified</div>
+</div>
+<div class="vault-card">
+<div class="vault-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+<div class="vault-name">Purchase Agreement</div>
+<div class="vault-status"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>Verified</div>
+</div>
+<div class="vault-card">
+<div class="vault-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><rect height="16" rx="2" ry="2" width="22" x="1" y="4"></rect><line x1="1" x2="23" y1="10" y2="10"></line></svg></div>
+<div class="vault-name">Escrow Completion Report</div>
+<div class="vault-status"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>Verified</div>
+</div>
+</div>
+</div>
+<!-- PROPERTY TIMELINE -->
+<div class="section-spacer animate-in delay-6">
+<div class="section-label">Acquisition Timeline</div>
+<div class="timeline-card">
+<div class="timeline-title">Your Journey to Ownership</div>
+<div class="timeline-flow" id="timelineFlow">
+<div class="timeline-step">
+<div class="timeline-dot completed"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="timeline-label">Offer Accepted</div>
+<div class="timeline-sub">Seller accepted your offer</div>
+<div class="timeline-date">28 May 2026</div>
+</div>
+<div class="timeline-step">
+<div class="timeline-dot completed"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="timeline-label">Agreement Signed</div>
+<div class="timeline-sub">Both parties executed the agreement</div>
+<div class="timeline-date">4 June 2026</div>
+</div>
+<div class="timeline-step">
+<div class="timeline-dot completed"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="timeline-label">Escrow Funded</div>
+<div class="timeline-sub">Deposit secured in protected escrow</div>
+<div class="timeline-date">4 June 2026</div>
+</div>
+<div class="timeline-step">
+<div class="timeline-dot completed"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="timeline-label">Ownership Transferred</div>
+<div class="timeline-sub">Title successfully transferred</div>
+<div class="timeline-date">15 July 2026</div>
+</div>
+<div class="timeline-step">
+<div class="timeline-dot completed"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="timeline-label">Portfolio Added</div>
+<div class="timeline-sub">Property added to your portfolio</div>
+<div class="timeline-date">15 July 2026</div>
+</div>
+</div>
+</div>
+</div>
+<!-- MARKET INTELLIGENCE -->
+<div class="section-spacer animate-in delay-7">
+<div class="section-label">Market Intelligence</div>
+<div class="intel-grid">
+<div class="intel-card">
+<div class="intel-value green">+12%</div>
+<div class="intel-label">Area Growth</div>
+</div>
+<div class="intel-card">
+<div class="intel-value warm">High</div>
+<div class="intel-label">Buyer Demand</div>
+</div>
+<div class="intel-card">
+<div class="intel-value blue">Excellent</div>
+<div class="intel-label">Infrastructure Score</div>
+</div>
+<div class="intel-card">
+<div class="intel-value green">Strong</div>
+<div class="intel-label">Liquidity</div>
+</div>
+</div>
+</div>
+<!-- PORTFOLIO INSIGHTS -->
+<div class="section-spacer animate-in delay-8">
+<div class="section-label">Domot! Insights</div>
+<div class="insights-card">
+<div class="insights-label">Portfolio Intelligence</div>
+<div class="insights-title">Positive Growth Indicators</div>
+<div class="insights-body">Your property is located in a high-demand area with strong ownership confidence and positive growth indicators. The Shelter Afrique Estate continues to attract premium buyer interest, supported by ongoing infrastructure development and verified title documentation.</div>
+<div class="insights-disclaimer">All projections are estimates based on current market data. Past performance does not guarantee future results.</div>
+</div>
+</div>
+<!-- DOCUMENT CENTER -->
+<div class="section-spacer animate-in delay-8">
+<div class="section-label">Document Center</div>
+<div class="doc-center-card">
+<div class="doc-center-title">Ownership Documents</div>
+<div class="doc-item-row">
+<div class="doc-icon-wrap"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+<div class="doc-info">
+<div class="doc-name-text">Certificate of Occupancy</div>
+<div class="doc-meta">PDF • 2.4 MB</div>
+</div>
+<div class="doc-actions">
+<button class="doc-action preview">Preview</button>
+<button class="doc-action download">Download</button>
+</div>
+<div class="doc-verified"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>Verified</div>
+</div>
+<div class="doc-item-row">
+<div class="doc-icon-wrap"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+<div class="doc-info">
+<div class="doc-name-text">Deed of Assignment</div>
+<div class="doc-meta">PDF • 1.8 MB</div>
+</div>
+<div class="doc-actions">
+<button class="doc-action preview">Preview</button>
+<button class="doc-action download">Download</button>
+</div>
+<div class="doc-verified"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>Verified</div>
+</div>
+<div class="doc-item-row">
+<div class="doc-icon-wrap"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+<div class="doc-info">
+<div class="doc-name-text">Survey Plan</div>
+<div class="doc-meta">PDF • 3.1 MB</div>
+</div>
+<div class="doc-actions">
+<button class="doc-action preview">Preview</button>
+<button class="doc-action download">Download</button>
+</div>
+<div class="doc-verified"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>Verified</div>
+</div>
+</div>
+</div>
+<!-- ACTIVITY FEED -->
+<div class="section-spacer animate-in delay-8">
+<div class="section-label">Recent Activity</div>
+<div class="activity-card">
+<div class="activity-title">Activity Feed</div>
+<div class="activity-item">
+<div class="activity-dot"></div>
+<div>
+<div class="activity-text">Ownership transferred successfully.</div>
+<div class="activity-time">15 July 2026 • 14:32 WAT</div>
+</div>
+</div>
+<div class="activity-item">
+<div class="activity-dot"></div>
+<div>
+<div class="activity-text">Property added to portfolio.</div>
+<div class="activity-time">15 July 2026 • 14:35 WAT</div>
+</div>
+</div>
+<div class="activity-item">
+<div class="activity-dot"></div>
+<div>
+<div class="activity-text">Verification certificate generated.</div>
+<div class="activity-time">15 July 2026 • 14:38 WAT</div>
+</div>
+</div>
+<div class="activity-item">
+<div class="activity-dot"></div>
+<div>
+<div class="activity-text">Market valuation updated.</div>
+<div class="activity-time">4 June 2026 • 09:15 WAT</div>
+</div>
+</div>
+</div>
+</div>
+<!-- QUICK ACTIONS -->
+<div class="section-spacer animate-in delay-9">
+<div class="section-label">Quick Actions</div>
+<div class="quick-grid">
+<div class="quick-card">
+<div class="quick-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+<div class="quick-label">View Documents</div>
+</div>
+<div class="quick-card">
+<div class="quick-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg></div>
+<div class="quick-label">Download Certificate</div>
+</div>
+<div class="quick-card">
+<div class="quick-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></div>
+<div class="quick-label">Request Support</div>
+</div>
+<div class="quick-card">
+<div class="quick-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg></div>
+<div class="quick-label">Explore Opportunities</div>
+</div>
+</div>
+</div>
+<!-- FUTURE ACQUISITIONS -->
+<div class="section-spacer animate-in delay-9">
+<div class="opportunities-section">
+<div class="opp-header">
+<div class="opp-title">Recommended Opportunities</div>
+<div class="opp-link">See All</div>
+</div>
+<div class="opp-card">
+<img alt="Property" class="opp-img" onerror="this.style.background='linear-gradient(135deg,#161624,#2a2044)'" src="h3.jpg"/>
+<div class="opp-info">
+<div class="opp-type">3 Bedroom Flat</div>
+<div class="opp-name">Ibom Estate Phase II</div>
+<div class="opp-location">Uyo, Akwa Ibom</div>
+</div>
+<div class="opp-price">₦42M</div>
+</div>
+<div class="opp-card">
+<img alt="Property" class="opp-img" onerror="this.style.background='linear-gradient(135deg,#161624,#2a2044)'" src="h4.jpg"/>
+<div class="opp-info">
+<div class="opp-type">5 Bedroom Mansion</div>
+<div class="opp-name">Ewet Housing Estate</div>
+<div class="opp-location">Uyo, Akwa Ibom</div>
+</div>
+<div class="opp-price">₦85M</div>
+</div>
+</div>
+</div>
+<div style="height:8px;"></div>
+</div>
+<!-- STICKY ACTION BAR -->
+<div class="action-bar" id="actionBar">
+<div class="action-bar-inner">
+<button class="secondary-btn" id="downloadBtn">Download Records</button>
+<button class="primary-btn" id="viewAssetBtn">View Asset Details</button>
+</div>
+</div>
+
+<script src="buyer_portfolio.js"></script></body>
+</html>
