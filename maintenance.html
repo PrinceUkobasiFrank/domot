@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Domot! — Tenancy Hub</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet"/>
+
+<!-- rebuilt: 2026-06-10T04:23:25.595032 -->
+<link href="maintenance.css" rel="stylesheet"/></head>
+<body>
+<div class="ambient">
+<div class="orb o1"></div>
+<div class="orb o2"></div>
+<div class="orb o3"></div>
+</div>
+<div class="scroll-root">
+<div class="nav">
+<button class="nav-btn" onclick="goBack()">
+<svg viewbox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+</button>
+<div class="nav-urgent-pill">
+<div class="dot"></div>
+<span>URGENT SUPPORT 24/7</span>
+</div>
+<button class="nav-btn" onclick="openHelp()">
+<svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line stroke-width="3" x1="12" x2="12.01" y1="17" y2="17"></line></svg>
+</button>
+</div>
+<div class="slabel">Your Property</div>
+<div class="context-card">
+<div class="ctx-icon">
+<svg viewbox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+</div>
+<div class="ctx-info">
+<div class="ctx-label">Active Tenancy</div>
+<div class="ctx-title">Shelter Afrique Estate</div>
+<div class="ctx-sub">Self Contain · Move-In: 15 July 2026</div>
+</div>
+<div class="ctx-badge">Active</div>
+</div>
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 1: MAINTENANCE REQUEST (#maintenance)           -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="section-wrap" id="section-maintenance">
+<div class="hd">
+<h1>Request<br/>Maintenance</h1>
+<p>Describe the issue and we'll coordinate with your property manager.</p>
+</div>
+<div class="slabel">Open Requests (2)</div>
+<div class="open-wrap">
+<div class="open-requests">
+<div class="req-card">
+<div class="req-status-dot in-review"></div>
+<div class="req-info">
+<div class="req-title">Water Pressure Issue</div>
+<div class="req-meta">Submitted 3 days ago · Plumbing</div>
+</div>
+<div class="req-badge review">In Review</div>
+</div>
+<div class="req-card">
+<div class="req-status-dot scheduled"></div>
+<div class="req-info">
+<div class="req-title">Electrical Fault (Kitchen)</div>
+<div class="req-meta">Submitted 6 days ago · Electrical</div>
+</div>
+<div class="req-badge sched">Scheduled</div>
+</div>
+</div>
+</div>
+<div class="slabel">What's the Issue?</div>
+<div class="cat-grid" id="catGrid">
+<div class="cat-card ripple-wrap" data-cat="plumbing" onclick="selectCat(this, event)">
+<div class="cat-icon-wrap ci-plumb">
+<svg viewbox="0 0 24 24"><path d="M5 12H2"></path><path d="M5 12a7 7 0 0 0 14 0"></path><path d="M19 12h3"></path><path d="M12 19v3"></path><path d="M12 5V2"></path><circle cx="12" cy="12" r="3"></circle></svg>
+</div>
+<div>
+<div class="cat-name">Plumbing</div>
+<div class="cat-desc">Leaks, pipe bursts, water pressure</div>
+</div>
+</div>
+<div class="cat-card cat-urgent ripple-wrap" data-cat="electrical" onclick="selectCat(this, event)">
+<div class="cat-icon-wrap ci-elec">
+<svg viewbox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+</div>
+<div>
+<div class="cat-name">Electrical</div>
+<div class="cat-desc">Power cuts, wiring, sockets</div>
+</div>
+<div class="cat-urgent-badge">URGENT</div>
+</div>
+<div class="cat-card cat-urgent ripple-wrap" data-cat="structural" onclick="selectCat(this, event)">
+<div class="cat-icon-wrap ci-struct">
+<svg viewbox="0 0 24 24"><path d="M2 22 12 2l10 20"></path><path d="M12 8v4"></path><circle cx="12" cy="16" fill="currentColor" r="1" stroke="none"></circle></svg>
+</div>
+<div>
+<div class="cat-name">Structural</div>
+<div class="cat-desc">Walls, ceiling, roof, cracks</div>
+</div>
+<div class="cat-urgent-badge">URGENT</div>
+</div>
+<div class="cat-card ripple-wrap" data-cat="pest" onclick="selectCat(this, event)">
+<div class="cat-icon-wrap ci-pest">
+<svg viewbox="0 0 24 24"><path d="M12 2a4 4 0 0 1 4 4"></path><path d="M8 6a4 4 0 0 1 4-4"></path><path d="M12 6v14"></path><path d="M8 10H4"></path><path d="M20 10h-4"></path><path d="M8 18H5"></path><path d="M19 18h-3"></path><path d="M8 14H5"></path><path d="M19 14h-3"></path></svg>
+</div>
+<div>
+<div class="cat-name">Pest Control</div>
+<div class="cat-desc">Insects, rodents, infestation</div>
+</div>
+</div>
+<div class="cat-card ripple-wrap" data-cat="ac" onclick="selectCat(this, event)">
+<div class="cat-icon-wrap ci-ac">
+<svg viewbox="0 0 24 24"><rect height="6" rx="2" width="20" x="2" y="3"></rect><path d="M12 9v12"></path><path d="M8 17l4 4 4-4"></path><path d="M9 13h6"></path></svg>
+</div>
+<div>
+<div class="cat-name">AC / Fixtures</div>
+<div class="cat-desc">Cooling, fans, fittings</div>
+</div>
+</div>
+<div class="cat-card ripple-wrap" data-cat="other" onclick="selectCat(this, event)">
+<div class="cat-icon-wrap ci-other">
+<svg viewbox="0 0 24 24"><circle cx="12" cy="12" fill="currentColor" r="1" stroke="none"></circle><circle cx="19" cy="12" fill="currentColor" r="1" stroke="none"></circle><circle cx="5" cy="12" fill="currentColor" r="1" stroke="none"></circle></svg>
+</div>
+<div>
+<div class="cat-name">Other</div>
+<div class="cat-desc">Something else not listed above</div>
+</div>
+</div>
+</div>
+<div class="slabel">Priority Level</div>
+<div class="priority-wrap">
+<div class="priority-row" id="priorityRow">
+<div class="priority-pill p-low" data-p="low" onclick="selectPriority(this)">
+<div class="p-dot"></div>
+<div class="p-label">Low</div>
+</div>
+<div class="priority-pill p-med" data-p="medium" onclick="selectPriority(this)">
+<div class="p-dot"></div>
+<div class="p-label">Medium</div>
+</div>
+<div class="priority-pill p-high selected" data-p="high" onclick="selectPriority(this)">
+<div class="p-dot"></div>
+<div class="p-label">High</div>
+</div>
+<div class="priority-pill p-urgent" data-p="urgent" onclick="selectPriority(this)">
+<div class="p-dot"></div>
+<div class="p-label">Urgent</div>
+</div>
+</div>
+</div>
+<div class="slabel">Describe the Problem</div>
+<div class="desc-wrap">
+<div class="desc-box" id="descBox">
+<div class="desc-label-row">
+<div class="desc-lbl">Details</div>
+<div class="char-count" id="charCount">0 / 500</div>
+</div>
+<textarea class="desc-textarea" id="descArea" maxlength="500" placeholder="e.g. The kitchen light socket sparks when I turn it on. It started yesterday evening. The circuit breaker hasn't tripped yet…" rows="5"></textarea>
+</div>
+</div>
+<div class="slabel">Attach Photos</div>
+<div class="photo-wrap">
+<div class="photo-scroll" id="photoScroll">
+<div class="photo-add ripple-wrap" onclick="addPhoto(event)">
+<svg viewbox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+<span>ADD</span>
+</div>
+</div>
+<div style="font-size:11px;color:var(--t4);margin-top:8px;">Photos help resolve issues faster. Max 5 images.</div>
+</div>
+<div class="slabel">How to Reach You</div>
+<div class="contact-wrap">
+<div class="contact-options" id="contactOptions">
+<div class="contact-option selected ripple-wrap" data-co="app" onclick="selectContact(this, event)">
+<div class="co-icon">
+<svg viewbox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+</div>
+<div class="co-info">
+<div class="co-title">In-App Messaging</div>
+<div class="co-sub">Manager notified instantly. Track responses here.</div>
+</div>
+<div class="co-radio"><div class="co-dot"></div></div>
+</div>
+<div class="contact-option ripple-wrap" data-co="call" onclick="selectContact(this, event)">
+<div class="co-icon">
+<svg viewbox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.39 2 2 0 0 1 3.58 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.29 6.29l.61-.61a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 17z"></path></svg>
+</div>
+<div class="co-info">
+<div class="co-title">Phone Call</div>
+<div class="co-sub">Manager will call within working hours.</div>
+</div>
+<div class="co-radio"><div class="co-dot"></div></div>
+</div>
+<div class="contact-option ripple-wrap" data-co="visit" onclick="selectContact(this, event)">
+<div class="co-icon">
+<svg viewbox="0 0 24 24"><circle cx="12" cy="10" r="3"></circle><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 14 8 14s8-8.75 8-14a8 8 0 0 0-8-8z"></path></svg>
+</div>
+<div class="co-info">
+<div class="co-title">Physical Visit</div>
+<div class="co-sub">Coordinate an in-person inspection time.</div>
+</div>
+<div class="co-radio"><div class="co-dot"></div></div>
+</div>
+</div>
+</div>
+<div class="submit-wrap">
+<button class="submit-btn ripple-wrap" onclick="submitRequest(event)">
+<svg viewbox="0 0 24 24"><polyline points="22 2 11 13"></polyline><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                Submit Request
+            </button>
+<div class="submit-note">Your property manager will be notified immediately. All requests are tracked and time-stamped by Domot!.</div>
+</div>
+</div><!-- /section-maintenance -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 2: DOCUMENTS (#documents)                       -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="section-wrap" id="section-documents" style="display:none;">
+<div class="hd">
+<h1>Tenancy<br/>Documents</h1>
+<p>All your rental paperwork in one secure place.</p>
+</div>
+<div class="slabel">Active Agreement</div>
+<div class="doc-list">
+<div class="doc-card ripple-wrap">
+<div class="doc-icon di-agreement">
+<svg viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+</div>
+<div class="doc-info">
+<div class="doc-name">Rental Agreement</div>
+<div class="doc-meta">1-year · Jul 2026 – Jul 2027 · Signed</div>
+</div>
+<div class="doc-badge pdf">PDF</div>
+</div>
+</div>
+<div class="slabel">Inspection &amp; Verification</div>
+<div class="doc-list">
+<div class="doc-card ripple-wrap">
+<div class="doc-icon di-inspection">
+<svg viewbox="0 0 24 24"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+</div>
+<div class="doc-info">
+<div class="doc-name">Move-In Inspection</div>
+<div class="doc-meta">15 Jul 2026 · 12 photos attached</div>
+</div>
+<div class="doc-badge pdf">PDF</div>
+</div>
+<div class="doc-card ripple-wrap">
+<div class="doc-icon di-verify">
+<svg viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+</div>
+<div class="doc-info">
+<div class="doc-name">Property Verification</div>
+<div class="doc-meta">Trust Score 92 · Shelter Afrique</div>
+</div>
+<div class="doc-badge pdf">PDF</div>
+</div>
+</div>
+<div class="slabel">Payments &amp; Receipts</div>
+<div class="doc-list">
+<div class="doc-card ripple-wrap">
+<div class="doc-icon di-receipt">
+<svg viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+</div>
+<div class="doc-info">
+<div class="doc-name">Annual Rent Receipt</div>
+<div class="doc-meta">₦450,000 · 10 Jul 2026 · OPay</div>
+</div>
+<div class="doc-badge pdf">PDF</div>
+</div>
+<div class="doc-card ripple-wrap">
+<div class="doc-icon di-receipt">
+<svg viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+</div>
+<div class="doc-info">
+<div class="doc-name">Legal Fee Receipt</div>
+<div class="doc-meta">₦25,000 · 5 Jul 2026 · OPay</div>
+</div>
+<div class="doc-badge pdf">PDF</div>
+</div>
+</div>
+<div class="slabel">Escrow</div>
+<div class="doc-list">
+<div class="doc-card ripple-wrap">
+<div class="doc-icon di-agreement">
+<svg viewbox="0 0 24 24"><rect height="11" rx="2" ry="2" width="18" x="3" y="11"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+</div>
+<div class="doc-info">
+<div class="doc-name">Escrow Release Certificate</div>
+<div class="doc-meta">₦450,000 · Released 15 Jul 2026</div>
+</div>
+<div class="doc-badge pdf">PDF</div>
+</div>
+</div>
+</div><!-- /section-documents -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 3: CONTACT MANAGER (#contact)                   -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="section-wrap" id="section-contact" style="display:none;">
+<div class="hd">
+<h1>Contact<br/>Manager</h1>
+<p>Reach your property manager directly.</p>
+</div>
+<div class="slabel">Your Manager</div>
+<div class="contact-manager-wrap">
+<div class="cm-card">
+<div class="cm-header">
+<div class="cm-avatar">
+<svg viewbox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+</div>
+<div class="cm-info">
+<div class="cm-name">Mr. Emmanuel Okon</div>
+<div class="cm-role">Property Manager · Shelter Afrique</div>
+</div>
+<div class="cm-status">
+<div class="dot"></div>
+                        Online
+                    </div>
+</div>
+<div class="cm-actions">
+<button class="cm-btn cm-btn-primary" onclick="haptic([10,30,10]); Audio.init(); Audio.tap();">
+<svg viewbox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.39 2 2 0 0 1 3.58 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.29 6.29l.61-.61a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 17z"></path></svg>
+                        Call Now
+                    </button>
+<button class="cm-btn cm-btn-secondary" onclick="haptic([8]); Audio.init(); Audio.tap();">
+<svg viewbox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                        Message
+                    </button>
+</div>
+</div>
+<div class="cm-card">
+<div class="cm-detail-row">
+<div class="cm-detail-icon">
+<svg viewbox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.39 2 2 0 0 1 3.58 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.29 6.29l.61-.61a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 17z"></path></svg>
+</div>
+<div>
+<div class="cm-detail-label">Phone</div>
+<div class="cm-detail-val">+234 803 456 7890</div>
+</div>
+</div>
+<div class="cm-detail-row">
+<div class="cm-detail-icon">
+<svg viewbox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+</div>
+<div>
+<div class="cm-detail-label">Email</div>
+<div class="cm-detail-val">manager@shelterafrique.ng</div>
+</div>
+</div>
+<div class="cm-detail-row">
+<div class="cm-detail-icon">
+<svg viewbox="0 0 24 24"><circle cx="12" cy="10" r="3"></circle><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 14 8 14s8-8.75 8-14a8 8 0 0 0-8-8z"></path></svg>
+</div>
+<div>
+<div class="cm-detail-label">Office</div>
+<div class="cm-detail-val">Block C, Shelter Afrique Estate</div>
+</div>
+</div>
+<div class="cm-detail-row">
+<div class="cm-detail-icon">
+<svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+</div>
+<div>
+<div class="cm-detail-label">Working Hours</div>
+<div class="cm-detail-val">Mon–Fri · 8:00 AM – 5:00 PM</div>
+</div>
+</div>
+</div>
+</div>
+<div class="slabel">Quick Actions</div>
+<div class="contact-manager-wrap">
+<div class="cm-card" style="padding:14px 16px;">
+<div class="cm-detail-row" onclick="window.location.href='maintenance.html#maintenance'" style="padding:10px 0; cursor:pointer;">
+<div class="cm-detail-icon" style="background:var(--violet-dim);">
+<svg style="stroke:var(--violet);" viewbox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+</div>
+<div>
+<div class="cm-detail-val">Request Maintenance</div>
+<div class="cm-detail-label">Submit a repair or service request</div>
+</div>
+</div>
+<div class="cm-detail-row" onclick="window.location.href='maintenance.html#report'" style="padding:10px 0; cursor:pointer;">
+<div class="cm-detail-icon" style="background:var(--red-dim);">
+<svg style="stroke:var(--red);" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="8" y2="12"></line><line x1="12" x2="12.01" y1="16" y2="16"></line></svg>
+</div>
+<div>
+<div class="cm-detail-val">Report an Issue</div>
+<div class="cm-detail-label">Flag urgent or safety concerns</div>
+</div>
+</div>
+</div>
+</div>
+</div><!-- /section-contact -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 4: REPORT ISSUE (#report)                       -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="section-wrap" id="section-report" style="display:none;">
+<div class="hd">
+<h1>Report an<br/>Issue</h1>
+<p>Flag concerns, disputes, or safety issues to Domot!.</p>
+</div>
+<div class="slabel">What are you reporting?</div>
+<div class="report-options">
+<div class="report-card ripple-wrap" onclick="selectReportType(this, 'urgent')">
+<div class="report-icon ri-urgent">
+<svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="8" y2="12"></line><line x1="12" x2="12.01" y1="16" y2="16"></line></svg>
+</div>
+<div class="report-info">
+<div class="report-title">Urgent Safety Concern</div>
+<div class="report-desc">Gas leak, structural damage, electrical hazard</div>
+</div>
+<div class="report-arrow">
+<svg viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</div>
+</div>
+<div class="report-card ripple-wrap" onclick="selectReportType(this, 'safety')">
+<div class="report-icon ri-safety">
+<svg viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+</div>
+<div class="report-info">
+<div class="report-title">Security Issue</div>
+<div class="report-desc">Break-in, theft, unauthorized access</div>
+</div>
+<div class="report-arrow">
+<svg viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</div>
+</div>
+<div class="report-card ripple-wrap" onclick="selectReportType(this, 'neighbor')">
+<div class="report-icon ri-neighbor">
+<svg viewbox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+</div>
+<div class="report-info">
+<div class="report-title">Neighbor Dispute</div>
+<div class="report-desc">Noise, boundary, or community issue</div>
+</div>
+<div class="report-arrow">
+<svg viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</div>
+</div>
+<div class="report-card ripple-wrap" onclick="selectReportType(this, 'payment')">
+<div class="report-icon ri-payment">
+<svg viewbox="0 0 24 24"><rect height="16" rx="2" ry="2" width="22" x="1" y="4"></rect><line x1="1" x2="23" y1="10" y2="10"></line></svg>
+</div>
+<div class="report-info">
+<div class="report-title">Payment Dispute</div>
+<div class="report-desc">Rent, fees, or escrow disagreement</div>
+</div>
+<div class="report-arrow">
+<svg viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</div>
+</div>
+</div>
+<div class="slabel">Describe the Issue</div>
+<div class="report-form-wrap">
+<div class="report-form-box">
+<div class="report-form-label">Details</div>
+<textarea class="report-textarea" id="reportDesc" maxlength="1000" placeholder="Please describe what happened, when it started, and any steps you've already taken to resolve it…" rows="6"></textarea>
+<div class="report-anon">
+<div class="report-anon-check" id="anonCheck" onclick="toggleAnon()">
+<svg viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+</div>
+<div class="report-anon-label">Submit anonymously</div>
+</div>
+</div>
+</div>
+<div class="slabel">Attach Evidence (Optional)</div>
+<div class="photo-wrap">
+<div class="photo-scroll" id="reportPhotoScroll">
+<div class="photo-add ripple-wrap" onclick="addReportPhoto(event)">
+<svg viewbox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+<span>ADD</span>
+</div>
+</div>
+<div style="font-size:11px;color:var(--t4);margin-top:8px;">Photos, videos, or documents. Max 5 files.</div>
+</div>
+<div class="submit-wrap">
+<button class="submit-btn ripple-wrap" onclick="submitReport(event)" style="background:linear-gradient(135deg, var(--red), #ff5252); box-shadow:0 8px 32px rgba(240,68,68,.28);">
+<svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="8" y2="12"></line><line x1="12" x2="12.01" y1="16" y2="16"></line></svg>
+                Submit Report
+            </button>
+<div class="submit-note">All reports are reviewed by Domot! within 24 hours. Your safety and privacy are our priority.</div>
+</div>
+</div><!-- /section-report -->
+</div><!-- /scroll-root -->
+<div class="confirm-overlay" id="confirmOverlay">
+<div class="confirm-sheet">
+<div class="cs-pill"></div>
+<div class="cs-icon-wrap">
+<svg viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+</div>
+<div class="cs-title" id="confirmTitle">Request Submitted</div>
+<div class="cs-sub" id="confirmSub">Your property manager has been notified. You'll receive an update shortly.</div>
+<div class="cs-ticket">
+<div class="cs-ticket-head">
+<div class="cs-ticket-id" id="ticketId">TICKET #DMT-00000</div>
+<div class="cs-ticket-status"><div class="dot"></div>OPEN</div>
+</div>
+<div class="cs-ticket-rows">
+<div class="cs-row">
+<div class="cs-row-icon">
+<svg viewbox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+</div>
+<div>
+<div class="cs-row-label">Category</div>
+<div class="cs-row-val" id="ticketCat">Electrical</div>
+</div>
+</div>
+<div class="cs-row">
+<div class="cs-row-icon">
+<svg viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+</div>
+<div>
+<div class="cs-row-label">Property</div>
+<div class="cs-row-val">Shelter Afrique Estate</div>
+</div>
+</div>
+<div class="cs-row">
+<div class="cs-row-icon">
+<svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+</div>
+<div>
+<div class="cs-row-label">Submitted</div>
+<div class="cs-row-val" id="ticketTime">Just now</div>
+</div>
+</div>
+</div>
+<div class="cs-divider"></div>
+<div class="cs-eta">
+<div>
+<div class="cs-eta-label">Expected Response</div>
+<div class="cs-eta-val" id="ticketEta">Within 24 hours</div>
+</div>
+<svg fill="none" height="18" stroke="var(--violet)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+</div>
+</div>
+<div class="cs-actions">
+<button class="cs-btn-primary" onclick="trackRequest()">Track Request</button>
+<button class="cs-btn-ghost" onclick="closeConfirm()">Back to Tenancy</button>
+</div>
+</div>
+</div>
+
+<script src="maintenance.js"></script></body>
+</html>

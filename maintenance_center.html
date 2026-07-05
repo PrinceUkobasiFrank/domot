@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Domot! — Maintenance Center</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet"/>
+
+<link href="maintenance_center.css" rel="stylesheet"/></head>
+<body>
+<div class="page-container" id="pageContainer">
+<div class="page-header">
+<div class="header-back">
+<button class="back-btn" onclick="goBack()">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+</button>
+<div class="header-badge">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+        MNT-2026-001
+      </div>
+</div>
+<div class="header-title">Maintenance Center</div>
+<div class="header-sub">Track property issues, repairs and resolutions.</div>
+</div>
+<div class="sec animate-in delay-1">
+<div class="hero-overview">
+<div class="hero-glow"></div>
+<div class="hero-glow2"></div>
+<div class="hero-label">Request Overview</div>
+<div class="hero-stats">
+<div class="hero-stat">
+<div class="hero-stat-val green" id="openCount">0</div>
+<div class="hero-stat-lbl">Open Requests</div>
+</div>
+<div class="hero-stat">
+<div class="hero-stat-val warm" id="progressCount">0</div>
+<div class="hero-stat-lbl">In Progress</div>
+</div>
+<div class="hero-stat">
+<div class="hero-stat-val blue" id="resolvedCount">0</div>
+<div class="hero-stat-lbl">Resolved This Month</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sec animate-in delay-2">
+<div class="section-label">Property Health</div>
+<div class="health-card">
+<div class="health-label">Maintenance Health Score</div>
+<div style="margin-bottom:4px;">
+<span class="health-num" id="healthDisplay">0</span><span class="health-denom">/100</span>
+</div>
+<div class="health-tag">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        Excellent Condition
+      </div>
+<div class="health-factors">
+<div class="health-factor">
+<div class="health-factor-dot green"></div>
+<div class="health-factor-label">Issue Resolution Speed</div>
+<div class="health-factor-tick green"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+</div>
+<div class="health-factor">
+<div class="health-factor-dot green"></div>
+<div class="health-factor-label">Maintenance Completion</div>
+<div class="health-factor-tick green"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+</div>
+<div class="health-factor">
+<div class="health-factor-dot green"></div>
+<div class="health-factor-label">Resident Satisfaction</div>
+<div class="health-factor-tick green"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+</div>
+<div class="health-factor">
+<div class="health-factor-dot warm"></div>
+<div class="health-factor-label">Property Condition</div>
+<div class="health-factor-tick warm"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sec animate-in delay-3">
+<div class="section-label">Request Filters</div>
+<div class="filter-bar">
+<button class="filter-chip active" onclick="filterRequests(this, 'all')">All</button>
+<button class="filter-chip" onclick="filterRequests(this, 'open')">Open</button>
+<button class="filter-chip" onclick="filterRequests(this, 'progress')">In Progress</button>
+<button class="filter-chip" onclick="filterRequests(this, 'resolved')">Resolved</button>
+<button class="filter-chip" onclick="filterRequests(this, 'urgent')">Urgent</button>
+</div>
+</div>
+<div class="sec animate-in delay-4" id="requestsSection">
+<div class="section-label">Maintenance Requests</div>
+<div class="request-card" data-status="progress" onclick="openIssueDrawer('Leaking Kitchen Tap', 'Unit B4', 'The kitchen tap has been dripping continuously for the past two days. Water is pooling under the sink and may cause damage to the cabinet if not addressed soon.', '2 Days Ago', 'Medium', 'In Progress', 'Maintenance Team', 'Expected by 8 Jun 2026')">
+<div class="request-header">
+<div class="request-icon warm"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg></div>
+<div class="request-info">
+<div class="request-title">Leaking Kitchen Tap</div>
+<div class="request-meta">Unit B4 · Submitted 2 days ago</div>
+</div>
+<div class="request-badges">
+<div class="request-badge medium">Medium</div>
+<div class="request-badge progress">In Progress</div>
+</div>
+</div>
+<div class="request-body">
+<div class="request-row"><div class="request-key"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>Location</div><div class="request-val">Unit B4</div></div>
+<div class="request-row"><div class="request-key"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>Assigned</div><div class="request-val">Maintenance Team</div></div>
+</div>
+<button class="request-cta"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>View Details</button>
+</div>
+<div class="request-card" data-status="open" onclick="openIssueDrawer('Electrical Fault', 'Unit A1', 'Power outlets in the living room are not working. The circuit breaker trips whenever the TV is turned on. This started after the rain last week.', '5 Hours Ago', 'Urgent', 'Open', 'Unassigned', 'Awaiting assignment')">
+<div class="request-header">
+<div class="request-icon red"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg></div>
+<div class="request-info">
+<div class="request-title">Electrical Fault</div>
+<div class="request-meta">Unit A1 · Submitted 5 hours ago</div>
+</div>
+<div class="request-badges">
+<div class="request-badge urgent">Urgent</div>
+<div class="request-badge open">Open</div>
+</div>
+</div>
+<div class="request-body">
+<div class="request-row"><div class="request-key"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>Location</div><div class="request-val">Unit A1</div></div>
+<div class="request-row"><div class="request-key"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>Assigned</div><div class="request-val" style="color:var(--accent-warm);">Awaiting assignment</div></div>
+</div>
+<button class="request-cta"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>View Details</button>
+</div>
+<div class="request-card" data-status="resolved" onclick="openIssueDrawer('Broken Window Lock', 'Unit C2', 'The lock on the bedroom window is broken and the window cannot be secured. This is a security concern that needs immediate attention.', '1 Week Ago', 'High', 'Resolved', 'Maintenance Team', 'Resolved 3 days ago')">
+<div class="request-header">
+<div class="request-icon green"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg></div>
+<div class="request-info">
+<div class="request-title">Broken Window Lock</div>
+<div class="request-meta">Unit C2 · Resolved 3 days ago</div>
+</div>
+<div class="request-badges">
+<div class="request-badge resolved">Resolved</div>
+</div>
+</div>
+<div class="request-body">
+<div class="request-row"><div class="request-key"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>Location</div><div class="request-val">Unit C2</div></div>
+<div class="request-row"><div class="request-key"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>Resolved</div><div class="request-val green">3 days ago</div></div>
+</div>
+<button class="request-cta"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>View Details</button>
+</div>
+</div>
+<div class="sec animate-in delay-5">
+<div class="section-label">Maintenance Timeline</div>
+<div class="timeline">
+<div class="tl-item done">
+<div class="tl-dot done"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="tl-body"><div class="tl-title done">Issue Reported</div><div class="tl-sub">5 Jun 2026 · Electrical Fault</div></div>
+</div>
+<div class="tl-item done">
+<div class="tl-dot done"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="tl-body"><div class="tl-title done">Issue Reviewed</div><div class="tl-sub">5 Jun 2026 · Priority: Urgent</div></div>
+</div>
+<div class="tl-item done">
+<div class="tl-dot done"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="tl-body"><div class="tl-title done">Team Assigned</div><div class="tl-sub">5 Jun 2026 · Electrical Team</div></div>
+</div>
+<div class="tl-item active">
+<div class="tl-dot active"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+<div class="tl-body"><div class="tl-title active">Repair In Progress</div><div class="tl-sub">In progress · Expected completion 8 Jun</div></div>
+</div>
+<div class="tl-item pending">
+<div class="tl-dot pending"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg></div>
+<div class="tl-body"><div class="tl-title pending">Resolved</div><div class="tl-sub">Awaiting completion</div></div>
+</div>
+</div>
+</div>
+<div class="sec animate-in delay-5">
+<div class="section-label">Report New Issue</div>
+<div class="report-card">
+<div class="report-field">
+<label class="report-label">Issue Title</label>
+<input class="report-input" placeholder="e.g., Leaking tap, broken light..." type="text"/>
+</div>
+<div class="report-field">
+<label class="report-label">Description</label>
+<textarea class="report-textarea" placeholder="Describe the issue in detail..."></textarea>
+</div>
+<div class="report-field">
+<label class="report-label">Location</label>
+<input class="report-input" placeholder="e.g., Unit B4, Kitchen" type="text"/>
+</div>
+<div class="report-field">
+<label class="report-label">Priority</label>
+<div class="report-priority">
+<button class="priority-chip active low" onclick="setPriority(this, 'low')"><span class="priority-dot low"></span>Low</button>
+<button class="priority-chip medium" onclick="setPriority(this, 'medium')"><span class="priority-dot medium"></span>Medium</button>
+<button class="priority-chip high" onclick="setPriority(this, 'high')"><span class="priority-dot high"></span>High</button>
+<button class="priority-chip urgent" onclick="setPriority(this, 'urgent')"><span class="priority-dot urgent"></span>Urgent</button>
+</div>
+</div>
+<div class="report-field">
+<label class="report-label">Add Photos</label>
+<div class="photo-upload">
+<div class="photo-slot" onclick="haptic('light')">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" ry="2" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+<span>Add</span>
+</div>
+<div class="photo-slot" onclick="haptic('light')">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" ry="2" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+<span>Add</span>
+</div>
+</div>
+</div>
+<button class="submit-btn" onclick="submitRequest()">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+        Create Request
+      </button>
+</div>
+</div>
+<div class="sec animate-in delay-6">
+<div class="section-label">Active Work Orders</div>
+<div class="work-card">
+<div class="work-icon scheduled"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg></div>
+<div class="work-info"><div class="work-name">Plumbing Repair</div><div class="work-status scheduled">Scheduled · 8 Jun 2026</div></div>
+</div>
+<div class="work-card">
+<div class="work-icon progress"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+<div class="work-info"><div class="work-name">Electrical Inspection</div><div class="work-status progress">In Progress · Unit A1</div></div>
+</div>
+<div class="work-card">
+<div class="work-icon completed"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="work-info"><div class="work-name">Generator Servicing</div><div class="work-status completed">Completed · 2 Jun 2026</div></div>
+</div>
+</div>
+<div class="sec animate-in delay-6">
+<div class="section-label">Recent Activity</div>
+<div class="activity-card">
+<div class="activity-item"><div class="activity-dot-wrap"><div class="activity-dot violet"></div></div><div class="activity-body"><div class="activity-text">Maintenance request submitted · Electrical Fault</div><div class="activity-time">5 hours ago · Unit A1</div></div></div>
+<div class="activity-item"><div class="activity-dot-wrap"><div class="activity-dot blue"></div></div><div class="activity-body"><div class="activity-text">Technician assigned · Electrical Team</div><div class="activity-time">3 hours ago · Unit A1</div></div></div>
+<div class="activity-item"><div class="activity-dot-wrap"><div class="activity-dot green"></div></div><div class="activity-body"><div class="activity-text">Repair completed · Broken Window Lock</div><div class="activity-time">3 days ago · Unit C2</div></div></div>
+<div class="activity-item"><div class="activity-dot-wrap"><div class="activity-dot green"></div></div><div class="activity-body"><div class="activity-text">Resident confirmed resolution</div><div class="activity-time">3 days ago · Unit C2</div></div></div>
+</div>
+</div>
+<div class="sec animate-in delay-7">
+<div class="section-label">Domot! Intelligence</div>
+<div class="insight-card">
+<div class="insight-header">
+<div class="insight-logo"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></div>
+<div><div class="insight-title">Domot! Maintenance Insights</div><div class="insight-sub">AI-assisted analysis</div></div>
+</div>
+<div class="insight-text">Most reported issues this month involve plumbing and electrical systems. Resolution performance remains above target with an average turnaround of 2.5 days. Property health score is tracking at 94/100.</div>
+</div>
+</div>
+<div class="sec animate-in delay-7">
+<div class="section-label">Property Manager</div>
+<div class="manager-card">
+<div class="manager-avatar">JE</div>
+<div class="manager-info">
+<div class="manager-name">John Ekanem</div>
+<div class="manager-role">Property Manager</div>
+<div class="manager-status"><span class="manager-status-dot"></span>Assigned</div>
+</div>
+<button class="manager-btn" onclick="haptic('light')">Contact Manager</button>
+</div>
+</div>
+<div class="sec animate-in delay-8">
+<div class="section-label">Resolution Confirmation</div>
+<div class="confirm-card">
+<div class="confirm-text">Was the Broken Window Lock issue resolved to your satisfaction?</div>
+<div class="confirm-btns">
+<button class="confirm-btn yes" onclick="haptic('success')"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" style="width:14px;height:14px;margin-right:6px;" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Yes</button>
+<button class="confirm-btn no" onclick="haptic('light')"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="width:14px;height:14px;margin-right:6px;" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="15" x2="9" y1="9" y2="15"></line><line x1="9" x2="15" y1="9" y2="15"></line></svg>Needs Attention</button>
+</div>
+</div>
+</div>
+</div>
+<div class="sticky-bar">
+<button class="btn-secondary" onclick="haptic('light')">View History</button>
+<button class="btn-primary" onclick="scrollToReport()">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+    Report Issue
+  </button>
+</div>
+<div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer(event)">
+<div class="drawer-sheet">
+<div class="drawer-handle"></div>
+<div class="drawer-title" id="drawerTitle">Issue Details</div>
+<div class="drawer-sub" id="drawerSub">Maintenance request information</div>
+<div id="drawerContent"></div>
+<div class="drawer-photos">
+<div class="drawer-photo"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" ry="2" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg></div>
+<div class="drawer-photo"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" ry="2" width="18" x="3" y="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg></div>
+</div>
+<button class="drawer-close" onclick="closeDrawerDirect()">Close</button>
+</div>
+</div>
+<div class="modal-overlay" id="successModal" onclick="closeModal(event)">
+<div class="modal-sheet">
+<div class="modal-handle"></div>
+<div class="success-anim">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+<div class="success-ring"></div>
+<div class="success-ring2"></div>
+</div>
+<div class="modal-title">Request Submitted</div>
+<div class="modal-sub">Your maintenance request has been logged and assigned to the appropriate team. You will receive updates as the issue progresses.</div>
+<button class="modal-btn" onclick="closeModalDirect()">Done</button>
+</div>
+</div>
+
+<script src="maintenance_center.js"></script></body>
+</html>

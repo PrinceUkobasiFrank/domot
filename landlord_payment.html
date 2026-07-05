@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Domot! — Payment Center</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet"/>
+
+<link href="landlord_payment.css" rel="stylesheet"/></head>
+<body>
+<div class="page-container" id="pageContainer">
+<div class="page-header">
+<div class="header-back">
+<button class="back-btn" onclick="goBack()">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+</button>
+<div class="header-badge">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><rect height="16" rx="2" ry="2" width="22" x="1" y="4"></rect><line x1="1" x2="23" y1="10" y2="10"></line></svg>
+        PAY-2026-001
+      </div>
+</div>
+<div class="header-title">Payment Center</div>
+<div class="header-sub">Track rent collections, upcoming payments and property income.</div>
+</div>
+<div class="sec animate-in delay-1">
+<div class="hero-fin-card">
+<div class="hero-glow"></div>
+<div class="hero-glow2"></div>
+<div class="hero-label">Wallet</div>
+<div class="hero-balance" id="heroBalance">₦0</div>
+<div class="hero-sub-balance">Ready for withdrawal</div>
+<div class="hero-sub-row">
+<div class="hero-sub-item">
+<div class="hero-sub-val green" id="monthlyCollections">₦0</div>
+<div class="hero-sub-lbl">This Month's Collections</div>
+</div>
+<div class="ring-wrap">
+<div class="ring-outer">
+<svg class="ring-svg" viewbox="0 0 56 56">
+<circle class="ring-track" cx="28" cy="28" r="25"></circle>
+<circle class="ring-progress" cx="28" cy="28" id="collectionRing" r="25"></circle>
+</svg>
+<div class="ring-inner"><div class="ring-text" id="collectionRate">0%</div></div>
+</div>
+<div class="ring-info">
+<div class="ring-label">Collection Rate</div>
+<div class="ring-status">Excellent</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sec animate-in delay-2">
+<div class="section-label">Payout Account</div>
+<div class="opay-card">
+<div class="opay-header">
+<div class="opay-logo">
+<img alt="OPay" onerror="this.style.display='none'; this.parentElement.innerHTML='&lt;svg viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'&gt;&lt;rect x=\'1\' y=\'4\' width=\'22\' height=\'16\' rx=\'2\' ry=\'2\'&gt;&lt;/rect&gt;&lt;line x1=\'1\' y1=\'10\' x2=\'23\' y2=\'10\'&gt;&lt;/line&gt;&lt;/svg&gt;';" src="opay.jpg"/>
+</div>
+<div class="opay-info">
+<div class="opay-name">Connected OPay Account</div>
+<div class="opay-status"><span class="opay-status-dot"></span>Active</div>
+</div>
+</div>
+<div class="opay-body">
+<div class="opay-row"><div class="opay-key">Payout Destination</div><div class="opay-val">OPay •••• 4421</div></div>
+<div class="opay-row"><div class="opay-key">Account Name</div><div class="opay-val">Prince Frank</div></div>
+<div class="opay-row"><div class="opay-key">Last Payout</div><div class="opay-val">3 Jun 2026</div></div>
+</div>
+<div class="opay-actions">
+<button class="opay-btn" onclick="haptic('light')">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+          Manage Account
+        </button>
+<button class="opay-btn" onclick="haptic('light')">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a2 2 0 0 1 2-2h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a2 2 0 0 1-2 2H5"></path></svg>
+          Change Account
+        </button>
+</div>
+</div>
+</div>
+<div class="sec animate-in delay-3">
+<div class="section-label">Payment Overview</div>
+<div class="pay-grid">
+<div class="pay-grid-card green" onclick="haptic('light'); createRipple(event, this)">
+<div class="pay-grid-label">Collected</div>
+<div class="pay-grid-val green" id="collectedVal">₦0</div>
+<div class="pay-grid-change green">+12% from last month</div>
+</div>
+<div class="pay-grid-card warm" onclick="haptic('light'); createRipple(event, this)">
+<div class="pay-grid-label">Pending</div>
+<div class="pay-grid-val warm" id="pendingVal">₦0</div>
+<div class="pay-grid-change warm">2 tenants</div>
+</div>
+<div class="pay-grid-card red" onclick="haptic('light'); createRipple(event, this)">
+<div class="pay-grid-label">Overdue</div>
+<div class="pay-grid-val red" id="overdueVal">₦0</div>
+<div class="pay-grid-change red">1 tenant · 5 days late</div>
+</div>
+<div class="pay-grid-card violet" onclick="haptic('light'); createRipple(event, this)">
+<div class="pay-grid-label">Upcoming</div>
+<div class="pay-grid-val violet" id="upcomingVal">₦0</div>
+<div class="pay-grid-change violet">Due in 7 days</div>
+</div>
+</div>
+</div>
+<div class="sec animate-in delay-4">
+<div class="section-label">Active Tenancies</div>
+<div class="tenancy-card" onclick="openPaymentDrawer('Michael Johnson','2 Bedroom Apartment','₦650,000','₦650,000','5 Jun 2026','RCP-2026-001','Paid')">
+<div class="tenancy-header">
+<div class="tenancy-avatar">MJ</div>
+<div class="tenancy-info"><div class="tenancy-name">Michael Johnson</div><div class="tenancy-prop">2 Bedroom Apartment</div></div>
+<div class="tenancy-badge paid">Paid</div>
+</div>
+<div class="tenancy-body">
+<div class="tenancy-row"><div class="tenancy-key"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" viewbox="0 0 64 64"><path d="M16 12V52M48 12V52M16 16L48 48M16 24H48M16 40H48"></path></svg>Annual Rent</div><div class="tenancy-val green">₦650,000</div></div>
+<div class="tenancy-row"><div class="tenancy-key"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>Next Payment</div><div class="tenancy-val">15 August 2026</div></div>
+</div>
+<button class="tenancy-cta"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>View Payment Details</button>
+</div>
+<div class="tenancy-card" onclick="openPaymentDrawer('Sarah Williams','1 Bedroom Flat','₦480,000','₦0','5 Jun 2026','Pending','Pending')">
+<div class="tenancy-header">
+<div class="tenancy-avatar" style="background:linear-gradient(135deg,#7c5cfa,#5c3fda); box-shadow:0 6px 20px rgba(124,92,250,0.28);">SW</div>
+<div class="tenancy-info"><div class="tenancy-name">Sarah Williams</div><div class="tenancy-prop">1 Bedroom Flat</div></div>
+<div class="tenancy-badge pending">Pending</div>
+</div>
+<div class="tenancy-body">
+<div class="tenancy-row"><div class="tenancy-key"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" viewbox="0 0 64 64"><path d="M16 12V52M48 12V52M16 16L48 48M16 24H48M16 40H48"></path></svg>Annual Rent</div><div class="tenancy-val">₦480,000</div></div>
+<div class="tenancy-row"><div class="tenancy-key"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>Next Payment</div><div class="tenancy-val">10 June 2026</div></div>
+</div>
+<button class="tenancy-cta"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>View Payment Details</button>
+</div>
+<div class="tenancy-card" onclick="openPaymentDrawer('David Okon','3 Bedroom Duplex','₦1,200,000','₦0','3 Jun 2026','—','Overdue')">
+<div class="tenancy-header">
+<div class="tenancy-avatar" style="background:linear-gradient(135deg,#f04444,#c0392b); box-shadow:0 6px 20px rgba(240,68,68,0.28);">DO</div>
+<div class="tenancy-info"><div class="tenancy-name">David Okon</div><div class="tenancy-prop">3 Bedroom Duplex</div></div>
+<div class="tenancy-badge overdue">Overdue</div>
+</div>
+<div class="tenancy-body">
+<div class="tenancy-row"><div class="tenancy-key"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" viewbox="0 0 64 64"><path d="M16 12V52M48 12V52M16 16L48 48M16 24H48M16 40H48"></path></svg>Annual Rent</div><div class="tenancy-val">₦1,200,000</div></div>
+<div class="tenancy-row"><div class="tenancy-key"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>Next Payment</div><div class="tenancy-val" style="color:var(--accent-red);">31 May 2026 · 5 days overdue</div></div>
+</div>
+<button class="tenancy-cta"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>View Payment Details</button>
+</div>
+</div>
+<div class="sec animate-in delay-5">
+<div class="section-label">Payment Timeline</div>
+<div class="pay-timeline">
+<div class="pay-tl-item done">
+<div class="pay-tl-dot done"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="pay-tl-body"><div class="pay-tl-title done">Agreement Activated</div><div class="pay-tl-sub">5 Jun 2026 · AGR-2026-001 active</div></div>
+</div>
+<div class="pay-tl-item done">
+<div class="pay-tl-dot done"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<div class="pay-tl-body"><div class="pay-tl-title done">Payment Setup</div><div class="pay-tl-sub">5 Jun 2026 · OPay connected</div></div>
+</div>
+<div class="pay-tl-item active">
+<div class="pay-tl-dot active"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+<div class="pay-tl-body"><div class="pay-tl-title active">Rent Due</div><div class="pay-tl-sub">15 Aug 2026 · ₦650,000 due</div></div>
+</div>
+<div class="pay-tl-item pending">
+<div class="pay-tl-dot pending"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="16" rx="2" ry="2" width="22" x="1" y="4"></rect><line x1="1" x2="23" y1="10" y2="10"></line></svg></div>
+<div class="pay-tl-body"><div class="pay-tl-title pending">Payment Received</div><div class="pay-tl-sub">Awaiting tenant payment</div></div>
+</div>
+<div class="pay-tl-item pending">
+<div class="pay-tl-dot pending"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+<div class="pay-tl-body"><div class="pay-tl-title pending">Receipt Generated</div><div class="pay-tl-sub">Auto-generated on payment</div></div>
+</div>
+</div>
+</div>
+<div class="sec animate-in delay-5">
+<div class="section-label">Collection Analytics</div>
+<div class="analytics-grid">
+<div class="analytics-card">
+<div class="analytics-label">Occupancy Revenue</div>
+<div class="analytics-val green" id="occupancyRev">₦0</div>
+<div class="analytics-bar"><div class="analytics-bar-fill green" id="occupancyBar" style="width:0%"></div></div>
+<div class="analytics-desc">92% of total property capacity</div>
+</div>
+<div class="analytics-card">
+<div class="analytics-label">Average Collection Time</div>
+<div class="analytics-val violet" id="avgTime">0 days</div>
+<div class="analytics-bar"><div class="analytics-bar-fill violet" id="avgTimeBar" style="width:0%"></div></div>
+<div class="analytics-desc">From due date to receipt</div>
+</div>
+<div class="analytics-card">
+<div class="analytics-label">Successful Collections</div>
+<div class="analytics-val green" id="successfulCol">0</div>
+<div class="analytics-bar"><div class="analytics-bar-fill green" id="successBar" style="width:0%"></div></div>
+<div class="analytics-desc">Out of 4 active tenancies</div>
+</div>
+<div class="analytics-card">
+<div class="analytics-label">Pending Receivables</div>
+<div class="analytics-val warm" id="pendingRec">₦0</div>
+<div class="analytics-bar"><div class="analytics-bar-fill warm" id="pendingBar" style="width:0%"></div></div>
+<div class="analytics-desc">2 tenants yet to pay</div>
+</div>
+</div>
+</div>
+<div class="sec animate-in delay-6">
+<div class="section-label">Payment Activity</div>
+<div class="activity-card">
+<div class="activity-item"><div class="activity-dot-wrap"><div class="activity-dot green"></div></div><div class="activity-body"><div class="activity-text">Rent payment received from Michael Johnson</div><div class="activity-time">Just now · ₦650,000</div></div></div>
+<div class="activity-item"><div class="activity-dot-wrap"><div class="activity-dot blue"></div></div><div class="activity-body"><div class="activity-text">Receipt generated for AGR-2026-001</div><div class="activity-time">2 minutes ago · RCP-2026-001</div></div></div>
+<div class="activity-item"><div class="activity-dot-wrap"><div class="activity-dot warm"></div></div><div class="activity-body"><div class="activity-text">Tenant payment reminder sent to Sarah Williams</div><div class="activity-time">1 hour ago · 3 days until due</div></div></div>
+<div class="activity-item"><div class="activity-dot-wrap"><div class="activity-dot violet"></div></div><div class="activity-body"><div class="activity-text">Payout transferred to OPay account</div><div class="activity-time">3 Jun 2026 · ₦1,200,000</div></div></div>
+<div class="activity-item"><div class="activity-dot-wrap"><div class="activity-dot green"></div></div><div class="activity-body"><div class="activity-text">Rent payment received from David Okon</div><div class="activity-time">31 May 2026 · ₦1,200,000</div></div></div>
+</div>
+</div>
+<div class="sec animate-in delay-6">
+<div class="section-label">Receipt Center</div>
+<div class="receipt-card" onclick="haptic('light'); createRipple(event, this)">
+<div class="receipt-icon violet"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg></div>
+<div class="receipt-info"><div class="receipt-name">Download Receipt</div><div class="receipt-status green">RCP-2026-001 available</div></div>
+<button class="receipt-action">Download</button>
+</div>
+<div class="receipt-card" onclick="haptic('light'); createRipple(event, this)">
+<div class="receipt-icon green"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></div>
+<div class="receipt-info"><div class="receipt-name">View Receipt</div><div class="receipt-status muted">Preview payment record</div></div>
+<button class="receipt-action">View</button>
+</div>
+<div class="receipt-card" onclick="haptic('light'); createRipple(event, this)">
+<div class="receipt-icon blue"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line></svg></div>
+<div class="receipt-info"><div class="receipt-name">Payment Record</div><div class="receipt-status muted">Full transaction history</div></div>
+<button class="receipt-action">Open</button>
+</div>
+</div>
+<div class="sec animate-in delay-7">
+<div class="section-label">Payment Reminders</div>
+<div class="reminders-card">
+<div class="reminder-item">
+<div class="reminder-icon on"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"></path></svg></div>
+<div class="reminder-text"><div class="reminder-name">Automatic Reminder</div><div class="reminder-desc">Enabled for all active tenancies</div></div>
+<div class="reminder-toggle on" onclick="toggleReminder(this)"></div>
+</div>
+<div class="reminder-item">
+<div class="reminder-icon on"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+<div class="reminder-text"><div class="reminder-name">7 Days Before Due Date</div><div class="reminder-desc">First reminder sent to tenant</div></div>
+<div class="reminder-toggle on" onclick="toggleReminder(this)"></div>
+</div>
+<div class="reminder-item">
+<div class="reminder-icon on"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+<div class="reminder-text"><div class="reminder-name">3 Days Before Due Date</div><div class="reminder-desc">Second reminder with urgency</div></div>
+<div class="reminder-toggle on" onclick="toggleReminder(this)"></div>
+</div>
+<div class="reminder-item">
+<div class="reminder-icon on"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+<div class="reminder-text"><div class="reminder-name">Due Date Alert</div><div class="reminder-desc">Final alert on payment day</div></div>
+<div class="reminder-toggle on" onclick="toggleReminder(this)"></div>
+</div>
+</div>
+</div>
+<div class="sec animate-in delay-7">
+<div class="section-label">Domot! Intelligence</div>
+<div class="insight-card">
+<div class="insight-header">
+<div class="insight-logo"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></div>
+<div><div class="insight-title">Domot! Financial Insights</div><div class="insight-sub">AI-assisted analysis</div></div>
+</div>
+<div class="insight-text">Collection performance remains strong across active tenancies. No critical payment risks detected. Occupancy revenue is tracking at 92% of capacity with an average collection time of 3 days.</div>
+</div>
+</div>
+<div class="sec animate-in delay-8">
+<div class="section-label">Withdraw Available Funds</div>
+<div class="withdraw-card">
+<div class="withdraw-label">Available for Withdrawal</div>
+<div class="withdraw-amount" id="withdrawAmount">₦0</div>
+<button class="withdraw-btn" onclick="openWithdrawModal()">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+        Withdraw To OPay
+      </button>
+</div>
+</div>
+</div>
+<div class="sticky-bar">
+<button class="btn-secondary" onclick="haptic('light')">View Statements</button>
+<button class="btn-primary" onclick="openWithdrawModal()">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+    Withdraw Funds
+  </button>
+</div>
+<div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer(event)">
+<div class="drawer-sheet">
+<div class="drawer-handle"></div>
+<div class="drawer-title" id="drawerTitle">Payment Details</div>
+<div class="drawer-sub" id="drawerSub">Tenant payment information</div>
+<div id="drawerContent"></div>
+<button class="drawer-close" onclick="closeDrawerDirect()">Close</button>
+</div>
+</div>
+<div class="modal-overlay" id="withdrawModal" onclick="closeModal(event)">
+<div class="modal-sheet">
+<div class="modal-handle"></div>
+<div class="success-anim">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+<div class="success-ring"></div>
+<div class="success-ring2"></div>
+</div>
+<div class="modal-title">Withdrawal Requested</div>
+<div class="modal-sub">Funds are being transferred to your connected OPay account. You will receive a confirmation once the transfer is complete.</div>
+<button class="modal-btn" onclick="closeModalDirect()">Done</button>
+</div>
+</div>
+
+<script src="landlord_payment.js"></script></body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Domot! — What would you like to do?</title>
+
+<link href="onboard.css" rel="stylesheet"/></head>
+<body>
+<div class="app" id="app">
+<!-- Background with PARALLAX — hero image lives inside here -->
+<div class="bg-layer" id="bgLayer">
+<img alt="Hero Illustration" src="bg2.jpg"/>
+</div>
+<div class="ambient" id="ambient"></div>
+<!-- Bottom frost panel — matches index.html glass-panel -->
+<div class="frost-panel">
+<div class="content">
+<div class="header">
+<h1 id="typeTitle"></h1>
+<p id="typeSubtitle"></p>
+</div>
+<div class="cards-container" id="cardsContainer">
+<div class="intent-card" data-intent="rent" id="cardRent">
+<div class="card-icon"><svg fill="none" height="36" viewbox="0 0 48 48" width="36" xmlns="http://www.w3.org/2000/svg"><path d="M6 20L24 6L42 20V42H30V30H18V42H6V20Z" fill="rgba(124,92,250,0.15)" stroke="#7c5cfa" stroke-linejoin="round" stroke-width="2.5"></path><rect fill="rgba(124,92,250,0.2)" height="12" rx="1" stroke="#7c5cfa" stroke-width="2" width="10" x="19" y="30"></rect><circle cx="24" cy="20" fill="#7c5cfa" r="3"></circle></svg></div>
+<div class="card-text">
+<h3>Rent a Home</h3>
+<p>Find verified rental properties.</p>
+</div>
+<div class="card-check"></div>
+</div>
+<div class="intent-card" data-intent="buy" id="cardBuy">
+<div class="card-icon"><svg fill="none" height="36" viewbox="0 0 48 48" width="36" xmlns="http://www.w3.org/2000/svg"><path d="M8 20L24 8L40 20V40H30V28H18V40H8V20Z" fill="rgba(14,201,127,0.1)" stroke="#0ec97f" stroke-linejoin="round" stroke-width="2.5"></path><path d="M20 40V32H28V40" stroke="#0ec97f" stroke-linejoin="round" stroke-width="2"></path><path d="M16 24H20M28 24H32" stroke="#0ec97f" stroke-linecap="round" stroke-width="2"></path><circle cx="38" cy="12" fill="rgba(14,201,127,0.15)" r="7" stroke="#0ec97f" stroke-width="2"></circle><path d="M35 12L37 14L41 10" stroke="#0ec97f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></div>
+<div class="card-text">
+<h3>Buy Property</h3>
+<p>Discover verified homes and investments.</p>
+</div>
+<div class="card-check"></div>
+</div>
+<div class="intent-card" data-intent="list" id="cardList">
+<div class="card-icon"><svg fill="none" height="36" viewbox="0 0 48 48" width="36" xmlns="http://www.w3.org/2000/svg"><rect fill="rgba(240,165,0,0.1)" height="36" rx="4" stroke="#f0a500" stroke-width="2.5" width="32" x="8" y="6"></rect><path d="M16 16H32M16 23H32M16 30H24" stroke="#f0a500" stroke-linecap="round" stroke-width="2"></path><circle cx="36" cy="36" fill="rgba(240,165,0,0.15)" r="8" stroke="#f0a500" stroke-width="2"></circle><path d="M33 36L35 38L39 34" stroke="#f0a500" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></div>
+<div class="card-text">
+<h3>List Property</h3>
+<p>Reach trusted tenants and buyers.</p>
+</div>
+<div class="card-check"></div>
+</div>
+</div>
+<div class="footer-note" id="footerNote">
+                    You can change this later.
+                </div>
+</div>
+</div>
+</div>
+
+<script src="onboard.js"></script></body>
+</html>

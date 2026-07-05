@@ -1,0 +1,405 @@
+
+move_in_html = '''<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Domot! — Move-In Hub</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet"/>
+
+<link href="movein.css" rel="stylesheet"/></head>
+<body>
+<div class="ambient">
+<div class="orb o1"></div>
+<div class="orb o2"></div>
+<div class="orb o3"></div>
+</div>
+<!-- ══════════════════ MAIN SCREEN ══════════════════ -->
+<div class="scroll-root" id="mainScroll">
+<!-- Nav -->
+<div class="nav">
+<button class="nav-btn" onclick="goBack()">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+</button>
+<div class="nav-lock">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24">
+<rect height="11" rx="2" ry="2" width="18" x="3" y="11"></rect>
+<path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+</svg>
+<span>Secured by Domot!</span>
+</div>
+<button class="nav-btn">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle>
+</svg>
+</button>
+</div>
+<!-- Header -->
+<div class="hd ai d1">
+<h1>Move-In Hub</h1>
+<p>Track everything before you receive your keys.</p>
+</div>
+<!-- Progress Timeline -->
+<div class="slabel ai d2">Move-In Progress</div>
+<div class="timeline-card ai d2">
+<div class="tl-header">
+<span class="tl-label">Transaction Timeline</span>
+<div class="tl-badge">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+<span>On Track</span>
+</div>
+</div>
+<div class="tl-step">
+<div class="tl-left">
+<div class="tl-node tl-done">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 16 16"><polyline points="3,8 6,11 13,4"></polyline></svg>
+</div>
+<div class="tl-connector tc-done"></div>
+</div>
+<div class="tl-content">
+<div class="tl-step-title tlst-green">Application Approved</div>
+<div class="tl-step-desc">Your application was reviewed and accepted by the landlord.</div>
+<div class="tl-step-time">3 Jun 2026</div>
+</div>
+</div>
+<div class="tl-step">
+<div class="tl-left">
+<div class="tl-node tl-done">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 16 16"><polyline points="3,8 6,11 13,4"></polyline></svg>
+</div>
+<div class="tl-connector tc-done"></div>
+</div>
+<div class="tl-content">
+<div class="tl-step-title tlst-green">Agreement Signed</div>
+<div class="tl-step-desc">Tenancy agreement digitally signed by both parties.</div>
+<div class="tl-step-time">3 Jun 2026</div>
+</div>
+</div>
+<div class="tl-step">
+<div class="tl-left">
+<div class="tl-node tl-done">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 16 16"><polyline points="3,8 6,11 13,4"></polyline></svg>
+</div>
+<div class="tl-connector tc-done"></div>
+</div>
+<div class="tl-content">
+<div class="tl-step-title tlst-green">Payment Secured</div>
+<div class="tl-step-desc">₦625,000 held in Domot! escrow. Funds are protected.</div>
+<div class="tl-step-time">3 Jun 2026 · 10:23 AM</div>
+</div>
+</div>
+<div class="tl-step">
+<div class="tl-left">
+<div class="tl-node tl-done">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 16 16"><polyline points="3,8 6,11 13,4"></polyline></svg>
+</div>
+<div class="tl-connector tc-fade"></div>
+</div>
+<div class="tl-content">
+<div class="tl-step-title tlst-green">Landlord Confirmed</div>
+<div class="tl-step-desc">Property manager confirmed availability for handover.</div>
+<div class="tl-step-time">3 Jun 2026 · 11:05 AM</div>
+</div>
+</div>
+<div class="tl-step">
+<div class="tl-left">
+<div class="tl-node tl-hold">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 16 16">
+<path d="M8 11s4-2 4-5V3L8 1 4 3v3c0 3 4 5 4 5z"></path>
+</svg>
+</div>
+<div class="tl-connector tc-none"></div>
+</div>
+<div class="tl-content">
+<div class="tl-step-title tlst-violet">Key Handover</div>
+<div class="tl-step-desc">Scheduled for 15 July 2026. Awaiting your confirmation.</div>
+<div class="tl-step-time" style="color:rgba(124,92,250,.7)">Scheduled · 10:00 AM</div>
+</div>
+</div>
+<div class="tl-step">
+<div class="tl-left">
+<div class="tl-node tl-pend">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 16 16">
+<polyline points="3,8 6,11 13,4"></polyline>
+</svg>
+</div>
+</div>
+<div class="tl-content">
+<div class="tl-step-title tlst-dim">Move-In Complete</div>
+<div class="tl-step-desc">Confirm key collection and property condition to complete.</div>
+<div class="tl-step-time">—</div>
+</div>
+</div>
+</div>
+<!-- Property Summary Card -->
+<div class="slabel ai d3">Property</div>
+<div class="prop-card ai d3">
+<div class="prop-img">🏠</div>
+<div class="prop-info">
+<div class="prop-type">Self Contain</div>
+<div class="prop-name">Shelter Afrique Estate</div>
+<div class="prop-meta">
+<div class="prop-meta-item">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" width="18" x="3" y="4"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+                    15 July 2026
+                </div>
+<div class="prop-meta-item">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    Uyo, Akwa Ibom
+                </div>
+</div>
+</div>
+</div>
+<!-- Key Handover Section -->
+<div class="slabel ai d4">Key Handover</div>
+<div class="key-card ai d4">
+<div class="key-top">
+<div class="key-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24">
+<path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path>
+</svg>
+</div>
+<div>
+<div class="key-title">Key Handover Scheduled</div>
+<div class="key-sub">Your appointment is confirmed with the property manager.</div>
+</div>
+</div>
+<div class="key-details">
+<div class="key-detail">
+<div class="key-detail-label">Date</div>
+<div class="key-detail-val">15 July</div>
+<div class="key-detail-sub">Tuesday, 2026</div>
+</div>
+<div class="key-detail">
+<div class="key-detail-label">Time</div>
+<div class="key-detail-val">10:00 AM</div>
+<div class="key-detail-sub">WAT (GMT+1)</div>
+</div>
+</div>
+</div>
+<!-- Required Documents -->
+<div class="slabel ai d5">Required Documents</div>
+<div class="doc-card ai d5">
+<div class="doc-row">
+<div class="doc-check done">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 16 16"><polyline points="3,8 6,11 13,4"></polyline></svg>
+</div>
+<div class="doc-info">
+<div class="doc-name">Signed Agreement</div>
+<div class="doc-status done">Verified · 3 Jun 2026</div>
+</div>
+<div class="doc-action" onclick="viewDoc('agreement')">View</div>
+</div>
+<div class="doc-row">
+<div class="doc-check done">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 16 16"><polyline points="3,8 6,11 13,4"></polyline></svg>
+</div>
+<div class="doc-info">
+<div class="doc-name">Payment Receipt</div>
+<div class="doc-status done">Secured · DMT-2026-48392</div>
+</div>
+<div class="doc-action" onclick="viewDoc('receipt')">View</div>
+</div>
+<div class="doc-row">
+<div class="doc-check done">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 16 16"><polyline points="3,8 6,11 13,4"></polyline></svg>
+</div>
+<div class="doc-info">
+<div class="doc-name">Identity Verification</div>
+<div class="doc-status done">Verified · NIN on file</div>
+</div>
+<div class="doc-action" onclick="viewDoc('identity')">View</div>
+</div>
+<div class="doc-row">
+<div class="doc-check done">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 16 16"><polyline points="3,8 6,11 13,4"></polyline></svg>
+</div>
+<div class="doc-info">
+<div class="doc-name">Landlord Confirmation</div>
+<div class="doc-status done">Confirmed · 3 Jun 2026</div>
+</div>
+<div class="doc-action" onclick="viewDoc('landlord')">View</div>
+</div>
+</div>
+<!-- Contact Section -->
+<div class="slabel ai d6">Property Manager</div>
+<div class="contact-card ai d6">
+<div class="contact-header">
+<div class="contact-avatar">👤</div>
+<div class="contact-info">
+<div class="contact-name">Mr. Emmanuel Okon</div>
+<div class="contact-role">Property Manager · Shelter Afrique</div>
+</div>
+<div class="contact-verified">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+                Verified
+            </div>
+</div>
+<div class="contact-actions">
+<div class="contact-btn" onclick="contactAction('call')">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+<span>Call</span>
+</div>
+<div class="contact-btn" onclick="contactAction('message')">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+<span>Message</span>
+</div>
+<div class="contact-btn" onclick="contactAction('directions')">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+<span>Directions</span>
+</div>
+</div>
+</div>
+<!-- Move-In Checklist -->
+<div class="slabel ai d7">Before Move-In Checklist</div>
+<div class="checklist-card ai d7">
+<div class="checklist-header">
+<div class="checklist-title">Move-In Inspection</div>
+<div class="checklist-sub">Complete these checks on handover day</div>
+</div>
+<div class="checklist-row" onclick="toggleCheck(this)">
+<div class="checklist-check">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 16 16"><polyline points="3,8 6,11 13,4"></polyline></svg>
+</div>
+<div class="checklist-text">Inspect Water Supply</div>
+</div>
+<div class="checklist-row" onclick="toggleCheck(this)">
+<div class="checklist-check">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 16 16"><polyline points="3,8 6,11 13,4"></polyline></svg>
+</div>
+<div class="checklist-text">Inspect Electricity</div>
+</div>
+<div class="checklist-row" onclick="toggleCheck(this)">
+<div class="checklist-check">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 16 16"><polyline points="3,8 6,11 13,4"></polyline></svg>
+</div>
+<div class="checklist-text">Confirm Keys Received</div>
+</div>
+<div class="checklist-row" onclick="toggleCheck(this)">
+<div class="checklist-check">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 16 16"><polyline points="3,8 6,11 13,4"></polyline></svg>
+</div>
+<div class="checklist-text">Check Meter Reading</div>
+</div>
+<div class="checklist-row" onclick="toggleCheck(this)">
+<div class="checklist-check">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 16 16"><polyline points="3,8 6,11 13,4"></polyline></svg>
+</div>
+<div class="checklist-text">Confirm Property Condition</div>
+</div>
+</div>
+<!-- Problem Reporting -->
+<div class="slabel ai d8">Problem Reporting</div>
+<div class="problem-card ai d8">
+<div class="problem-top">
+<div class="problem-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<line x1="12" x2="12" y1="8" y2="12"></line>
+<line x1="12" x2="12.01" y1="16" y2="16"></line>
+</svg>
+</div>
+<div>
+<div class="problem-title">Report an Issue</div>
+<div class="problem-sub">Keep disputes inside Domot!. No WhatsApp drama.</div>
+</div>
+</div>
+<div class="problem-options">
+<div class="problem-opt" onclick="reportIssue('described')">
+<div class="problem-opt-dot"></div>
+<div class="problem-opt-text">Property Not As Described</div>
+</div>
+<div class="problem-opt" onclick="reportIssue('keys')">
+<div class="problem-opt-dot"></div>
+<div class="problem-opt-text">Keys Not Available</div>
+</div>
+<div class="problem-opt" onclick="reportIssue('unreachable')">
+<div class="problem-opt-dot"></div>
+<div class="problem-opt-text">Landlord Unreachable</div>
+</div>
+<div class="problem-opt" onclick="reportIssue('payment')">
+<div class="problem-opt-dot"></div>
+<div class="problem-opt-text">Payment Dispute</div>
+</div>
+</div>
+</div>
+<div style="height:12px"></div>
+<!-- CTA -->
+<div class="action-bar">
+<button class="pay-btn" onclick="confirmKeys()">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path>
+</svg>
+            Confirm Key Collection
+        </button>
+<div class="pay-btn-sub">Shelter Afrique · 15 July · 10:00 AM</div>
+</div>
+</div>
+<!-- ══════════════════ WELCOME HOME OVERLAY ══════════════════ -->
+<div class="welcome-overlay" id="welcomeOverlay">
+<div class="welcome-vault-wrap">
+<div class="welcome-vault">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 50 50">
+<path d="M25 46s16-8 16-20V10L25 4 9 10v16c0 12 16 20 16 20z"></path>
+<path d="M18 25l5 5 9-9"></path>
+</svg>
+<div class="welcome-vault-ring"></div>
+</div>
+</div>
+<div class="welcome-title">Welcome Home</div>
+<div class="welcome-sub">You have successfully moved in. Your tenancy is now active and protected under Domot!.</div>
+<!-- Welcome Card -->
+<div class="welcome-card">
+<div class="wc-head">
+<span class="wc-brand">Domot!</span>
+<div class="wc-secured">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+<span>TENANT</span>
+</div>
+</div>
+<div class="wc-divider"></div>
+<div class="wc-rows">
+<div class="wc-row">
+<div class="wc-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div>
+<div>
+<div class="wc-lbl">Property</div>
+<div class="wc-val">Shelter Afrique Estate</div>
+</div>
+</div>
+<div class="wc-row">
+<div class="wc-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" width="18" x="3" y="4"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg></div>
+<div>
+<div class="wc-lbl">Move-In Date</div>
+<div class="wc-val">15 July 2026</div>
+</div>
+</div>
+<div class="wc-row">
+<div class="wc-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg></div>
+<div>
+<div class="wc-lbl">Tenancy Status</div>
+<div class="wc-val">Active · Escrow Protected</div>
+</div>
+</div>
+<div class="wc-row">
+<div class="wc-icon"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><line x1="12" x2="12" y1="1" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+<div>
+<div class="wc-lbl">Annual Rent</div>
+<div class="wc-val">₦450,000</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="welcome-actions">
+<button class="btn-p" onclick="goToDashboard()">Go to Tenancy Dashboard</button>
+<button class="btn-g" onclick="saveWelcome()">Save Move-In Details</button>
+</div>
+</div>
+
+<script src="movein.js"></script></body>
+</html>

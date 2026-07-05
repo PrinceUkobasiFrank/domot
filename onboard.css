@@ -1,0 +1,356 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.18);
+            --glass-border-hover: rgba(255, 255, 255, 0.35);
+            --text-primary: rgba(255, 255, 255, 0.95);
+            --text-secondary: rgba(255, 255, 255, 0.6);
+            --text-muted: rgba(255, 255, 255, 0.35);
+            --accent-glow: rgba(255, 255, 255, 0.08);
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0f;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* ==================== MAIN APP ==================== */
+        .app {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /* Background layer with PARALLAX */
+        .bg-layer {
+            position: absolute;
+            inset: -30px;
+            z-index: 0;
+            will-change: transform;
+            transition: transform 0.1s linear;
+        }
+
+        .bg-layer img {
+            width: 95%;
+            height: 45%;
+            object-fit: cover;
+            filter: brightness(0.55) saturate(1.05);
+        }
+
+        /* Subtle gradient overlay — NOT blue */
+        .bg-layer::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 30% 10%, rgba(139, 92, 246, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 90%, rgba(236, 72, 153, 0.04) 0%, transparent 50%),
+                linear-gradient(180deg, rgba(0,0,0,0.15) 0%, transparent 30%, rgba(0,0,0,0.25) 100%);
+            pointer-events: none;
+        }
+
+        /* ==================== BOTTOM FROST PANEL ==================== */
+        .frost-panel {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            padding: 32px 24px;
+            padding-bottom: max(28px, env(safe-area-inset-bottom));
+            background:
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E"),
+                linear-gradient(
+                    to top,
+                    rgba(100, 20, 190, 0.94) 0%,
+                    rgba(140, 60, 220, 0.70) 30%,
+                    rgba(180, 110, 245, 0.32) 62%,
+                    transparent 100%
+                );
+            backdrop-filter: blur(14px) saturate(140%);
+            -webkit-backdrop-filter: blur(14px) saturate(140%);
+        }
+
+        /* Shimmer sweep */
+        .frost-panel::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                105deg,
+                transparent 30%,
+                rgba(255, 255, 255, 0.06) 50%,
+                transparent 70%
+            );
+            background-size: 250% 100%;
+            animation: panelShimmer 3.5s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes panelShimmer {
+            0%   { background-position: 200% 0; }
+            60%  { background-position: -50% 0; }
+            100% { background-position: -50% 0; }
+        }
+
+        /* Content inside frost panel */
+        .content {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        /* Header text with typewriter */
+        .header {
+            text-align: center;
+            margin-bottom: 24px;
+            opacity: 0;
+            animation: headerReveal 0.6s ease 0.5s forwards;
+        }
+
+        @keyframes headerReveal {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .header h1 {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+            min-height: 34px;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 15px;
+            font-weight: 400;
+            color: var(--text-secondary);
+            min-height: 22px;
+            text-shadow: 0 1px 10px rgba(0,0,0,0.3);
+        }
+
+        /* Typewriter cursor */
+        .typewriter-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1em;
+            background: var(--text-primary);
+            margin-left: 2px;
+            animation: blink 0.8s step-end infinite;
+            vertical-align: text-bottom;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .typewriter-cursor.done {
+            animation: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        /* ==================== GLASSMORPHIC CARDS ==================== */
+        .cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .intent-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            width: 100%;
+            padding: 18px 20px;
+            border-radius: 18px;
+            border: 1px solid var(--glass-border);
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px) saturate(150%);
+            -webkit-backdrop-filter: blur(20px) saturate(150%);
+            cursor: pointer;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px) scale(0.98);
+            box-shadow:
+                0 4px 16px rgba(0, 0, 0, 0.2),
+                0 1px 3px rgba(0, 0, 0, 0.12),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .intent-card.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .intent-card:active {
+            transform: scale(0.96);
+            box-shadow:
+                0 2px 8px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        }
+
+        .intent-card.selected {
+            border-color: var(--glass-border-hover);
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow:
+                0 0 30px var(--accent-glow),
+                0 4px 20px rgba(0, 0, 0, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            transform: scale(1.02);
+        }
+
+        /* Card icon with bounce */
+        .card-icon {
+            font-size: 28px;
+            line-height: 1;
+            flex-shrink: 0;
+            margin-top: 2px;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .intent-card.selected .card-icon {
+            transform: scale(1.2) rotate(-5deg);
+        }
+
+        /* Card text */
+        .card-text {
+            flex: 1;
+        }
+
+        .card-text h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 3px;
+            letter-spacing: -0.2px;
+        }
+
+        .card-text p {
+            font-size: 12px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.62);
+            line-height: 1.4;
+        }
+
+        /* Selection indicator */
+        .card-check {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            border: 2px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            margin-top: 2px;
+        }
+
+        .intent-card.selected .card-check {
+            background: var(--text-primary);
+            border-color: var(--text-primary);
+            transform: scale(1.1);
+        }
+
+        .card-check::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--text-primary);
+            transform: scale(0);
+            transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .intent-card.selected .card-check::after {
+            transform: scale(1);
+            background: #ffffff;
+        }
+
+        /* Ripple effect */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.12);
+            transform: scale(0);
+            animation: rippleAnim 0.6s ease-out;
+            pointer-events: none;
+        }
+
+        @keyframes rippleAnim {
+            to { transform: scale(2.5); opacity: 0; }
+        }
+
+        /* Footer note */
+        .footer-note {
+            text-align: center;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.45);
+            font-weight: 400;
+            letter-spacing: 0.3px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.5s ease;
+        }
+
+        .footer-note.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Ambient particles */
+        .ambient {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .ambient-dot {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: drift 20s infinite ease-in-out;
+        }
+
+        @keyframes drift {
+            0%, 100% { transform: translate(0, 0); opacity: 0.1; }
+            33% { transform: translate(20px, -30px); opacity: 0.2; }
+            66% { transform: translate(-15px, -15px); opacity: 0.15; }
+        }
+
+        /* Confetti burst on selection */
+        .confetti {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        @keyframes confettiBurst {
+            0% { transform: translate(0, 0) scale(1); opacity: 1; }
+            100% { transform: translate(var(--tx), var(--ty)) scale(0); opacity: 0; }
+        }
