@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Domot! — What's your expected budget?</title>
+
+<link href="budget.css" rel="stylesheet"/></head>
+<body>
+<div class="app" id="app">
+<!-- Progress bar -->
+<div class="progress-bar">
+<div class="progress-fill" id="progressFill"></div>
+</div>
+<!-- Background with PARALLAX -->
+<div class="bg-layer" id="bgLayer">
+<img alt="Hero Illustration" src="bg3.png"/>
+</div>
+<!-- Luxury floating glow -->
+<div class="luxury-glow" style="top: 20%; left: 10%;"></div>
+<div class="luxury-glow" style="top: 60%; right: 5%; animation-delay: -4s;"></div>
+<div class="ambient" id="ambient"></div>
+<!-- Bottom frost panel -->
+<div class="frost-panel">
+<div class="content">
+<div class="header">
+<h1 id="typeTitle"></h1>
+<p id="typeSubtitle"></p>
+</div>
+<!-- Budget Cards -->
+<div class="budget-cards" id="budgetCards">
+<button class="budget-card" data-max="600000" data-min="300000" data-value="300k-600k">
+<div class="budget-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<rect height="14" rx="2" width="20" x="2" y="5"></rect>
+<line x1="2" x2="22" y1="10" y2="10"></line>
+</svg>
+</div>
+<div class="budget-text">
+<span class="range">₦300k — ₦600k</span>
+<span class="hint">Entry level rentals</span>
+</div>
+<div class="card-check">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</div>
+</button>
+<button class="budget-card" data-max="1500000" data-min="600000" data-value="600k-1.5m">
+<div class="budget-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<rect height="14" rx="2" width="20" x="2" y="5"></rect>
+<line x1="2" x2="22" y1="10" y2="10"></line>
+</svg>
+</div>
+<div class="budget-text">
+<span class="range">₦600k — ₦1.5m</span>
+<span class="hint">Standard rentals</span>
+</div>
+<div class="card-check">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</div>
+</button>
+<button class="budget-card" data-max="5000000" data-min="1500000" data-value="1.5m-5m">
+<div class="budget-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<rect height="14" rx="2" width="20" x="2" y="5"></rect>
+<line x1="2" x2="22" y1="10" y2="10"></line>
+</svg>
+</div>
+<div class="budget-text">
+<span class="range">₦1.5m — ₦5m</span>
+<span class="hint">Premium rentals</span>
+</div>
+<div class="card-check">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</div>
+</button>
+<button class="budget-card" data-max="999999999" data-min="5000000" data-value="5m+">
+<div class="budget-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<rect height="14" rx="2" width="20" x="2" y="5"></rect>
+<line x1="2" x2="22" y1="10" y2="10"></line>
+</svg>
+</div>
+<div class="budget-text">
+<span class="range">₦5m+</span>
+<span class="hint">Luxury &amp; executive</span>
+</div>
+<div class="card-check">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</div>
+</button>
+</div>
+<!-- Custom Budget -->
+<div class="custom-budget-wrapper" id="customBudgetWrapper">
+<button class="custom-budget-btn" id="customBudgetBtn">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<line x1="12" x2="12" y1="5" y2="19"></line>
+<line x1="5" x2="19" y1="12" y2="12"></line>
+</svg>
+                        Set Custom Budget
+                    </button>
+<div class="custom-panel" id="customPanel">
+<div class="custom-panel-label">Custom Budget Range</div>
+<div class="custom-input-row">
+<div class="custom-input-group">
+<label>Minimum</label>
+<input class="custom-input" id="customMin" inputmode="numeric" placeholder="₦0" type="text"/>
+</div>
+<div class="custom-input-group">
+<label>Maximum</label>
+<input class="custom-input" id="customMax" inputmode="numeric" placeholder="₦No limit" type="text"/>
+</div>
+</div>
+<div class="slider-container">
+<div class="slider-labels">
+<span>₦100k</span>
+<span>₦20m+</span>
+</div>
+<div class="slider-track" id="sliderTrack">
+<div class="slider-fill" id="sliderFill"></div>
+<div class="slider-thumb" id="sliderThumb" style="left: 50%;"></div>
+</div>
+<div class="slider-value-display" id="sliderValue">₦1.5m — ₦5m</div>
+</div>
+</div>
+</div>
+<!-- Confirmation Summary -->
+<div class="summary-panel" id="summaryPanel">
+<div class="summary-title">Looking for:</div>
+<div class="summary-item">
+<div class="summary-check">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</div>
+<span id="summaryType">Self Contain</span>
+</div>
+<div class="summary-item">
+<div class="summary-check">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</div>
+<span id="summaryLocation">Uyo</span>
+</div>
+<div class="summary-item" id="summaryBudgetItem">
+<div class="summary-check">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</div>
+<span id="summaryBudget">₦600k — ₦1.5m</span>
+</div>
+</div>
+<!-- CTA -->
+<div class="cta-wrapper" id="ctaWrapper">
+<button class="cta-btn" disabled="" id="ctaBtn">
+<span>Continue</span>
+<svg class="cta-arrow" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<line x1="5" x2="19" y1="12" y2="12"></line>
+<polyline points="12 5 19 12 12 19"></polyline>
+</svg>
+</button>
+</div>
+<div class="footer-note" id="footerNote">
+                    You can update these preferences anytime.
+                </div>
+</div>
+</div>
+</div>
+
+<script src="budget.js"></script></body>
+</html>
