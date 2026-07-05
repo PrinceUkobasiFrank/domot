@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Domot! — Rental Application</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet"/>
+
+<link href="apply.css" rel="stylesheet"/></head>
+<body>
+<div class="ambient">
+<div class="ambient-orb ambient-orb-1"></div>
+<div class="ambient-orb ambient-orb-2"></div>
+</div>
+<!-- ==================== SCREEN 1: APPLICATION ==================== -->
+<div class="screen" id="applyScreen">
+<!-- Nav -->
+<div class="float-nav">
+<button class="nav-btn" onclick="goBack()">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+</button>
+<div style="display:flex; gap:10px;">
+<button class="nav-btn">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="18" cy="5" r="3"></circle>
+<circle cx="6" cy="12" r="3"></circle>
+<circle cx="18" cy="19" r="3"></circle>
+<line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line>
+<line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line>
+</svg>
+</button>
+</div>
+</div>
+<!-- Progress -->
+<div class="progress-bar animate-in">
+<div class="progress-step done">
+<div class="step-dot">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 12 12">
+<polyline points="2,6 5,9 10,3"></polyline>
+</svg>
+</div>
+<span class="step-label">Property</span>
+</div>
+<div class="progress-step done">
+<div class="step-dot">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 12 12">
+<polyline points="2,6 5,9 10,3"></polyline>
+</svg>
+</div>
+<span class="step-label">Inspection</span>
+</div>
+<div class="progress-step active">
+<div class="step-dot">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 12 12">
+<circle cx="6" cy="6" fill="currentColor" r="2" stroke="none"></circle>
+</svg>
+</div>
+<span class="step-label">Application</span>
+</div>
+<div class="progress-step">
+<div class="step-dot"></div>
+<span class="step-label">Agreement</span>
+</div>
+<div class="progress-step">
+<div class="step-dot"></div>
+<span class="step-label">Move-in</span>
+</div>
+</div>
+<!-- Header -->
+<div class="header-text animate-in delay-1">
+<h1>Apply for This Property</h1>
+<p>Help the landlord understand your application.</p>
+</div>
+<!-- Applicant Profile -->
+<div class="section-label animate-in delay-2">Applicant Profile</div>
+<div class="profile-card animate-in delay-2">
+<div class="profile-top">
+<div class="avatar">PF</div>
+<div class="profile-name-wrap">
+<div class="profile-name">Prince Frank</div>
+<div class="profile-locked">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<rect height="11" rx="2" ry="2" width="18" x="3" y="11"></rect>
+<path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+</svg>
+                    Pre-filled from your account
+                </div>
+</div>
+</div>
+<div class="profile-badges">
+<div class="badge badge-green">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 12 12">
+<polyline points="2,6 5,9 10,3"></polyline>
+</svg>
+                Phone Verified
+            </div>
+<div class="badge badge-green">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 12 12">
+<polyline points="2,6 5,9 10,3"></polyline>
+</svg>
+                Email Verified
+            </div>
+<div class="badge badge-green">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 12 12">
+<polyline points="2,6 5,9 10,3"></polyline>
+</svg>
+                Identity Verified
+            </div>
+</div>
+</div>
+<!-- Occupancy -->
+<div class="section-label animate-in delay-3">Who Will Live Here?</div>
+<div class="option-row animate-in delay-3" id="occupancyRow">
+<div class="option-card selected" data-group="occupancy">
+<div class="option-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+<circle cx="12" cy="7" r="4"></circle>
+</svg>
+</div>
+<div class="option-label">Just Me</div>
+</div>
+<div class="option-card" data-group="occupancy">
+<div class="option-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+<circle cx="9" cy="7" r="4"></circle>
+<path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+<path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+</svg>
+</div>
+<div class="option-label">Me &amp; Family</div>
+</div>
+<div class="option-card" data-group="occupancy">
+<div class="option-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+<circle cx="9" cy="7" r="4"></circle>
+<path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+<path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+<circle cx="20" cy="7" r="3"></circle>
+</svg>
+</div>
+<div class="option-label">Shared Occupancy</div>
+</div>
+</div>
+<!-- Move-in Date -->
+<div class="section-label animate-in delay-4">Intended Move-in Date</div>
+<div class="date-card animate-in delay-4">
+<div class="month-nav">
+<button class="month-btn" onclick="changeMonth(-1)">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+</button>
+<span class="month-label" id="monthLabel">August 2026</span>
+<button class="month-btn" onclick="changeMonth(1)">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</button>
+</div>
+<div class="cal-grid" id="calGrid"></div>
+</div>
+<!-- Lease Duration -->
+<div class="section-label animate-in delay-5">Lease Duration</div>
+<div class="lease-scroll animate-in delay-5" id="leaseRow">
+<div class="lease-pill selected" data-lease="1">1 Year</div>
+<div class="lease-pill" data-lease="2">2 Years</div>
+<div class="lease-pill" data-lease="3">3 Years+</div>
+</div>
+<!-- Notes -->
+<div class="section-label animate-in delay-6">Additional Information</div>
+<div class="notes-card animate-in delay-6">
+<div class="notes-label-row">
+<span class="notes-label">Tell the landlord anything important</span>
+<span class="notes-optional">Optional</span>
+</div>
+<textarea class="notes-textarea" id="notesArea" placeholder="E.g. I work from home, no pets, quiet professional…" rows="3"></textarea>
+</div>
+<!-- Trust Snapshot -->
+<div class="section-label animate-in delay-7">Your Trust Profile</div>
+<div class="trust-card animate-in delay-7">
+<div class="trust-card-title">Applicant Trust Profile</div>
+<div class="trust-row">
+<div class="trust-dot">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</div>
+<span class="trust-row-text">Identity Verified</span>
+</div>
+<div class="trust-row">
+<div class="trust-dot">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</div>
+<span class="trust-row-text">Phone Verified</span>
+</div>
+<div class="trust-row">
+<div class="trust-dot">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</div>
+<span class="trust-row-text">Payment Account Verified</span>
+</div>
+</div>
+<!-- Summary -->
+<div class="section-label animate-in delay-7">Application Summary</div>
+<div class="summary-card animate-in delay-7">
+<div class="summary-row">
+<span class="summary-key">Property Type</span>
+<span class="summary-val">Self Contain</span>
+</div>
+<div class="summary-row">
+<span class="summary-key">Property</span>
+<span class="summary-val">Shelter Afrique Estate</span>
+</div>
+<div class="summary-divider"></div>
+<div class="summary-row">
+<span class="summary-key">Annual Rent</span>
+<span class="summary-val green">₦450,000</span>
+</div>
+<div class="summary-row">
+<span class="summary-key">Move-in</span>
+<span class="summary-val" id="summaryMovein">August 2026</span>
+</div>
+<div class="summary-row">
+<span class="summary-key">Lease</span>
+<span class="summary-val" id="summaryLease">1 Year</span>
+</div>
+</div>
+<div style="height: 16px;"></div>
+<!-- CTA -->
+<div class="action-bar">
+<button class="submit-btn" id="submitBtn" onclick="submitApplication()">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<line x1="22" x2="11" y1="2" y2="13"></line>
+<polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+</svg>
+            Submit Application
+        </button>
+</div>
+</div>
+<!-- ==================== SCREEN 2: STATUS ==================== -->
+<div class="screen hidden" id="statusScreen">
+<!-- Nav -->
+<div class="float-nav">
+<button class="nav-btn" onclick="goToApply()">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+</button>
+<button class="nav-btn">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+<path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+</svg>
+</button>
+</div>
+<!-- Status Hero -->
+<div class="status-hero animate-in">
+<div class="status-icon-wrap">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+</div>
+<div class="status-title">Application Under Review</div>
+<div class="status-sub">Landlord typically responds within 48 hours. We'll notify you instantly.</div>
+</div>
+<!-- Property Chip -->
+<div class="property-chip animate-in delay-1">
+<img alt="Property" class="chip-thumb" onerror="this.style.background='linear-gradient(135deg,#161624,#2a2044)'" src="h2.jpg"/>
+<div class="chip-info">
+<div class="chip-type">Self Contain</div>
+<div class="chip-name">Shelter Afrique Estate</div>
+<div class="chip-price">₦450,000 / year</div>
+</div>
+<div class="chip-id">DMT-28471</div>
+</div>
+<div style="padding:0 0 24px;">
+<button onclick="goToReview()" style="width:100%;height:56px;border-radius:18px;border:none;background:linear-gradient(135deg,#7c5cfa,#5c3fda);color:#fff;font-size:15px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 20px rgba(124,92,250,0.35);"><svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line></svg>View Application Review</button>
+</div>
+<!-- Tracker -->
+<div class="section-label animate-in delay-2">Application Timeline</div>
+<div class="tracker-card animate-in delay-2">
+<div class="tracker-step">
+<div class="tracker-left">
+<div class="tracker-node node-done">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 16 16">
+<polyline points="3,8 6,11 13,4"></polyline>
+</svg>
+</div>
+<div class="tracker-line line-done"></div>
+</div>
+<div class="tracker-content">
+<div class="tracker-step-title step-done-title">Application Submitted</div>
+<div class="tracker-step-desc">Your application has been received and logged by Domot!</div>
+<div class="tracker-step-time">Today, 3:41 PM</div>
+</div>
+</div>
+<div class="tracker-step">
+<div class="tracker-left">
+<div class="tracker-node node-active">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 16 16">
+<circle cx="8" cy="8" r="3"></circle>
+</svg>
+</div>
+<div class="tracker-line line-active"></div>
+</div>
+<div class="tracker-content">
+<div class="tracker-step-title step-active-title">Landlord Reviewing</div>
+<div class="tracker-step-desc">The landlord has been notified and is reviewing your profile and details.</div>
+<div class="tracker-step-time violet">Expected within 48 hours</div>
+</div>
+</div>
+<div class="tracker-step">
+<div class="tracker-left">
+<div class="tracker-node node-pending">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16">
+<polyline points="3,8 6,11 13,4"></polyline>
+</svg>
+</div>
+<div class="tracker-line line-pending"></div>
+</div>
+<div class="tracker-content">
+<div class="tracker-step-title step-pending-title">Application Approved</div>
+<div class="tracker-step-desc">Landlord confirms interest and approves your application.</div>
+<div class="tracker-step-time">—</div>
+</div>
+</div>
+<div class="tracker-step">
+<div class="tracker-left">
+<div class="tracker-node node-pending">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16">
+<path d="M4 4h8M4 8h8M4 12h5"></path>
+</svg>
+</div>
+<div class="tracker-line line-pending"></div>
+</div>
+<div class="tracker-content">
+<div class="tracker-step-title step-pending-title">Agreement Ready</div>
+<div class="tracker-step-desc">Tenancy agreement is prepared and sent for your review and e-signature.</div>
+<div class="tracker-step-time">—</div>
+</div>
+</div>
+<div class="tracker-step">
+<div class="tracker-left">
+<div class="tracker-node node-pending">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16">
+<rect height="10" rx="1.5" width="12" x="2" y="3"></rect>
+<polyline points="2,6 8,9 14,6"></polyline>
+</svg>
+</div>
+<div class="tracker-line line-pending"></div>
+</div>
+<div class="tracker-content">
+<div class="tracker-step-title step-pending-title">Payment Pending</div>
+<div class="tracker-step-desc">Secure payment of rent and agent fees through Domot!</div>
+<div class="tracker-step-time">—</div>
+</div>
+</div>
+<div class="tracker-step">
+<div class="tracker-left">
+<div class="tracker-node node-pending">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 16 16">
+<path d="M2 12h12M8 12V4M5 7l3-3 3 3"></path>
+</svg>
+</div>
+</div>
+<div class="tracker-content">
+<div class="tracker-step-title step-pending-title">Move-in Ready</div>
+<div class="tracker-step-desc">Keys are handed over. Welcome to your new home.</div>
+<div class="tracker-step-time">—</div>
+</div>
+</div>
+</div>
+<!-- Landlord Response Notice -->
+<div class="response-card animate-in delay-3">
+<div class="response-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<line x1="12" x2="12" y1="8" y2="12"></line>
+<line x1="12" x2="12.01" y1="16" y2="16"></line>
+</svg>
+</div>
+<div>
+<div class="response-text-title">Awaiting Landlord Response</div>
+<div class="response-text-desc">You'll receive a push notification the moment the landlord responds. No need to refresh.</div>
+</div>
+</div>
+<div style="height: 16px;"></div>
+<!-- Bottom Actions -->
+<div class="action-bar-two">
+<button class="btn-outline">Share Status</button>
+<button class="btn-filled" onclick="goToApply()">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+            Back to Home
+        </button>
+</div>
+</div>
+
+<script src="apply.js"></script></body>
+</html>

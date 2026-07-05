@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Domot! — Digital Agreement</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet"/>
+
+<link href="agreement.css" rel="stylesheet"/></head>
+<body>
+<div class="ambient">
+<div class="ambient-orb ambient-orb-1"></div>
+<div class="ambient-orb ambient-orb-2"></div>
+</div>
+<!-- ==================== SCREEN 1: AGREEMENT ==================== -->
+<div class="screen" id="agreementScreen">
+<!-- Nav -->
+<div class="float-nav">
+<button class="nav-btn" onclick="goBack()">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+</button>
+<div style="display:flex; gap:10px;">
+<button class="nav-btn">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="18" cy="5" r="3"></circle>
+<circle cx="6" cy="12" r="3"></circle>
+<circle cx="18" cy="19" r="3"></circle>
+<line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line>
+<line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line>
+</svg>
+</button>
+</div>
+</div>
+<!-- Progress -->
+<div class="progress-bar animate-in">
+<div class="progress-step done">
+<div class="step-dot">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 12 12">
+<polyline points="2,6 5,9 10,3"></polyline>
+</svg>
+</div>
+<span class="step-label">Property</span>
+</div>
+<div class="progress-step done">
+<div class="step-dot">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 12 12">
+<polyline points="2,6 5,9 10,3"></polyline>
+</svg>
+</div>
+<span class="step-label">Inspection</span>
+</div>
+<div class="progress-step done">
+<div class="step-dot">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 12 12">
+<polyline points="2,6 5,9 10,3"></polyline>
+</svg>
+</div>
+<span class="step-label">Application</span>
+</div>
+<div class="progress-step active">
+<div class="step-dot">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 12 12">
+<circle cx="6" cy="6" fill="currentColor" r="2" stroke="none"></circle>
+</svg>
+</div>
+<span class="step-label">Agreement</span>
+</div>
+<div class="progress-step">
+<div class="step-dot"></div>
+<span class="step-label">Payment</span>
+</div>
+</div>
+<!-- Header -->
+<div class="header-text animate-in delay-1">
+<h1>Rental Agreement</h1>
+<p>Review the terms before signing.</p>
+</div>
+<!-- Agreement Summary Card -->
+<div class="section-label animate-in delay-2">Agreement Summary</div>
+<div class="summary-card animate-in delay-2">
+<div class="summary-row">
+<span class="summary-key">Property Type</span>
+<span class="summary-val">Self Contain</span>
+</div>
+<div class="summary-row">
+<span class="summary-key">Property</span>
+<span class="summary-val">Shelter Afrique Estate</span>
+</div>
+<div class="summary-divider"></div>
+<div class="summary-row">
+<span class="summary-key">Tenant</span>
+<span class="summary-val">Prince Frank</span>
+</div>
+<div class="summary-row">
+<span class="summary-key">Landlord</span>
+<span class="summary-val">John E.</span>
+</div>
+<div class="summary-divider"></div>
+<div class="summary-row" style="align-items:flex-start;">
+<span class="summary-key">Status</span>
+<span class="summary-badge">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 12 12">
+<polyline points="2,6 5,9 10,3"></polyline>
+</svg>
+                Approved
+            </span>
+</div>
+</div>
+<!-- Key Terms -->
+<div class="section-label animate-in delay-3">Key Terms</div>
+<div class="terms-card animate-in delay-3">
+<div class="terms-card-title">The Important Stuff</div>
+<div class="term-row">
+<span class="term-label">Annual Rent</span>
+<span class="term-value green">₦450,000</span>
+</div>
+<div class="term-row">
+<span class="term-label">Lease Duration</span>
+<span class="term-value">1 Year</span>
+</div>
+<div class="term-row">
+<span class="term-label">Security Deposit</span>
+<span class="term-value warm">₦100,000</span>
+</div>
+<div class="term-row">
+<span class="term-label">Renewal Notice</span>
+<span class="term-value">30 Days</span>
+</div>
+<div class="term-row">
+<span class="term-label">Move-in Date</span>
+<span class="term-value violet">August 15, 2026</span>
+</div>
+<div class="term-row">
+<span class="term-label">Agency Fee</span>
+<span class="term-value">₦50,000</span>
+</div>
+<div class="term-row">
+<span class="term-label">Legal Fee</span>
+<span class="term-value">₦25,000</span>
+</div>
+</div>
+<!-- Expand Full Agreement -->
+<button class="expand-btn animate-in delay-4" id="expandBtn" onclick="toggleAgreement()">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<polyline points="6 9 12 15 18 9"></polyline>
+</svg>
+        Read Full Agreement
+    </button>
+<!-- Full Agreement Panel -->
+<div class="full-agreement" id="fullAgreement">
+<div class="agreement-doc">
+<h3>1. Parties</h3>
+<p>This Tenancy Agreement is made between <strong>John Etim</strong> ("Landlord") and <strong>Prince Frank</strong> ("Tenant") for the property located at Shelter Afrique Estate, Uyo, Akwa Ibom State.</p>
+<h3>2. Property</h3>
+<p>The Landlord agrees to let and the Tenant agrees to take the self-contained apartment described as Unit 4B, Ground Floor, Block C, Shelter Afrique Estate, Uyo.</p>
+<h3>3. Term</h3>
+<p>The tenancy shall commence on <strong>August 15, 2026</strong> and shall continue for a period of <strong>one (1) year</strong>, unless terminated in accordance with the provisions of this Agreement.</p>
+<h3>4. Rent</h3>
+<p>The annual rent is <strong>₦450,000</strong> (Four Hundred and Fifty Thousand Naira), payable in advance before or on the commencement date.</p>
+<h3>5. Security Deposit</h3>
+<p>A security deposit of <strong>₦100,000</strong> shall be paid by the Tenant. This deposit shall be refundable at the end of the tenancy, subject to deductions for damages beyond fair wear and tear.</p>
+<h3>6. Renewal</h3>
+<p>Either party may terminate this agreement by giving <strong>thirty (30) days</strong> written notice. Renewal shall be subject to mutual agreement and may involve rent review.</p>
+<h3>7. Use of Premises</h3>
+<p>The premises shall be used solely for residential purposes. Subletting without prior written consent is prohibited.</p>
+<h3>8. Maintenance</h3>
+<p>The Landlord shall be responsible for structural repairs. The Tenant shall maintain the interior and report any defects promptly.</p>
+<h3>9. Dispute Resolution</h3>
+<p>Any dispute arising from this agreement shall first be resolved through mediation. Failing that, the parties submit to the jurisdiction of the courts in Akwa Ibom State.</p>
+<h3>10. Governing Law</h3>
+<p>This agreement shall be governed by and construed in accordance with the laws of the Federal Republic of Nigeria.</p>
+</div>
+</div>
+<!-- Trust Indicators -->
+<div class="section-label animate-in delay-5">Legal Confidence</div>
+<div class="trust-card animate-in delay-5">
+<div class="trust-card-title">Agreement Verified</div>
+<div class="trust-row">
+<div class="trust-dot">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</div>
+<span class="trust-row-text">Agreement Verified by Domot!</span>
+</div>
+<div class="trust-row">
+<div class="trust-dot">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</div>
+<span class="trust-row-text">Standard Domot! Template</span>
+</div>
+<div class="trust-row">
+<div class="trust-dot">
+<svg viewbox="0 0 12 12"><polyline points="2,6 5,9 10,3"></polyline></svg>
+</div>
+<span class="trust-row-text">Legally Executable in Nigeria</span>
+</div>
+</div>
+<!-- Signature Section -->
+<div class="section-label animate-in delay-6">Signatures</div>
+<div class="signature-card animate-in delay-6">
+<div class="signature-status">
+<div class="sig-row">
+<div class="sig-party">
+<div class="sig-avatar landlord">JE</div>
+<div class="sig-info">
+<div class="sig-name">John Etim</div>
+<div class="sig-role">Landlord</div>
+</div>
+</div>
+<div class="sig-status signed">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+                    Signed
+                </div>
+</div>
+<div class="sig-row">
+<div class="sig-party">
+<div class="sig-avatar tenant">PF</div>
+<div class="sig-info">
+<div class="sig-name">Prince Frank</div>
+<div class="sig-role">Tenant — You</div>
+</div>
+</div>
+<div class="sig-status pending" id="tenantSigStatus">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+                    Pending
+                </div>
+</div>
+</div>
+<!-- Signature Pad -->
+<div class="sig-pad-wrap">
+<div class="sig-pad-label">Draw Your Signature</div>
+<div class="sig-pad" id="sigPad">
+<div class="sig-pad-placeholder" id="sigPlaceholder">
+<svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="16">
+<path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+</svg>
+                    Use your finger to sign
+                </div>
+<canvas id="sigCanvas"></canvas>
+</div>
+<div class="sig-pad-actions">
+<button class="sig-clear-btn" onclick="clearSignature()">Clear</button>
+<div class="sig-verify-option" onclick="useVerifiedIdentity()">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+<path d="M9 12l2 2 4-4"></path>
+</svg>
+                    Use Verified Identity
+                </div>
+</div>
+</div>
+</div>
+<div style="height: 16px;"></div>
+<!-- CTA -->
+<div class="action-bar">
+<button class="submit-btn" id="signBtn" onclick="signAgreement()">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+<path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+</svg>
+            Sign Agreement
+        </button>
+</div>
+</div>
+<!-- ==================== SCREEN 2: SUCCESS ==================== -->
+<div class="screen hidden" id="successScreen">
+<div class="success-hero animate-in">
+<div class="success-icon-wrap">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+</div>
+<div class="success-title">Agreement Executed</div>
+<div class="success-sub">Both parties have signed. Your tenancy is now legally binding.</div>
+</div>
+<!-- Executed Details -->
+<div class="executed-card animate-in delay-1">
+<div class="executed-row">
+<span class="executed-key">Property</span>
+<span class="executed-val">Shelter Afrique Estate</span>
+</div>
+<div class="executed-row">
+<span class="executed-key">Landlord</span>
+<span class="executed-val">John Etim</span>
+</div>
+<div class="executed-row">
+<span class="executed-key">Tenant</span>
+<span class="executed-val">Prince Frank</span>
+</div>
+<div class="executed-divider"></div>
+<div class="executed-row">
+<span class="executed-key">Annual Rent</span>
+<span class="executed-val" style="color:var(--accent-green);">₦450,000</span>
+</div>
+<div class="executed-row">
+<span class="executed-key">Total Due</span>
+<span class="executed-val" style="color:var(--accent-violet);">₦625,000</span>
+</div>
+<div class="executed-status">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+</svg>
+<span>Legally Binding · Executed Today</span>
+</div>
+</div>
+<!-- Next Step Card -->
+<div class="next-step-card animate-in delay-2">
+<div class="next-step-label">Next Step</div>
+<div class="next-step-title">Secure Payment</div>
+<div class="next-step-desc">Pay your rent and fees safely through Domot!'s escrow system. Funds are held securely until you confirm move-in.</div>
+<div class="next-step-progress">
+<div class="next-step-dot done">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 12 12">
+<polyline points="2,6 5,9 10,3"></polyline>
+</svg>
+</div>
+<div class="next-step-line done"></div>
+<div class="next-step-dot done">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 12 12">
+<polyline points="2,6 5,9 10,3"></polyline>
+</svg>
+</div>
+<div class="next-step-line done"></div>
+<div class="next-step-dot done">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 12 12">
+<polyline points="2,6 5,9 10,3"></polyline>
+</svg>
+</div>
+<div class="next-step-line done"></div>
+<div class="next-step-dot done">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 12 12">
+<polyline points="2,6 5,9 10,3"></polyline>
+</svg>
+</div>
+<div class="next-step-line"></div>
+<div class="next-step-dot active" style="border-color:var(--accent-violet); background:rgba(124,92,250,0.15);">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 12 12">
+<circle cx="6" cy="6" fill="currentColor" r="2" stroke="none"></circle>
+</svg>
+</div>
+</div>
+</div>
+<!-- Bottom Actions -->
+<div class="action-bar-two">
+<button class="btn-outline" onclick="downloadAgreement()">Download PDF</button>
+<button class="btn-filled" id="proceedBtn" onclick="goToPayment()">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M5 12h14M12 5l7 7-7 7"></path>
+</svg>
+            Proceed to Payment
+        </button>
+</div>
+</div>
+
+<!-- 2FA OTP Modal -->
+<div id="otpOverlay" style="display:none; position:fixed; inset:0; z-index:300; background:rgba(0,0,0,0.75); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); align-items:flex-end; justify-content:center;">
+<div style="background:#1a1a2e; border-radius:28px 28px 0 0; padding:32px 24px 40px; width:100%; max-width:480px; transform:translateY(40px); opacity:0; transition: transform 0.45s cubic-bezier(0.16,1,0.3,1), opacity 0.35s ease;">
+<div style="width:36px; height:4px; border-radius:2px; background:rgba(255,255,255,0.15); margin:0 auto 24px;"></div>
+<div style="font-size:10px; font-weight:700; letter-spacing:1.4px; text-transform:uppercase; color:rgba(124,92,250,0.7); margin-bottom:8px;">Signature Verification</div>
+<div style="font-size:20px; font-weight:700; letter-spacing:-0.4px; color:#fff; margin-bottom:8px;">Confirm Your Identity</div>
+<div style="font-size:14px; color:rgba(255,255,255,0.55); margin-bottom:28px;">A one-time code has been sent to your verified number ••• ••• 7841. Enter it below to apply your Advanced Electronic Signature.</div>
+<div id="otpInputs" style="display:flex; gap:10px; justify-content:center; margin-bottom:24px;">
+<input maxlength="1" oninput="otpNext(this,0)" style="width:52px; height:60px; border-radius:14px; border:1px solid rgba(124,92,250,0.4); background:rgba(124,92,250,0.08); color:#fff; font-size:28px; font-weight:700; text-align:center; outline:none;" type="tel"/>
+<input maxlength="1" oninput="otpNext(this,1)" style="width:52px; height:60px; border-radius:14px; border:1px solid rgba(124,92,250,0.4); background:rgba(124,92,250,0.08); color:#fff; font-size:28px; font-weight:700; text-align:center; outline:none;" type="tel"/>
+<input maxlength="1" oninput="otpNext(this,2)" style="width:52px; height:60px; border-radius:14px; border:1px solid rgba(124,92,250,0.4); background:rgba(124,92,250,0.08); color:#fff; font-size:28px; font-weight:700; text-align:center; outline:none;" type="tel"/>
+<input maxlength="1" oninput="otpNext(this,3)" style="width:52px; height:60px; border-radius:14px; border:1px solid rgba(124,92,250,0.4); background:rgba(124,92,250,0.08); color:#fff; font-size:28px; font-weight:700; text-align:center; outline:none;" type="tel"/>
+<input maxlength="1" oninput="otpNext(this,4)" style="width:52px; height:60px; border-radius:14px; border:1px solid rgba(124,92,250,0.4); background:rgba(124,92,250,0.08); color:#fff; font-size:28px; font-weight:700; text-align:center; outline:none;" type="tel"/>
+<input maxlength="1" oninput="otpNext(this,5)" style="width:52px; height:60px; border-radius:14px; border:1px solid rgba(124,92,250,0.4); background:rgba(124,92,250,0.08); color:#fff; font-size:28px; font-weight:700; text-align:center; outline:none;" type="tel"/>
+</div>
+<button onclick="confirmOtp()" style="width:100%; height:56px; border-radius:16px; border:none; background:linear-gradient(135deg,#7c5cfa,#5b3fd8); color:#fff; font-size:16px; font-weight:700; cursor:pointer; margin-bottom:12px;">Verify &amp; Sign</button>
+<button onclick="closeOtp()" style="width:100%; height:48px; border-radius:14px; border:1px solid rgba(255,255,255,0.1); background:transparent; color:rgba(255,255,255,0.5); font-size:14px; font-weight:600; cursor:pointer;">Cancel</button>
+</div>
+</div>
+<script src="agreement.js"></script></body>
+</html>

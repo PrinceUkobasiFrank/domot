@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Domot! — Application Review</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet"/>
+
+<link href="application_review.css" rel="stylesheet"/></head>
+<body>
+<div class="ambient">
+<div class="ambient-orb ambient-orb-1"></div>
+<div class="ambient-orb ambient-orb-2"></div>
+</div>
+<div class="page-container" id="pageContainer">
+<!-- HEADER -->
+<div class="page-header">
+<div class="header-back">
+<button class="back-btn" onclick="goBack()">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+</button>
+<div class="header-badge">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        Verification Complete
+      </div>
+</div>
+<div class="header-title">Application Review</div>
+<div class="header-sub">Evaluate applicant readiness and verification status.</div>
+</div>
+<!-- APPLICANT HERO CARD -->
+<div class="applicant-hero animate-in delay-1">
+<div class="hero-glow"></div>
+<div class="hero-top">
+<div class="hero-avatar">
+        MJ
+        <div class="hero-avatar-ring"></div>
+</div>
+<div class="hero-info">
+<div class="hero-name">Michael Johnson</div>
+<div class="hero-property">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          2 Bedroom Apartment
+        </div>
+<div class="hero-meta-row">
+<div class="hero-date">Submitted 2 Days Ago</div>
+<div class="status-badge">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Verified
+          </div>
+</div>
+</div>
+</div>
+<div class="hero-stats">
+<div class="hero-stat">
+<div class="hero-stat-val">91</div>
+<div class="hero-stat-lbl">Score</div>
+</div>
+<div class="hero-stat">
+<div class="hero-stat-val">5/5</div>
+<div class="hero-stat-lbl">Verified</div>
+</div>
+<div class="hero-stat">
+<div class="hero-stat-val">94%</div>
+<div class="hero-stat-lbl">Match</div>
+</div>
+</div>
+</div>
+<!-- APPLICATION SCORE HERO -->
+<div class="sec animate-in delay-2">
+<div class="section-label">Application Confidence</div>
+<div class="score-hero">
+<div class="score-label">Application Score</div>
+<div>
+<span class="score-number" id="scoreDisplay">0</span><span class="score-denom">/100</span>
+</div>
+<div>
+<div class="score-tag">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          Strong Candidate
+        </div>
+</div>
+</div>
+</div>
+<!-- SCORE BREAKDOWN -->
+<div class="sec animate-in delay-3">
+<div class="section-label">Score Breakdown</div>
+<div class="breakdown-grid">
+<div class="breakdown-card">
+<div class="bd-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+</div>
+<div class="bd-label">Identity</div>
+<div class="bd-score" id="bd1">0<span>/100</span></div>
+<div class="trust-bar-track" style="margin-top:8px;"><div class="trust-bar-fill" style="width:100%;"></div></div>
+</div>
+<div class="breakdown-card">
+<div class="bd-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><line x1="12" x2="12" y1="1" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+</div>
+<div class="bd-label">Income Stability</div>
+<div class="bd-score" id="bd2">0<span>/100</span></div>
+<div class="trust-bar-track" style="margin-top:8px;"><div class="trust-bar-fill" style="width:88%;"></div></div>
+</div>
+<div class="breakdown-card">
+<div class="bd-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="16" rx="2" ry="2" width="22" x="1" y="4"></rect><line x1="1" x2="23" y1="10" y2="10"></line></svg>
+</div>
+<div class="bd-label">Payment Reliability</div>
+<div class="bd-score" id="bd3">0<span>/100</span></div>
+<div class="trust-bar-track" style="margin-top:8px;"><div class="trust-bar-fill" style="width:92%;"></div></div>
+</div>
+<div class="breakdown-card">
+<div class="bd-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+</div>
+<div class="bd-label">Reference Quality</div>
+<div class="bd-score" id="bd4">0<span>/100</span></div>
+<div class="trust-bar-track" style="margin-top:8px;"><div class="trust-bar-fill" style="width:90%;"></div></div>
+</div>
+<div class="breakdown-card" style="grid-column:span 2;">
+<div class="bd-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+</div>
+<div class="bd-label">Profile Completeness</div>
+<div class="bd-score" id="bd5">0<span>/100</span></div>
+<div class="trust-bar-track" style="margin-top:8px;"><div class="trust-bar-fill" style="width:95%;"></div></div>
+</div>
+</div>
+</div>
+<!-- APPLICANT SUMMARY -->
+<div class="sec animate-in delay-3">
+<div class="section-label">Applicant Summary</div>
+<div class="summary-card">
+<div class="summary-row">
+<div class="summary-key">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="14" rx="2" ry="2" width="20" x="2" y="7"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+          Employment Status
+        </div>
+<div class="summary-val green">Full-Time Employment</div>
+</div>
+<div class="summary-row">
+<div class="summary-key">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><line x1="12" x2="12" y1="1" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          Monthly Income
+        </div>
+<div class="summary-val violet">₦450,000</div>
+</div>
+<div class="summary-row">
+<div class="summary-key">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+          Desired Move-In
+        </div>
+<div class="summary-val">July 1, 2026</div>
+</div>
+<div class="summary-row">
+<div class="summary-key">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          Lease Duration
+        </div>
+<div class="summary-val">1 Year</div>
+</div>
+</div>
+</div>
+<!-- TRUST & VERIFICATION CENTER -->
+<div class="sec animate-in delay-4">
+<div class="section-label">Trust &amp; Verification</div>
+<div class="trust-card">
+<div class="trust-item">
+<div class="trust-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+</div>
+<div class="trust-label">Identity Verified</div>
+<div class="trust-check">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          Confirmed
+        </div>
+</div>
+<div class="trust-item">
+<div class="trust-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.89 12.15 19.79 19.79 0 0 1 1.88 3.5 2 2 0 0 1 3.87 1.3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+</div>
+<div class="trust-label">Phone Verified</div>
+<div class="trust-check">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          Confirmed
+        </div>
+</div>
+<div class="trust-item">
+<div class="trust-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+</div>
+<div class="trust-label">Email Verified</div>
+<div class="trust-check">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          Confirmed
+        </div>
+</div>
+<div class="trust-item">
+<div class="trust-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="16" rx="2" ry="2" width="22" x="1" y="4"></rect><line x1="1" x2="23" y1="10" y2="10"></line></svg>
+</div>
+<div class="trust-label">Payment Method Connected</div>
+<div class="trust-check">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          Confirmed
+        </div>
+</div>
+<div class="trust-item">
+<div class="trust-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+</div>
+<div class="trust-label">Address Verification</div>
+<div class="trust-check">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          Confirmed
+        </div>
+</div>
+</div>
+</div>
+<!-- FINANCIAL READINESS -->
+<div class="sec animate-in delay-4">
+<div class="section-label">Financial Readiness</div>
+<div class="financial-card">
+<div class="fin-row">
+<div class="fin-key">Rent Affordability</div>
+<div class="fin-badge strong">Strong</div>
+</div>
+<div class="fin-row">
+<div class="fin-key">Income Verification</div>
+<div class="fin-badge complete">Completed</div>
+</div>
+<div class="fin-row">
+<div class="fin-key">Payment Readiness</div>
+<div class="fin-badge verified">Verified</div>
+</div>
+</div>
+</div>
+<!-- REFERENCES -->
+<div class="sec animate-in delay-5">
+<div class="section-label">References</div>
+<div class="ref-card" onclick="toggleRef(this)">
+<div class="ref-top">
+<div class="ref-avatar">FL</div>
+<div class="ref-info">
+<div class="ref-type">Former Landlord</div>
+<div class="ref-name">Emeka Okonkwo</div>
+<div class="ref-badge">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Reference Verified
+          </div>
+</div>
+<div class="ref-expand">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+</div>
+<div class="ref-details">
+<div class="ref-details-inner">
+<div class="ref-detail-row"><span class="ref-detail-key">Relationship</span><span class="ref-detail-val">Landlord (2 years)</span></div>
+<div class="ref-detail-row"><span class="ref-detail-key">Payment Record</span><span class="ref-detail-val">Consistent</span></div>
+<div class="ref-detail-row"><span class="ref-detail-key">Property Condition</span><span class="ref-detail-val">Well Maintained</span></div>
+<div class="ref-detail-row"><span class="ref-detail-key">Contacted</span><span class="ref-detail-val">June 3, 2026</span></div>
+</div>
+</div>
+</div>
+<div class="ref-card" onclick="toggleRef(this)">
+<div class="ref-top">
+<div class="ref-avatar" style="background:linear-gradient(135deg,rgba(14,201,127,0.3),rgba(14,201,127,0.12)); color:var(--accent-green);">PR</div>
+<div class="ref-info">
+<div class="ref-type">Professional Reference</div>
+<div class="ref-name">Dr. Amara Nwosu</div>
+<div class="ref-badge">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Reference Verified
+          </div>
+</div>
+<div class="ref-expand">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+</div>
+<div class="ref-details">
+<div class="ref-details-inner">
+<div class="ref-detail-row"><span class="ref-detail-key">Relationship</span><span class="ref-detail-val">Direct Supervisor</span></div>
+<div class="ref-detail-row"><span class="ref-detail-key">Employment Duration</span><span class="ref-detail-val">3 Years</span></div>
+<div class="ref-detail-row"><span class="ref-detail-key">Character Assessment</span><span class="ref-detail-val">Highly Reliable</span></div>
+<div class="ref-detail-row"><span class="ref-detail-key">Contacted</span><span class="ref-detail-val">June 3, 2026</span></div>
+</div>
+</div>
+</div>
+</div>
+<!-- TIMELINE -->
+<div class="sec animate-in delay-5">
+<div class="section-label">Application Timeline</div>
+<div class="timeline" style="padding:0 24px;">
+<div class="timeline-item done">
+<div class="timeline-dot done">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+</div>
+<div class="timeline-body">
+<div class="timeline-title done">Application Submitted</div>
+<div class="timeline-date">June 3, 2026 · 10:14 AM</div>
+</div>
+</div>
+<div class="timeline-item done">
+<div class="timeline-dot done">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+</div>
+<div class="timeline-body">
+<div class="timeline-title done">Identity Verified</div>
+<div class="timeline-date">June 3, 2026 · 11:02 AM</div>
+</div>
+</div>
+<div class="timeline-item done">
+<div class="timeline-dot done">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+</div>
+<div class="timeline-body">
+<div class="timeline-title done">Income Reviewed</div>
+<div class="timeline-date">June 4, 2026 · 9:30 AM</div>
+</div>
+</div>
+<div class="timeline-item done">
+<div class="timeline-dot done">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+</div>
+<div class="timeline-body">
+<div class="timeline-title done">References Verified</div>
+<div class="timeline-date">June 4, 2026 · 3:45 PM</div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot active">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+</div>
+<div class="timeline-body">
+<div class="timeline-title active">Landlord Review</div>
+<div class="timeline-date" style="color:var(--accent-violet);">In Progress · Now</div>
+</div>
+</div>
+</div>
+</div>
+<!-- APPLICANT NOTE -->
+<div class="sec animate-in delay-6">
+<div class="section-label">Applicant's Note</div>
+<div class="note-card">
+<div class="note-quote">"</div>
+<div class="note-label">Personal Statement</div>
+<div class="note-text">I am relocating for work and looking for a long-term rental opportunity. I take great care of properties I occupy and always maintain open communication with landlords. I am committed to a one-year lease and can move in immediately upon approval.</div>
+</div>
+</div>
+<!-- PROPERTY MATCH -->
+<div class="sec animate-in delay-6">
+<div class="section-label">Compatibility Analysis</div>
+<div class="match-card">
+<div class="match-top">
+<div>
+<div class="match-title">Property Match</div>
+<div style="font-size:12px;color:var(--text-muted);margin-top:3px;">2 Bedroom Apartment</div>
+</div>
+<div class="match-score-wrap">
+<div class="match-pct" id="matchDisplay">0%</div>
+<div class="match-pct-lbl">Compatibility</div>
+</div>
+</div>
+<div class="match-factors">
+<div class="match-factor">
+<div class="match-factor-dot"></div>
+<div class="match-factor-label">Budget Match</div>
+<div class="match-factor-tick"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+</div>
+<div class="match-factor">
+<div class="match-factor-dot"></div>
+<div class="match-factor-label">Location Match</div>
+<div class="match-factor-tick"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+</div>
+<div class="match-factor">
+<div class="match-factor-dot"></div>
+<div class="match-factor-label">Property Type</div>
+<div class="match-factor-tick"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+</div>
+<div class="match-factor">
+<div class="match-factor-dot"></div>
+<div class="match-factor-label">Move-In Timing</div>
+<div class="match-factor-tick"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+</div>
+</div>
+</div>
+</div>
+<!-- DOMOT! INSIGHT -->
+<div class="sec animate-in delay-7">
+<div class="section-label">Domot! Assessment</div>
+<div class="insight-card">
+<div class="insight-header">
+<div class="insight-logo">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+</div>
+<div>
+<div class="insight-title">Domot! Assessment</div>
+<div class="insight-sub">AI-assisted readiness indicator</div>
+</div>
+</div>
+<div class="insight-text">
+        Applicant demonstrates strong verification status across all five trust indicators, stable income readiness relative to the requested property, and a high degree of compatibility with the selected listing. Reference quality is consistent and professional references were contactable. No information flags were raised during the review process. All readiness indicators are complete. This summary reflects submitted data and does not constitute a guarantee or legal commitment.
+      </div>
+</div>
+</div>
+<!-- DOCUMENTS -->
+<div class="sec animate-in delay-7">
+<div class="section-label">Submitted Documents</div>
+<div class="doc-card">
+<div class="doc-icon" style="background:rgba(124,92,250,0.1);">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="color:var(--accent-violet);" viewbox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+</div>
+<div class="doc-info">
+<div class="doc-name">Identity Verification</div>
+<div class="doc-status">Verified · National ID</div>
+</div>
+<button class="doc-preview-btn" onclick="previewDoc(event)">Preview</button>
+</div>
+<div class="doc-card">
+<div class="doc-icon" style="background:rgba(14,201,127,0.1);">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="color:var(--accent-green);" viewbox="0 0 24 24"><line x1="12" x2="12" y1="1" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+</div>
+<div class="doc-info">
+<div class="doc-name">Proof of Income</div>
+<div class="doc-status">Verified · 3 months statements</div>
+</div>
+<button class="doc-preview-btn" onclick="previewDoc(event)">Preview</button>
+</div>
+<div class="doc-card">
+<div class="doc-icon" style="background:rgba(59,130,246,0.1);">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="color:var(--accent-blue);" viewbox="0 0 24 24"><rect height="14" rx="2" ry="2" width="20" x="2" y="7"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+</div>
+<div class="doc-info">
+<div class="doc-name">Employment Verification</div>
+<div class="doc-status">Verified · Official letter</div>
+</div>
+<button class="doc-preview-btn" onclick="previewDoc(event)">Preview</button>
+</div>
+<div class="doc-card" style="margin-bottom:0;">
+<div class="doc-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+</div>
+<div class="doc-info">
+<div class="doc-name">Supporting Documents</div>
+<div class="doc-status" style="color:var(--accent-warm);">2 files · Pending review</div>
+</div>
+<button class="doc-preview-btn" onclick="previewDoc(event)">Preview</button>
+</div>
+</div>
+<!-- INTERNAL NOTES -->
+<div class="sec animate-in delay-8">
+<div class="section-label">Internal Notes</div>
+<div class="notes-card">
+<div class="notes-header">
+<div class="notes-lock">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="11" rx="2" ry="2" width="18" x="3" y="11"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+</div>
+<div class="notes-title">Private — Not Visible to Applicant</div>
+<div class="notes-private">Landlord Only</div>
+</div>
+<textarea class="notes-textarea" placeholder="Add private notes about this applicant…">Strong candidate. Schedule inspection call this week.</textarea>
+</div>
+</div>
+<!-- DECISION PANEL -->
+<div class="sec animate-in delay-8">
+<div class="section-label">Your Decision</div>
+<div class="decision-panel">
+<div class="decision-title">Ready to decide?</div>
+<div class="decision-sub">Choose an action below. You can request additional information before committing to a decision.</div>
+<div class="decision-grid">
+<div class="decision-btn more-info" onclick="onRequestInfo()">
+<div class="decision-btn-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="16" y2="12"></line><line x1="12" x2="12.01" y1="8" y2="8"></line></svg>
+</div>
+          Request Info
+        </div>
+<div class="decision-btn schedule" onclick="onSchedule()">
+<div class="decision-btn-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+</div>
+          Schedule
+        </div>
+<div class="decision-btn decline" onclick="openDeclineModal()">
+<div class="decision-btn-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg>
+</div>
+          Decline
+        </div>
+<div class="decision-btn approve" onclick="openApproveModal()">
+<div class="decision-btn-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+</div>
+          Approve Application
+        </div>
+</div>
+</div>
+</div>
+<div style="height:8px;"></div>
+</div><!-- /page-container -->
+<!-- STICKY BAR -->
+<div class="sticky-bar" id="stickyBar">
+<button class="btn-secondary" onclick="onRequestInfo()">Request Info</button>
+<button class="btn-primary" onclick="openApproveModal()">Approve Application</button>
+</div>
+<!-- APPROVE MODAL -->
+<div class="modal-overlay" id="approveModal" onclick="closeModals(event)">
+<div class="modal-sheet">
+<div class="modal-pill"></div>
+<div class="modal-icon-wrap success">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+</div>
+<div class="modal-title">Application Approved</div>
+<div class="modal-sub">Michael Johnson has been approved for the 2 Bedroom Apartment. Proceed to generate a formal tenancy agreement.</div>
+<button class="modal-btn primary-green" onclick="generateAgreement()">Generate Agreement</button>
+<button class="modal-btn ghost" onclick="closeModal('approveModal')">Review Again</button>
+</div>
+</div>
+<!-- DECLINE MODAL -->
+<div class="modal-overlay" id="declineModal" onclick="closeModals(event)">
+<div class="modal-sheet">
+<div class="modal-pill"></div>
+<div class="modal-icon-wrap decline">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg>
+</div>
+<div class="modal-title">Decline Application</div>
+<div class="modal-sub">Please select a reason. The applicant will receive a respectful notification.</div>
+<div class="decline-reasons">
+<button class="reason-option" onclick="selectReason(this)">Property No Longer Available</button>
+<button class="reason-option" onclick="selectReason(this)">Application Requirements Not Met</button>
+<button class="reason-option" onclick="selectReason(this)">Other</button>
+</div>
+<button class="modal-btn" id="declineConfirmBtn" onclick="confirmDecline()" style="background:rgba(240,68,68,0.12);box-shadow:inset 0 0 0 1px rgba(240,68,68,0.25);color:var(--accent-red);opacity:0.5;cursor:not-allowed;">Confirm Decline</button>
+<button class="modal-btn ghost" onclick="closeModal('declineModal')">Cancel</button>
+</div>
+</div>
+<!-- REQUEST INFO MODAL -->
+<div class="modal-overlay" id="infoModal" onclick="closeModals(event)">
+<div class="modal-sheet">
+<div class="modal-pill"></div>
+<div class="modal-icon-wrap" style="background:var(--accent-blue-dim);">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="color:var(--accent-blue);" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="16" y2="12"></line><line x1="12" x2="12.01" y1="8" y2="8"></line></svg>
+</div>
+<div class="modal-title">Request Sent</div>
+<div class="modal-sub">A request for additional information has been sent to Michael Johnson. You will be notified when they respond.</div>
+<button class="modal-btn primary-violet" onclick="closeModal('infoModal')">Done</button>
+</div>
+</div>
+<!-- SCHEDULE MODAL -->
+<div class="modal-overlay" id="scheduleModal" onclick="closeModals(event)">
+<div class="modal-sheet">
+<div class="modal-pill"></div>
+<div class="modal-icon-wrap" style="background:var(--accent-warm-dim);">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="color:var(--accent-warm);" viewbox="0 0 24 24"><rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+</div>
+<div class="modal-title">Schedule Inspection</div>
+<div class="modal-sub">Send an inspection invitation to Michael Johnson. They will receive a proposed time to visit the property.</div>
+<button class="modal-btn" onclick="closeModal('scheduleModal')" style="background:linear-gradient(135deg,#f0a500,#d4920a);box-shadow:0 4px 20px rgba(240,165,0,0.25);color:#fff;">Send Invitation</button>
+<button class="modal-btn ghost" onclick="closeModal('scheduleModal')">Cancel</button>
+</div>
+</div>
+
+<script src="application_review.js"></script></body>
+</html>
